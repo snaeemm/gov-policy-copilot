@@ -49,9 +49,16 @@ class Settings(BaseSettings):
     rerank_top_n: int = Field(default=5, ge=1, le=20)
     groundedness_threshold: float = Field(default=0.7, ge=0, le=1)
 
+    # USD per 1M tokens (list prices; used for cost-per-query telemetry)
+    price_input_per_m: float = 0.25
+    price_output_per_m: float = 2.00
+    price_embedding_per_m: float = 0.02
+    review_db_path: str = "data/reviews.db"
+
     auth_enabled: bool = False
     entra_tenant_id: str = ""
     entra_api_audience: str = "api://gov-policy-copilot"
+    entra_spa_client_id: str = ""
     rate_limit: str = "20/minute"
 
     applicationinsights_connection_string: str = ""

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gov Policy Copilot</title>
+<meta name="description" content="Bilingual assistant for public UAE government policy documents, with citations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#e3b75b"/></linearGradient></defs><path d="M16 3 4 8v8c0 7 5 11.5 12 13 7-1.5 12-6 12-13V8L16 3Z" fill="none" stroke="url(#lg)" stroke-width="2.2" stroke-linejoin="round"/><path d="m11 16 3.5 3.5L21.5 12" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="brand-name" data-i18n="title">Gov Policy Copilot</div>
+        <div class="brand-sub" data-i18n="subtitle">Grounded answers from public UAE policy documents</div>
+      </div>
+    </div>
+    <nav class="actions">
+      <button class="tab active" data-view="chat" data-i18n="tabChat">Ask</button>
+      <button class="tab" data-view="reviews" id="reviewsTab" hidden data-i18n="tabReviews">Review queue</button>
+      <button class="pill" id="langToggle" aria-label="Switch language">ع</button>
+      <button class="pill" id="themeToggle" aria-label="Toggle theme">◐</button>
+      <button class="pill" id="loginBtn" hidden data-i18n="signIn">Sign in</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="chatView" class="view">
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="hero" id="hero">
+          <h1><span class="grad" data-i18n="heroTitle">Ask about UAE AI & data policy</span></h1>
+          <p data-i18n="heroText">Answers come only from official public documents, every sentence is cited, and low-confidence answers go to a human reviewer.</p>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+      </div>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <textarea id="question" rows="1" maxlength="1000" data-i18n-ph="placeholder" placeholder="Ask in English or Arabic…"></textarea>
+        <button type="submit" id="sendBtn" aria-label="Send">
+          <svg viewBox="0 0 24 24"><path d="M4 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p class="disclaimer" data-i18n="disclaimer">Reference implementation on public data. Not an official government service and not legal advice.</p>
+    </section>
+
+    <section id="reviewsView" class="view" hidden>
+      <div class="reviews-head">
+        <h2 data-i18n="reviewsTitle">Human review queue</h2>
+        <button class="pill" id="refreshReviews" data-i18n="refresh">Refresh</button>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+    </section>
+  </main>
+
+  <template id="msgTpl">
+    <article class="msg">
+      <div class="bubble"><div class="content"></div></div>
+    </article>
+  </template>
+
+  <script src="/static/app.js" type="module"></script>
+</body>
+</html>

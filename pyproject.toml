@@ -51,6 +51,7 @@ select = ["E", "F", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM"]
 ignore = ["S101", "RUF001", "RUF002", "RUF003"]  # Arabic text is intentional
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S", "N"]
+"src/gov_copilot/agent/schemas.py" = ["E501"]
 
 [tool.mypy]
 python_version = "3.12"

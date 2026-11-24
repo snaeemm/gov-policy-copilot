@@ -5,6 +5,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 Language = Literal["en", "ar"]
+Classification = Literal["public", "internal", "confidential"]
 
 
 class SourceDocument(BaseModel):
@@ -15,6 +16,7 @@ class SourceDocument(BaseModel):
     publisher: str
     year: int
     source_url: str
+    classification: Classification = "public"
 
 
 class Chunk(BaseModel):
@@ -27,6 +29,7 @@ class Chunk(BaseModel):
     chunk_index: int = Field(ge=0)
     content: str
     source_url: str
+    classification: Classification = "public"
 
 
 class RetrievedChunk(Chunk):

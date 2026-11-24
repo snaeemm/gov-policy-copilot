@@ -59,14 +59,16 @@ jobs:
       RERANKER: none
     steps:
       - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: { enable-cache: true }
+      - run: uv python install 3.12 && uv sync --frozen --extra eval
+      # Log in right before Azure calls: the GitHub OIDC assertion is short-lived and
+      # the Azure CLI can't refresh it after dependency installation takes several minutes.
       - uses: azure/login@v2
         with:
           client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ vars.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-      - uses: astral-sh/setup-uv@v5
-        with: { enable-cache: true }
-      - run: uv python install 3.12 && uv sync --frozen --extra eval
       - name: Evaluation gate
         run: |
           LIMIT=""

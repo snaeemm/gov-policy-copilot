@@ -25,3 +25,26 @@ Current index: 147 chunks (charter EN 13, charter AR 9, policy EN 11, policy AR 
 ## Quality issues
 - OCR artifacts: "Al" for "AI"; some Arabic entity names garbled (e.g. AI71/G42 on policy page 3).
 - Last page of each document is a cover/back page with little content.
+
+## Data-quality gates
+
+Ingestion (`scripts/ingest.py`) runs data-quality checks on **all** chunks before anything is embedded or uploaded. Implementation: `src/gov_copilot/ingestion/quality.py`; tests: `tests/unit/test_quality.py`. Any **error** fails the run (exit code 1) and leaves the index untouched. **Warnings** are reported but allowed by default; `--no-allow-dq-warnings` makes them fatal too. `--dq-only` runs the checks offline on the cached Document Intelligence output. Reports are written to `data/processed/dq-report.json` and `dq-report.md`.
+
+| Check | Error (blocks) | Warning (reported) |
+|---|---|---|
+| metadata | missing doc_id, title, source_url or file; non-https source; chunk/doc mismatch; page < 1 | – |
+| classification | label missing, mismatched, or not `public` (this index is public-data only) | – |
+| length | empty chunk; document produced no chunks | chunk < 20 tokens |
+| language | dominant script ≠ declared language with < 5% expected script | 5–35% expected script (mixed text tolerated above 35%; < 40 letters not judged) |
+| duplicates | exact duplicate after normalisation (Arabic normalisation, case, whitespace) | near-duplicate within a document (5-word shingles, Jaccard ≥ 0.9) |
+| ocr | > 1% replacement or control characters | > 15% symbols; tokens > 60 chars (URLs excluded); known artefact "Al" read for "AI" |
+
+Every document carries a `classification` label (`public` / `internal` / `confidential`) in `data/manifest.json`. It is stored as a filterable field in the search index, so a mixed-sensitivity corpus could be filtered per user role later.
+
+**Latest run (6 documents, 147 chunks): PASS, 0 errors, 34 warnings.**
+
+| Check | Errors | Warnings | Notes |
+|---|---|---|---|
+| ocr | 0 | 28 | Mostly "Al" for "AI" in the English Charter and Ethics PDFs (a known OCR confusion) |
+| length | 0 | 5 | Cover/title-page chunks |
+| language | 0 | 1 | Arabic Ethics guide chunk dominated by English bibliography references |

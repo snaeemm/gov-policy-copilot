@@ -128,6 +128,7 @@ def chunk_markdown(
                 chunk_index=i,
                 content=content,
                 source_url=doc.source_url,
+                classification=doc.classification,
             )
         )
     return chunks

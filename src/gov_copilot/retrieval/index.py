@@ -45,6 +45,9 @@ def build_index(name: str, dimensions: int) -> SearchIndex:
         SimpleField(name="page", type=SearchFieldDataType.Int32, filterable=True),
         SimpleField(name="chunk_index", type=SearchFieldDataType.Int32),
         SimpleField(name="source_url", type=SearchFieldDataType.String),
+        SimpleField(
+            name="classification", type=SearchFieldDataType.String, filterable=True, facetable=True
+        ),
         # Original text for display/citation (not searched).
         SimpleField(name="content", type=SearchFieldDataType.String),
         SearchableField(

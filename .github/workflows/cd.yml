@@ -8,8 +8,6 @@ on:
   workflow_dispatch:
     inputs:
       full_eval: { description: "Run the full eval suite (74 prompts) instead of the smoke subset", type: boolean, default: true }
-  schedule:
-    - cron: "0 3 * * 1" # weekly full evaluation (drift detection)
 
 permissions:
   contents: read

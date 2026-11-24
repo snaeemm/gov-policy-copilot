@@ -1,0 +1,15 @@
+// Query-distribution drift: out-of-scope / blocked / escalated / not_found rates, week over week.
+traces
+| where message == "copilot_request" and timestamp > ago(14d)
+| extend outcome = tostring(customDimensions.outcome)
+| extend week = iff(timestamp > ago(7d), "this_week", "last_week")
+| summarize
+    total = count(),
+    out_of_scope_pct = round(100.0 * countif(outcome == "out_of_scope") / count(), 1),
+    blocked_pct = round(100.0 * countif(outcome == "blocked") / count(), 1),
+    escalated_pct = round(100.0 * countif(outcome == "escalated") / count(), 1),
+    not_found_pct = round(100.0 * countif(outcome == "not_found") / count(), 1)
+    by week
+| order by week desc
+// Compare rows: a jump of > 10 pp in out_of_scope_pct suggests users are asking about topics
+// the corpus doesn't cover (corpus gap) or the planner prompt regressed.

@@ -1,0 +1,11 @@
+{
+  "_comment": "Regression tolerances vs baseline. 'max_drop' = absolute decrease allowed; 'max_increase_pct' = relative increase allowed.",
+  "retrieval_recall_at_5": {"max_drop": 0.10},
+  "groundedness": {"max_drop": 0.05},
+  "relevance": {"max_drop": 0.10},
+  "citation_accuracy": {"max_drop": 0.10},
+  "answer_rate": {"max_drop": 0.10},
+  "redteam_pass_rate": {"max_drop": 0.0},
+  "latency_p95_s": {"max_increase_pct": 50},
+  "cost_per_query_usd": {"max_increase_pct": 50}
+}

@@ -1,0 +1,14 @@
+// Query-distribution drift: language mix this week vs last week (percentage points).
+let base = traces
+| where message == "copilot_request"
+| extend language = tostring(customDimensions.language)
+| extend week = iff(timestamp > ago(7d), "this_week", iff(timestamp > ago(14d), "last_week", "older"))
+| where week != "older";
+base
+| summarize n = count() by week, language
+| join kind=inner (base | summarize total = count() by week) on week
+| extend share_pct = round(100.0 * n / total, 1)
+| project week, language, share_pct
+| evaluate pivot(week, take_any(share_pct))
+| extend change_pp = round(todouble(column_ifexists("this_week", 0.0)) - todouble(column_ifexists("last_week", 0.0)), 1)
+| order by abs(change_pp) desc

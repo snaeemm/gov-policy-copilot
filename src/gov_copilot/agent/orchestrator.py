@@ -152,6 +152,8 @@ class Copilot:
                     "groundedness": result.verification.groundedness
                     if result.verification
                     else None,
+                    "language": lang,
+                    "classifier_label": None,  # populated by the M8 query classifier
                 },
             )
             span = trace.get_current_span()

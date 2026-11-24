@@ -18,3 +18,4 @@ eval/results/*.local.json
 *.bicepparam.local
 data/*.db
 eval/results/latest.json
+eval/results/drift-report.md

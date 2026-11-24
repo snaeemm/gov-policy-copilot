@@ -32,3 +32,4 @@ output workspaceCustomerId string = law.properties.customerId
 #disable-next-line outputs-should-not-contain-secrets // connection string is stored in Key Vault, not logged
 output appInsightsConnectionString string = appi.properties.ConnectionString
 output appInsightsName string = appi.name
+output appInsightsId string = appi.id

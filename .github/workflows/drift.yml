@@ -1,0 +1,67 @@
+name: drift
+# Weekly quality-drift check: tiny eval sample (8 golden + 8 red-team, ~$0.03) compared with the
+# committed baseline. On regression, opens (or comments on) a GitHub issue labelled `drift`.
+on:
+  schedule:
+    - cron: "0 4 * * 1" # Mondays 04:00 UTC
+  workflow_dispatch:
+    inputs:
+      limit: { description: "Prompts per set (golden and red-team)", default: "8" }
+
+permissions:
+  contents: read
+  issues: write
+  id-token: write
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      AZURE_OPENAI_ENDPOINT: ${{ vars.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_CHAT_DEPLOYMENT: gpt-5-mini
+      AZURE_OPENAI_EMBEDDING_DEPLOYMENT: text-embedding-3-small
+      AZURE_SEARCH_ENDPOINT: ${{ vars.AZURE_SEARCH_ENDPOINT }}
+      CONTENT_SAFETY_ENDPOINT: ${{ vars.CONTENT_SAFETY_ENDPOINT }}
+      LANGUAGE_ENDPOINT: ${{ vars.LANGUAGE_ENDPOINT }}
+      RERANKER: none
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: astral-sh/setup-uv@v5
+        with: { enable-cache: true }
+      - run: uv python install 3.12 && uv sync --frozen --extra eval
+      - name: Sample evaluation
+        run: uv run python eval/run_eval.py --limit "${{ inputs.limit || '8' }}"
+      - name: Compare with baseline
+        id: compare
+        run: |
+          set +e
+          uv run python eval/compare_baseline.py
+          echo "regressed=$([ $? -ne 0 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          cat eval/results/drift-report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open or update drift issue
+        if: steps.compare.outputs.regressed == 'true'
+        run: |
+          gh label create drift --color B60205 --description "Eval quality drift" 2>/dev/null || true
+          BODY="$(cat eval/results/drift-report.md)
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          EXISTING=$(gh issue list --label drift --state open --json number --jq '.[0].number')
+          if [[ -n "$EXISTING" ]]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "Eval drift detected ($(date -u +%F))" --label drift --body "$BODY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: drift-${{ github.run_id }}
+          path: |
+            eval/results/latest.json
+            eval/results/drift-report.md

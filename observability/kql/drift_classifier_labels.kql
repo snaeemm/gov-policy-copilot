@@ -1,0 +1,14 @@
+// Query-distribution drift: classifier label mix week over week (label populated once the
+// M8 query classifier is enabled; null labels are reported as "unclassified").
+let base = traces
+| where message == "copilot_request" and timestamp > ago(14d)
+| extend label = coalesce(tostring(customDimensions.classifier_label), "unclassified")
+| extend week = iff(timestamp > ago(7d), "this_week", "last_week");
+base
+| summarize n = count() by week, label
+| join kind=inner (base | summarize total = count() by week) on week
+| extend share_pct = round(100.0 * n / total, 1)
+| project week, label, share_pct
+| evaluate pivot(week, take_any(share_pct))
+| extend change_pp = round(todouble(column_ifexists("this_week", 0.0)) - todouble(column_ifexists("last_week", 0.0)), 1)
+| order by abs(change_pp) desc

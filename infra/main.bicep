@@ -24,6 +24,8 @@ param enablePrivateEndpoints bool = false
 param entraTenantId string = tenant().tenantId
 param entraApiAppId string = ''
 param entraSpaClientId string = ''
+@description('Azure Monitor log-search alerts (~$2.50/month for 5 rules at 15-min frequency); off by default')
+param deployAlerts bool = false
 @description('Object ID of the GitHub Actions OIDC service principal')
 param ciPrincipalId string = ''
 
@@ -98,6 +100,18 @@ module privateNetworking 'modules/private-endpoints.bicep' = if (deployApp && en
     tags: tags
     cognitiveAccountIds: ai.outputs.cognitiveAccountIds
     keyVaultId: app!.outputs.keyVaultId
+  }
+}
+
+module alerts 'modules/alerts.bicep' = if (deployApp && deployAlerts) {
+  scope: rg
+  name: 'alerts'
+  params: {
+    prefix: prefix
+    location: location
+    tags: tags
+    appInsightsId: monitoring!.outputs.appInsightsId
+    email: budgetEmail
   }
 }
 

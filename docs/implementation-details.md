@@ -30,7 +30,7 @@ How each capability of Gov Policy Copilot is implemented, its known limitations,
 - The review queue is ephemeral, the eval on push is a 12-item subset, and there's no WCAG audit yet.
 - Fabric Gold layer is live (Delta tables in a OneLake lakehouse); Purview is design-only.
 - The classifier is trained, registered (Azure ML v1) and enabled in the live app; the model artifact is published as a GitHub release.
-- The Azure ML MLflow run shows FAILED: MLflow 3's `log_model` calls an API Azure ML doesn't support. Training completed, and the model was registered via the Azure ML SDK instead.
+- The first Azure ML run (v1) is marked FAILED because MLflow 3's `log_model` calls an API Azure ML doesn't support. Fixed by logging artifacts through the MLflow client and registering via the Azure ML SDK; the retrained run completed cleanly and is registered as v2.
 - Private endpoints were tested and torn down, not left on: the live environment is public with Entra auth.
 
 ## Demo walkthrough

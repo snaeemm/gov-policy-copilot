@@ -16,6 +16,7 @@ from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
 from gov_copilot.agent.prompts import load_prompt
 from gov_copilot.agent.review_queue import ReviewQueue
 from gov_copilot.agent.schemas import (
+    BLOCKED,
     ESCALATED,
     NOT_FOUND,
     OUT_OF_SCOPE,
@@ -165,7 +166,8 @@ class Copilot:
 
             guard_in = await self.guard.check_input(question)
             if not guard_in.allowed:
-                yield final(OUT_OF_SCOPE[lang], Outcome.BLOCKED)
+                span.set_attribute("copilot.blocked_reason", guard_in.reason or "")
+                yield final(BLOCKED[lang], Outcome.BLOCKED)
                 return
 
             yield {"type": "status", "step": "planning"}

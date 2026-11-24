@@ -15,6 +15,10 @@ OUT_OF_SCOPE = {
     "(AI Charter, AI policy, AI ethics, personal data protection).",
     "ar": "يمكنني فقط الإجابة عن الأسئلة المتعلقة بوثائق السياسات الحكومية الإماراتية العامة المتاحة لدي.",
 }
+BLOCKED = {
+    "en": "This request was blocked by the safety filter. Please rephrase your question about UAE policy.",
+    "ar": "تم حظر هذا الطلب بواسطة مرشح الأمان. يرجى إعادة صياغة سؤالك حول السياسات الإماراتية.",
+}
 ESCALATED = {
     "en": "I'm not confident this answer is fully supported by the sources, so it has been sent to a "
     "human reviewer.",

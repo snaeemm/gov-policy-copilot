@@ -157,6 +157,10 @@ def create_app(copilot: Copilot | None = None) -> FastAPI:
     async def me(user: Annotated[User, Depends(require(Role.VIEWER))]) -> dict[str, object]:
         return {"name": user.name, "roles": sorted(r.value for r in user.roles)}
 
+    @app.get("/favicon.ico", include_in_schema=False)
+    async def favicon() -> FileResponse:
+        return FileResponse(FRONTEND / "favicon.svg", media_type="image/svg+xml")
+
     if FRONTEND.exists():
         app.mount("/static", StaticFiles(directory=FRONTEND), name="static")
 

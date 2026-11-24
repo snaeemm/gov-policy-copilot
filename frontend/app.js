@@ -63,6 +63,7 @@ function applyLang() {
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t()[el.dataset.i18n]; });
   document.querySelectorAll("[data-i18n-ph]").forEach((el) => { el.placeholder = t()[el.dataset.i18nPh]; });
   $("#langToggle").textContent = lang === "ar" ? "EN" : "ع";
+  document.title = lang === "ar" ? "مساعد السياسات الحكومية · الإمارات" : "Gov Policy Copilot · UAE Policy Assistant";
   renderSuggestions();
 }
 function renderSuggestions() {

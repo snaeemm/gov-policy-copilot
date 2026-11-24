@@ -51,3 +51,5 @@ output searchEndpoint string = ai.outputs.searchEndpoint
 output docIntelEndpoint string = ai.outputs.docIntelEndpoint
 output chatDeployment string = ai.outputs.chatDeployment
 output embeddingDeployment string = ai.outputs.embeddingDeployment
+output contentSafetyEndpoint string = ai.outputs.contentSafetyEndpoint
+output languageEndpoint string = ai.outputs.languageEndpoint

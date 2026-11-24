@@ -60,6 +60,32 @@ resource docIntel 'Microsoft.CognitiveServices/accounts@2024-10-01' = {
   }
 }
 
+resource contentSafety 'Microsoft.CognitiveServices/accounts@2024-10-01' = {
+  name: 'cs-${prefix}-${suffix}'
+  location: location
+  tags: tags
+  kind: 'ContentSafety'
+  sku: { name: 'F0' }
+  properties: {
+    customSubDomainName: 'cs-${prefix}-${suffix}'
+    disableLocalAuth: true
+    publicNetworkAccess: 'Enabled'
+  }
+}
+
+resource language 'Microsoft.CognitiveServices/accounts@2024-10-01' = {
+  name: 'lang-${prefix}-${suffix}'
+  location: location
+  tags: tags
+  kind: 'TextAnalytics'
+  sku: { name: 'F0' }
+  properties: {
+    customSubDomainName: 'lang-${prefix}-${suffix}'
+    disableLocalAuth: true
+    publicNetworkAccess: 'Enabled'
+  }
+}
+
 resource search 'Microsoft.Search/searchServices@2024-06-01-preview' = {
   name: 'srch-${prefix}-${suffix}'
   location: location
@@ -91,6 +117,16 @@ resource devDocIntel 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (
   scope: docIntel
   properties: { principalId: developerPrincipalId, principalType: 'User', roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roles.cogServicesUser) }
 }
+resource devContentSafety 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (!empty(developerPrincipalId)) {
+  name: guid(contentSafety.id, developerPrincipalId, roles.cogServicesUser)
+  scope: contentSafety
+  properties: { principalId: developerPrincipalId, principalType: 'User', roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roles.cogServicesUser) }
+}
+resource devLanguage 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (!empty(developerPrincipalId)) {
+  name: guid(language.id, developerPrincipalId, roles.cogServicesUser)
+  scope: language
+  properties: { principalId: developerPrincipalId, principalType: 'User', roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roles.cogServicesUser) }
+}
 resource devSearchData 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (!empty(developerPrincipalId)) {
   name: guid(search.id, developerPrincipalId, roles.searchIndexContributor)
   scope: search
@@ -107,3 +143,10 @@ output docIntelEndpoint string = docIntel.properties.endpoint
 output searchEndpoint string = 'https://${search.name}.search.windows.net'
 output chatDeployment string = chat.name
 output embeddingDeployment string = embedding.name
+output contentSafetyEndpoint string = contentSafety.properties.endpoint
+output languageEndpoint string = language.properties.endpoint
+output openAiName string = openAi.name
+output searchName string = search.name
+output docIntelName string = docIntel.name
+output contentSafetyName string = contentSafety.name
+output languageName string = language.name

@@ -53,16 +53,18 @@ Details: [docs/architecture.md](docs/architecture.md)
 | 11 | Documentation | ADRs, model and data cards, RAI vs UAE AI Charter, PDPL, STRIDE, risk register, runbook, eval report | ✅ |
 
 ## Evaluation (prompt v2, gpt-5-mini)
-| Metric | Result | Gate |
-|---|---|---|
-| Retrieval recall@5 | 1.00 | ≥ 0.80 |
-| Groundedness | 0.96 | ≥ 0.80 |
-| Relevance | 0.76 | ≥ 0.70 |
-| Citation accuracy | 1.00 | ≥ 0.80 |
-| Answer rate (EN / AR) | 0.96 (1.00 / 0.92) | ≥ 0.75 |
-| Red-team pass rate | 1.00 (24/24) | ≥ 0.90 |
-| Latency p50 / p95 | 10.4 s / 14.3 s | p95 ≤ 45 s |
-| Cost per query | $0.0016 | ≤ $0.01 |
+| Metric | 4-doc corpus | 6-doc corpus (current) | Gate |
+|---|---|---|---|
+| Retrieval recall@5 | 1.00 | 0.92 | ≥ 0.80 |
+| Groundedness | 0.96 | 0.98 | ≥ 0.80 |
+| Relevance | 0.76 | 0.81 | ≥ 0.70 |
+| Citation accuracy | 1.00 | 0.89 | ≥ 0.80 |
+| Answer rate (EN / AR) | 0.96 (1.00 / 0.92) | 0.84 (0.84 / 0.84) | ≥ 0.75 |
+| Red-team pass rate | 1.00 (24/24) | 1.00 (24/24) | ≥ 0.90 |
+| Latency p50 / p95 | 10.4 s / 14.3 s | 10.6 s / 15.4 s | p95 ≤ 45 s |
+| Cost per query | $0.0016 | $0.0016 | ≤ $0.01 |
+
+Adding the AI Ethics guidelines (overlapping topics) lowered recall/citation scores because the golden set's expected sources only list the Charter and Policy documents - some answers now correctly cite the Ethics guide but are scored as off-target. Extending the golden set's expected sources is tracked as a follow-up.
 
 The first run (prompt v1) **failed the gate** at a 0.72 answer rate. The root causes were F0 throttling, a narrow planner scope, and over-cautious handling of numbered lists. All three were fixed in v2, documented in [docs/evaluation-report.md](docs/evaluation-report.md).
 
@@ -107,7 +109,7 @@ docs/              architecture, ADRs, cards, RAI, PDPL, threat model, risks, ru
 A $5/month budget alert is defined in Bicep.
 
 ## Known limitations
-- The corpus is small: the AI Charter and the UAE International AI Policy, each in EN and AR. The PDPL and AI Ethics documents are listed in the manifest but need a manual download, because the source sites block automated download.
+- The corpus is small: 6 official documents (UAE AI Charter, UAE International Stance on AI Policy, UAE AI Ethics Principles & Guidelines - each in EN and AR; 147 chunks). The PDPL is in the manifest but not indexed, because uaelegislation.gov.ae blocks automated downloads (Cloudflare); it can be added with a manual browser download.
 - gpt-5-mini runs as GlobalStandard, so inference may happen outside the UAE (ADR-0007).
 - The review queue is SQLite inside the container, so it's lost on restart; production would use Cosmos DB.
 - The same model family generates and judges answers.

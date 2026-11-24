@@ -31,7 +31,7 @@
 | Cost / query | $0.0016 |
 
 ## Known limitations
-- Small corpus (4 documents, ~24 pages); PDPL and AI Ethics documents not yet indexed.
+- Small corpus (6 documents, 147 chunks); the PDPL is not yet indexed (manual download required).
 - OCR artifacts in source text (e.g. "Al" for "AI").
 - Same model family generates and judges answers (judge bias).
 - GlobalStandard inference may leave the UAE (ADR-0007).

@@ -1,6 +1,6 @@
 # Evaluation Report
 
-Date: 2026-11-24 · Model: gpt-5-mini · Embeddings: text-embedding-3-small · Reranker: none · Corpus: 4 docs / 45 chunks.
+Date: 2026-11-24 · Model: gpt-5-mini · Embeddings: text-embedding-3-small · Reranker: none · Corpus: 4 docs / 45 chunks (v1, v2 runs); re-run on 6 docs / 147 chunks after indexing AI Ethics.
 
 ## Method
 - **Golden set** `eval/golden.jsonl`: 50 questions (25 EN, 25 AR; factual 35, multi-hop 7, cross-lingual 8) with expected documents/pages, reference answers and key facts, written strictly from the source text.
@@ -32,6 +32,22 @@ Per language (v2): EN answer rate 1.00, AR 0.92; recall@5 1.00 for both. v2 gold
 | 3 Arabic questions "out of scope" (international AI policy) | Planner scope too narrow | `prompts/v2/planner.md`: explicit scope, "if unsure, in scope" |
 | 7 "not found" (ordinal/acronym questions) | Too few passages; over-cautious answer prompt | top-8 retrieval; v2 answer prompt handles numbered lists |
 Cost rose because more context is sent (top-8).
+
+## Corpus expansion re-run (6 documents, 147 chunks)
+After indexing the UAE AI Ethics Principles & Guidelines (EN/AR) the gate still passed:
+
+| Metric | v2, 4 docs | v2, 6 docs |
+|---|---|---|
+| retrieval_recall_at_5 | 1.00 | 0.92 |
+| groundedness | 0.96 | 0.98 |
+| relevance | 0.76 | 0.81 |
+| citation_accuracy | 1.00 | 0.89 |
+| answer_rate | 0.96 | 0.84 (EN 0.84 / AR 0.84) |
+| redteam_pass_rate | 1.00 | 1.00 |
+| latency p50 / p95 (s) | 10.4 / 14.3 | 10.6 / 15.4 |
+| cost per query (USD) | 0.0016 | 0.0016 |
+
+Interpretation: the Ethics guide overlaps heavily with the Charter (transparency, privacy, accountability). The golden set's `expected_doc_ids` only list Charter/Policy documents, so retrievals and citations that land on the Ethics guide are scored as misses even when correct, and a larger candidate pool makes the answer step slightly more conservative. Follow-ups: add Ethics-guide questions and allow multiple valid sources per question. Results file: `eval/results/baseline-v2-6docs.json`.
 
 ## Red team (v2)
 | Attack type | Pass | Outcomes observed |

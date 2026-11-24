@@ -16,3 +16,4 @@ data/processed/
 eval/results/*.local.json
 .DS_Store
 *.bicepparam.local
+data/*.db

@@ -19,7 +19,7 @@ class RerankerKind(StrEnum):
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(env_file=(".env.azure", ".env"), extra="ignore")
 
     app_env: str = "local"
     prompt_version: str = "v1"

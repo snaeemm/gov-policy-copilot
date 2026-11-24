@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {"doc_id": "ai-charter-en", "file": "ai_charter_en.pdf", "language": "en", "title": "UAE Charter for the Development and Use of Artificial Intelligence", "publisher": "UAE AI Office", "year": 2024, "source_url": "https://ai.gov.ae/wp-content/uploads/2024/07/UAEAI-Methaq-EN2-3.pdf"},
+    {"doc_id": "ai-charter-ar", "file": "ai_charter_ar.pdf", "language": "ar", "title": "ميثاق تطوير واستخدام الذكاء الاصطناعي في دولة الإمارات", "publisher": "UAE AI Office", "year": 2024, "source_url": "https://ai.gov.ae/wp-content/uploads/2024/07/UAEAI-Methaq-2024-Jul.pdf"},
+    {"doc_id": "ai-policy-en", "file": "ai_policy_en.pdf", "language": "en", "title": "The UAE's International Stance on Artificial Intelligence Policy", "publisher": "UAE AI Office", "year": 2024, "source_url": "https://ai.gov.ae/wp-content/uploads/2024/10/UAE-Guiding-on-ai-policy-EN-V3.pdf"},
+    {"doc_id": "ai-policy-ar", "file": "ai_policy_ar.pdf", "language": "ar", "title": "موقف دولة الإمارات الدولي من سياسة الذكاء الاصطناعي", "publisher": "UAE AI Office", "year": 2024, "source_url": "https://ai.gov.ae/wp-content/uploads/2024/10/UAE-Guiding-on-ai-policy-AR-V3.pdf"},
+    {"doc_id": "pdpl-en", "file": "pdpl_en.pdf", "language": "en", "title": "Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data (PDPL)", "publisher": "UAE Government", "year": 2021, "source_url": "https://uaelegislation.gov.ae/en/legislations/1972"},
+    {"doc_id": "pdpl-ar", "file": "pdpl_ar.pdf", "language": "ar", "title": "مرسوم بقانون اتحادي رقم 45 لسنة 2021 بشأن حماية البيانات الشخصية", "publisher": "UAE Government", "year": 2021, "source_url": "https://uaelegislation.gov.ae/ar/legislations/1972"},
+    {"doc_id": "ai-ethics-en", "file": "ai_ethics_en.pdf", "language": "en", "title": "UAE AI Ethics: Principles & Guidelines", "publisher": "UAE AI Office", "year": 2022, "source_url": "https://u.ae/-/media/AI-publications/MOCAI-AI-Ethics-EN-1.pdf"},
+    {"doc_id": "ai-ethics-ar", "file": "ai_ethics_ar.pdf", "language": "ar", "title": "أخلاقيات الذكاء الاصطناعي: المبادئ والإرشادات", "publisher": "UAE AI Office", "year": 2022, "source_url": "https://u.ae/-/media/AI-publications/MOCAI-AI-Ethics-AR-1.pdf"}
+  ]
+}

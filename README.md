@@ -9,6 +9,8 @@
 
 > ⚠️ **Reference implementation on public data**, built as an engineering portfolio project. It is **not** an official system of any UAE government entity and does not provide legal advice.
 
+**Demo film (about 4 minutes):** [docs/demo/gov-policy-copilot-demo.mp4](docs/demo/gov-policy-copilot-demo.mp4) · **Case study:** https://shahzeb-naeem.vercel.app/en/work/gov-policy-copilot
+
 **Live:** https://ca-govcopilot-dev.yellowsky-4e1b1c86.uaenorth.azurecontainerapps.io. Sign-in uses Microsoft Entra ID on a personal tenant, so only invited users can sign in. The app scales to zero, so the first request after idle takes about 15 s.
 
 ## Screenshots

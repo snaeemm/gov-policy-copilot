@@ -44,7 +44,7 @@
 | Task | 5-way routing: charter / international_policy / ethics / data_protection / out_of_scope |
 | Languages | Arabic, English |
 | Training | 4 epochs, lr 4e-5, max_len 64, CPU (local / GitHub Actions), MLflow-tracked in Azure ML |
-| Serving | ONNX int8 (135.8 MB) via onnxruntime inside the Container App; `CLASSIFIER_ENABLED` flag (default off) |
+| Serving | ONNX int8 (135.8 MB) via onnxruntime inside the Container App; `CLASSIFIER_ENABLED` flag (code default off; on in the production image) |
 | Metrics (test) | accuracy EN 0.812 / AR 0.811; macro-F1 EN 0.810 / AR 0.800; in-scope accuracy 0.961 |
 | Use in system | Confident out-of-scope (≥ 0.9) answered without an LLM call; label shown in UI/API and logged for drift monitoring |
 | Not for | Safety filtering, legal classification, decisions about people |

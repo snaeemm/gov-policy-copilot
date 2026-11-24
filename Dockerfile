@@ -17,7 +17,10 @@ WORKDIR /app
 COPY --from=build --chown=app /app /app
 COPY --chown=app prompts ./prompts
 COPY --chown=app frontend ./frontend
-ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 APP_ENV=prod REVIEW_DB_PATH=/tmp/reviews.db
+# Fine-tuned query classifier (M8): int8 ONNX from the public GitHub release
+ARG CLF_URL=https://github.com/snaeemm/gov-policy-copilot/releases/download/classifier-v1
+ADD --chown=app ${CLF_URL}/model.onnx ${CLF_URL}/tokenizer.json ${CLF_URL}/labels.json ./ml/artifacts/gov-policy-query-classifier/
+ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 APP_ENV=prod REVIEW_DB_PATH=/tmp/reviews.db CLASSIFIER_ENABLED=true
 USER app
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=3s CMD python -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/healthz')"

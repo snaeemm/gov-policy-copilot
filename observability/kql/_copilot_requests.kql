@@ -1,0 +1,15 @@
+// Base: one row per copilot request (log "copilot_request" emitted by gov_copilot.agent).
+// Fields arrive as customDimensions (azure-monitor-opentelemetry logging handler).
+traces
+| where message == "copilot_request"
+| extend
+    request_id = tostring(customDimensions.request_id),
+    outcome = tostring(customDimensions.outcome),
+    model = tostring(customDimensions.model),
+    prompt_version = tostring(customDimensions.prompt_version),
+    latency_ms = todouble(customDimensions.latency_ms),
+    prompt_tokens = toint(customDimensions.prompt_tokens),
+    completion_tokens = toint(customDimensions.completion_tokens),
+    cost_usd = todouble(customDimensions.cost_usd),
+    groundedness = todouble(customDimensions.groundedness),
+    question_masked = tostring(customDimensions.question_masked)

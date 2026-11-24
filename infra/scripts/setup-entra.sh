@@ -67,11 +67,21 @@ if [[ -z "$GH_ID" ]]; then
   GH_ID=$(az ad app create --display-name "$GH_NAME" --sign-in-audience AzureADMyOrg --query appId -o tsv)
   az ad sp create --id "$GH_ID" >/dev/null
 fi
-for SUBJ in "ref:refs/heads/main" "environment:production"; do
-  NAME="gh-$(echo "$SUBJ" | tr ':/' '--')"
-  if [[ -z $(az ad app federated-credential list --id "$GH_ID" --query "[?name=='$NAME'].name" -o tsv) ]]; then
-    az ad app federated-credential create --id "$GH_ID" --parameters "{\"name\": \"$NAME\", \"issuer\": \"https://token.actions.githubusercontent.com\", \"subject\": \"repo:$REPO:$SUBJ\", \"audiences\": [\"api://AzureADTokenExchange\"]}" >/dev/null
-  fi
+# GitHub may issue subjects in the legacy form (repo:owner/repo:...) or the immutable-ID form
+# (repo:owner@<ownerId>/repo@<repoId>:...). Register both.
+OWNER_ID=$(gh api "repos/$REPO" --jq .owner.id 2>/dev/null || true)
+REPO_ID=$(gh api "repos/$REPO" --jq .id 2>/dev/null || true)
+PREFIXES=("repo:$REPO")
+[[ -n "$OWNER_ID" && -n "$REPO_ID" ]] && PREFIXES+=("repo:${REPO%%/*}@$OWNER_ID/${REPO##*/}@$REPO_ID")
+for PFX in "${PREFIXES[@]}"; do
+  for SUBJ in "ref:refs/heads/main" "environment:production"; do
+    FULL="$PFX:$SUBJ"
+    EXIST=$(az ad app federated-credential list --id "$GH_ID" --query "[?subject=='$FULL'] | length(@)" -o tsv)
+    if [[ "$EXIST" == "0" ]]; then
+      NAME="gh-$(python3 -c 'import hashlib,sys;print(hashlib.sha1(sys.argv[1].encode()).hexdigest()[:10])' "$FULL")"
+      az ad app federated-credential create --id "$GH_ID" --parameters "{\"name\": \"$NAME\", \"issuer\": \"https://token.actions.githubusercontent.com\", \"subject\": \"$FULL\", \"audiences\": [\"api://AzureADTokenExchange\"]}" >/dev/null
+    fi
+  done
 done
 GH_SP=$(az ad sp show --id "$GH_ID" --query id -o tsv)
 

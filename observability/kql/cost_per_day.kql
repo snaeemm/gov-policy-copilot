@@ -1,0 +1,11 @@
+// LLM cost and tokens per day (list prices configured in Settings.price_*)
+traces
+| where timestamp > ago(30d) and message == "copilot_request"
+| summarize
+    queries = count(),
+    cost_usd = round(sum(todouble(customDimensions.cost_usd)), 4),
+    prompt_tokens = sum(toint(customDimensions.prompt_tokens)),
+    completion_tokens = sum(toint(customDimensions.completion_tokens))
+    by day = bin(timestamp, 1d), model = tostring(customDimensions.model)
+| extend cost_per_query = round(cost_usd / queries, 5)
+| order by day desc

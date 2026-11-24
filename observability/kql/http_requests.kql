@@ -1,0 +1,6 @@
+// HTTP layer (FastAPI instrumentation): volume, failure rate and p95 by route
+requests
+| where timestamp > ago(24h)
+| summarize requests = count(), failed = countif(success == false), p95_ms = percentile(duration, 95) by name
+| extend failure_rate = round(100.0 * failed / requests, 2)
+| order by requests desc

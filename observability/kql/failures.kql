@@ -1,0 +1,5 @@
+// Failed requests and exceptions in the last 24h
+union
+  (requests | where timestamp > ago(24h) and success == false | project timestamp, kind = "request", name, detail = tostring(resultCode)),
+  (exceptions | where timestamp > ago(24h) | project timestamp, kind = "exception", name = type, detail = outerMessage)
+| order by timestamp desc

@@ -1,0 +1,7 @@
+// Daily escalation (human review) rate and mean groundedness
+traces
+| where timestamp > ago(30d) and message == "copilot_request"
+| extend outcome = tostring(customDimensions.outcome), g = todouble(customDimensions.groundedness)
+| summarize total = count(), escalated = countif(outcome == "escalated"), mean_groundedness = avgif(g, isnotnull(g)) by bin(timestamp, 1d)
+| extend escalation_rate = round(100.0 * escalated / total, 2)
+| order by timestamp desc

@@ -1,0 +1,6 @@
+// End-to-end copilot latency percentiles per hour, by prompt version
+traces
+| where timestamp > ago(7d) and message == "copilot_request"
+| extend latency_s = todouble(customDimensions.latency_ms) / 1000, prompt_version = tostring(customDimensions.prompt_version)
+| summarize p50 = percentile(latency_s, 50), p95 = percentile(latency_s, 95), n = count() by bin(timestamp, 1h), prompt_version
+| render timechart

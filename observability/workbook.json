@@ -1,0 +1,110 @@
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 1,
+      "content": {
+        "json": "# Gov Policy Copilot \u2013 operations\nOutcomes, latency, cost and safety. Source: Application Insights (OpenTelemetry)."
+      },
+      "name": "header"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "// Copilot outcomes over time: answered / escalated / not_found / out_of_scope / blocked\ntraces\n| where timestamp > ago(7d) and message == \"copilot_request\"\n| summarize count() by bin(timestamp, 1h), outcome = tostring(customDimensions.outcome)\n| render columnchart kind=stacked\n",
+        "size": 0,
+        "title": "Outcomes over time",
+        "timeContext": {
+          "durationMs": 604800000
+        },
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "barchart"
+      },
+      "name": "outcomes_over_time.kql"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "// End-to-end copilot latency percentiles per hour, by prompt version\ntraces\n| where timestamp > ago(7d) and message == \"copilot_request\"\n| extend latency_s = todouble(customDimensions.latency_ms) / 1000, prompt_version = tostring(customDimensions.prompt_version)\n| summarize p50 = percentile(latency_s, 50), p95 = percentile(latency_s, 95), n = count() by bin(timestamp, 1h), prompt_version\n| render timechart\n",
+        "size": 0,
+        "title": "Latency p50 / p95 (s)",
+        "timeContext": {
+          "durationMs": 604800000
+        },
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "timechart"
+      },
+      "name": "latency_p50_p95.kql"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "// LLM cost and tokens per day (list prices configured in Settings.price_*)\ntraces\n| where timestamp > ago(30d) and message == \"copilot_request\"\n| summarize\n    queries = count(),\n    cost_usd = round(sum(todouble(customDimensions.cost_usd)), 4),\n    prompt_tokens = sum(toint(customDimensions.prompt_tokens)),\n    completion_tokens = sum(toint(customDimensions.completion_tokens))\n    by day = bin(timestamp, 1d), model = tostring(customDimensions.model)\n| extend cost_per_query = round(cost_usd / queries, 5)\n| order by day desc\n",
+        "size": 0,
+        "title": "Cost per day",
+        "timeContext": {
+          "durationMs": 604800000
+        },
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "table"
+      },
+      "name": "cost_per_day.kql"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "// Daily escalation (human review) rate and mean groundedness\ntraces\n| where timestamp > ago(30d) and message == \"copilot_request\"\n| extend outcome = tostring(customDimensions.outcome), g = todouble(customDimensions.groundedness)\n| summarize total = count(), escalated = countif(outcome == \"escalated\"), mean_groundedness = avgif(g, isnotnull(g)) by bin(timestamp, 1d)\n| extend escalation_rate = round(100.0 * escalated / total, 2)\n| order by timestamp desc\n",
+        "size": 0,
+        "title": "Escalation rate",
+        "timeContext": {
+          "durationMs": 604800000
+        },
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "table"
+      },
+      "name": "escalation_rate.kql"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "// Safety blocks. Reason is recorded on the request span (copilot.blocked_reason).\ndependencies\n| union requests\n| where timestamp > ago(30d) and isnotempty(customDimensions[\"copilot.blocked_reason\"])\n| summarize blocked = count() by reason = tostring(customDimensions[\"copilot.blocked_reason\"])\n| order by blocked desc\n",
+        "size": 0,
+        "title": "Safety blocks by reason",
+        "timeContext": {
+          "durationMs": 604800000
+        },
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "piechart"
+      },
+      "name": "blocked_by_reason.kql"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "// Outbound calls to Azure OpenAI / AI Search / Content Safety (dependency telemetry)\ndependencies\n| where timestamp > ago(24h)\n| where target has_any (\"openai.azure.com\", \"search.windows.net\", \"cognitiveservices.azure.com\")\n| summarize calls = count(), failures = countif(success == false), p95_ms = percentile(duration, 95) by target, name\n| order by calls desc\n",
+        "size": 0,
+        "title": "Azure AI dependencies",
+        "timeContext": {
+          "durationMs": 604800000
+        },
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "table"
+      },
+      "name": "openai_dependencies.kql"
+    }
+  ],
+  "fallbackResourceIds": [],
+  "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+}

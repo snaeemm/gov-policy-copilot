@@ -1,0 +1,6 @@
+// Safety blocks. Reason is recorded on the request span (copilot.blocked_reason).
+dependencies
+| union requests
+| where timestamp > ago(30d) and isnotempty(customDimensions["copilot.blocked_reason"])
+| summarize blocked = count() by reason = tostring(customDimensions["copilot.blocked_reason"])
+| order by blocked desc

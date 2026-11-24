@@ -1,0 +1,6 @@
+// Outbound calls to Azure OpenAI / AI Search / Content Safety (dependency telemetry)
+dependencies
+| where timestamp > ago(24h)
+| where target has_any ("openai.azure.com", "search.windows.net", "cognitiveservices.azure.com")
+| summarize calls = count(), failures = countif(success == false), p95_ms = percentile(duration, 95) by target, name
+| order by calls desc

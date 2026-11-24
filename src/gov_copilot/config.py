@@ -43,7 +43,7 @@ class Settings(BaseSettings):
     content_safety_endpoint: str = ""
     language_endpoint: str = ""
 
-    reranker: RerankerKind = RerankerKind.CROSS_ENCODER
+    reranker: RerankerKind = RerankerKind.NONE  # cross_encoder needs the `rerank` extra
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
     retrieval_top_k: int = Field(default=20, ge=1, le=50)
     rerank_top_n: int = Field(default=8, ge=1, le=20)

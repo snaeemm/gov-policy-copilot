@@ -1,0 +1,5 @@
+// Copilot outcomes over time: answered / escalated / not_found / out_of_scope / blocked
+traces
+| where timestamp > ago(7d) and message == "copilot_request"
+| summarize count() by bin(timestamp, 1h), outcome = tostring(customDimensions.outcome)
+| render columnchart kind=stacked

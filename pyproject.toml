@@ -39,6 +39,7 @@ rerank = ["sentence-transformers>=3.0"]
 eval = ["azure-ai-evaluation>=1.0"]
 # Training the query classifier (CPU). Not installed in the serving image.
 ml = [
+    "deltalake>=1.0",
   "torch>=2.4",
   "transformers>=4.45",
   "datasets>=3.0",

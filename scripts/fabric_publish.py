@@ -198,17 +198,18 @@ def main() -> None:
         path = f"{lh}/Files/gold/{name}.csv"
         fs.get_file_client(path).upload_data(_csv(rows), overwrite=True)
         print(f"uploaded {path}")
-        _call(
-            "POST",
-            f"/workspaces/{ws}/lakehouses/{lh}/tables/{name}/load",
-            {
-                "relativePath": f"Files/gold/{name}.csv",
-                "pathType": "File",
-                "mode": "Overwrite",
-                "formatOptions": {"format": "Csv", "header": True, "delimiter": ","},
-            },
+        # Write Delta directly to OneLake Tables/ (no Spark session needed).
+        import pyarrow as pa
+        from deltalake import write_deltalake
+
+        tok = cred.get_token("https://storage.azure.com/.default").token
+        write_deltalake(
+            f"abfss://{ws}@onelake.dfs.fabric.microsoft.com/{lh}/Tables/{name}",
+            pa.Table.from_pylist([{k: str(v) for k, v in r.items()} for r in rows]),
+            mode="overwrite",
+            storage_options={"bearer_token": tok, "use_fabric_endpoint": "true"},
         )
-        print(f"loaded Delta table {name}")
+        print(f"wrote Delta table {name}")
 
     out = ROOT / "docs/evidence/fabric-gold.md"
     out.write_text(

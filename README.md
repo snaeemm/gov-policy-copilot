@@ -53,7 +53,7 @@ Details: [docs/architecture.md](docs/architecture.md)
 | 7 | CI/CD | ruff, mypy, pytest, Bicep build → GHCR image → eval gate → OIDC deploy → smoke test with automatic rollback | ✅ |
 | 8 | Evaluation and LLMOps | 50 EN/AR golden + 24 red-team; recall@5, groundedness, relevance (Azure AI Evaluation SDK), citation accuracy, latency, cost; versioned prompts; rollback | ✅ |
 | 9 | Observability | OpenTelemetry → App Insights, KQL queries, workbook | ✅ |
-| 10 | Data governance | Fabric gold-layer contract and Purview design | ◐ designed, not deployed ([why](docs/governance-fabric-purview.md)) |
+| 10 | Data governance | Fabric gold-layer contract and Purview design | ◐ publisher built and tested locally ([`scripts/fabric_publish.py`](scripts/fabric_publish.py): 4 Delta tables, 147 chunks); not run against a live tenant: the available school tenant blocks third-party sign-in ([details](docs/governance-fabric-purview.md)) |
 | 11 | Documentation | ADRs, model and data cards, RAI vs UAE AI Charter, PDPL, STRIDE, risk register, runbook, eval report | ✅ |
 | 12 | Fine-tuning (Azure ML) | `distilbert-base-multilingual-cased` fine-tuned as a bilingual query router (5 labels); MLflow tracking + model registry in an Azure ML workspace (no compute; training on GitHub runners); int8 ONNX served in-container behind `CLASSIFIER_ENABLED` ([ADR-0013](docs/adr/0013-query-classifier-azure-ml.md)) | ✅ (flag off in live app) |
 | 13 | Kubernetes | Helm chart (probes, limits, non-root, read-only rootfs, HPA, PDB, NetworkPolicy, Workload Identity, Key Vault CSI) deployed to kind in CI; no AKS ([ADR-0012](docs/adr/0012-container-apps-vs-aks.md)) | ✅ |

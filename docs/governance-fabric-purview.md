@@ -1,6 +1,8 @@
 # Data Governance: Microsoft Fabric "Gold layer" + Microsoft Purview
 
 > **Status: designed, not deployed.** A Microsoft Fabric trial requires an organizational (work/school) Entra account; this project runs on a personal Microsoft account tenant. The ingestion code already follows the medallion contract below using local folders, so moving to OneLake is a storage swap, not a redesign.
+>
+> **Publisher ready:** [`scripts/fabric_publish.py`](../scripts/fabric_publish.py) builds the Gold tables (`documents` 8 rows, `chunks` 147, `eval_results` 16, `dq_checks` 3; verified locally), creates the workspace `gov-policy-copilot` and lakehouse `gold` through the Fabric REST API, uploads CSVs to OneLake and loads them as Delta tables. A run was attempted on 2026-11-24 with a university Entra account; the tenant's Conditional Access blocked both device-code and browser sign-in for third-party clients. With any Fabric-enabled work account it runs as `uv run python scripts/fabric_publish.py`.
 
 ## Medallion layout (OneLake lakehouse `lh_gov_policies`)
 | Layer | Content | Today (local) | In Fabric |

@@ -14,7 +14,11 @@
 ## Screenshots
 ![Query classifier confusion matrix (test set, EN+AR)](docs/images/classifier-confusion-matrix.png)
 
-> TODO: chat (EN), chat (AR, RTL), citations, review queue and eval-gate screenshots in `docs/images/`.
+| English answer, cited + verified | Arabic (RTL) answer |
+|---|---|
+| ![English](docs/images/chat-english.png) | ![Arabic](docs/images/chat-arabic.png) |
+| **Fine-tuned classifier routes out-of-scope** | **Prompt injection blocked** |
+| ![Classifier](docs/images/classifier-out-of-scope.png) | ![Safety](docs/images/safety-blocked.png) |
 
 ## Architecture
 ```mermaid

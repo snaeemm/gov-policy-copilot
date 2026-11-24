@@ -56,7 +56,8 @@ def eval_quantized(art: Path) -> dict[str, float]:
 
 def ml_client():  # type: ignore[no-untyped-def]
     from azure.ai.ml import MLClient
-    from azure.identity import DefaultAzureCredential
+
+    from gov_copilot.credentials import credential
 
     sub = (
         os.environ.get("AZURE_SUBSCRIPTION_ID")
@@ -68,7 +69,7 @@ def ml_client():  # type: ignore[no-untyped-def]
         ).stdout.strip()
     )
     return MLClient(
-        DefaultAzureCredential(),
+        credential(),
         sub,
         os.environ.get("AZUREML_RESOURCE_GROUP", "rg-govcopilot-dev"),
         os.environ.get("AZUREML_WORKSPACE", "mlw-govcopilot-dev"),

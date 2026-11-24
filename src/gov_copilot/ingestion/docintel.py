@@ -12,8 +12,9 @@ from pathlib import Path
 
 from azure.ai.documentintelligence.aio import DocumentIntelligenceClient
 from azure.ai.documentintelligence.models import AnalyzeDocumentRequest, DocumentContentFormat
-from azure.identity.aio import DefaultAzureCredential
 from pypdf import PdfReader, PdfWriter
+
+from gov_copilot.credentials import async_credential
 
 PAGES_PER_REQUEST = 2  # F0 limit
 
@@ -90,7 +91,7 @@ async def analyze_to_markdown(pdf_path: Path, endpoint: str, cache_dir: Path) ->
         return str(json.loads(await asyncio.to_thread(cache.read_text))["markdown"])
     slices = await asyncio.to_thread(lambda: split_pdf(pdf_path.read_bytes()))
     pages_md: list[str] = []
-    async with DocumentIntelligenceClient(endpoint, DefaultAzureCredential()) as client:
+    async with DocumentIntelligenceClient(endpoint, async_credential()) as client:
         for data in slices:
             poller = await client.begin_analyze_document(
                 "prebuilt-layout",

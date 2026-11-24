@@ -62,7 +62,8 @@ def make_judges() -> tuple[Any, Any]:
         GroundednessEvaluator,
         RelevanceEvaluator,
     )
-    from azure.identity import DefaultAzureCredential
+
+    from gov_copilot.credentials import credential
 
     s = get_settings()
     cfg = AzureOpenAIModelConfiguration(
@@ -70,7 +71,7 @@ def make_judges() -> tuple[Any, Any]:
         azure_deployment=s.azure_openai_chat_deployment,
         api_version="2025-04-01-preview",
     )
-    cred = DefaultAzureCredential()
+    cred = credential()
     reasoning = s.azure_openai_chat_deployment.startswith(("gpt-5", "o"))
     return (
         GroundednessEvaluator(cfg, credential=cred, is_reasoning_model=reasoning),

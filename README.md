@@ -4,13 +4,17 @@
 
 [![ci](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/ci.yml)
 [![cd](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/cd.yml/badge.svg)](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/cd.yml)
+[![k8s](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/k8s.yml/badge.svg)](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/k8s.yml)
+[![drift](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/drift.yml/badge.svg)](https://github.com/snaeemm/gov-policy-copilot/actions/workflows/drift.yml)
 
 > ⚠️ **Reference implementation on public data**, built as an engineering portfolio project. It is **not** an official system of any UAE government entity and does not provide legal advice.
 
 **Live:** https://ca-govcopilot-dev.yellowsky-4e1b1c86.uaenorth.azurecontainerapps.io. Sign-in uses Microsoft Entra ID on a personal tenant, so only invited users can sign in. The app scales to zero, so the first request after idle takes about 15 s.
 
 ## Screenshots
-> TODO: add `docs/images/chat-en.png`, `docs/images/chat-ar-rtl.png`, `docs/images/citations.png`, `docs/images/review-queue.png`, `docs/images/eval-gate.png`.
+![Query classifier confusion matrix (test set, EN+AR)](docs/images/classifier-confusion-matrix.png)
+
+> TODO: chat (EN), chat (AR, RTL), citations, review queue and eval-gate screenshots in `docs/images/`.
 
 ## Architecture
 ```mermaid
@@ -51,6 +55,12 @@ Details: [docs/architecture.md](docs/architecture.md)
 | 9 | Observability | OpenTelemetry → App Insights, KQL queries, workbook | ✅ |
 | 10 | Data governance | Fabric gold-layer contract and Purview design | ◐ designed, not deployed ([why](docs/governance-fabric-purview.md)) |
 | 11 | Documentation | ADRs, model and data cards, RAI vs UAE AI Charter, PDPL, STRIDE, risk register, runbook, eval report | ✅ |
+| 12 | Fine-tuning (Azure ML) | `distilbert-base-multilingual-cased` fine-tuned as a bilingual query router (5 labels); MLflow tracking + model registry in an Azure ML workspace (no compute; training on GitHub runners); int8 ONNX served in-container behind `CLASSIFIER_ENABLED` ([ADR-0013](docs/adr/0013-query-classifier-azure-ml.md)) | ✅ (flag off in live app) |
+| 13 | Kubernetes | Helm chart (probes, limits, non-root, read-only rootfs, HPA, PDB, NetworkPolicy, Workload Identity, Key Vault CSI) deployed to kind in CI; no AKS ([ADR-0012](docs/adr/0012-container-apps-vs-aks.md)) | ✅ |
+| 14 | Drift monitoring | Weekly 8-sample eval vs baseline opens a `drift` issue; query-distribution KQL; alert rules in Bicep (off by default) | ✅ |
+| 15 | Data-quality gates | Metadata, classification label, length, language, duplicate and OCR checks; ingestion fails before embedding on errors; DQ report | ✅ |
+| 16 | Private networking | Private endpoints + privatelink DNS for AOAI, Doc Intelligence, Content Safety, Language, Key Vault — deployed, verified, torn down ([evidence](docs/evidence/private-endpoints-test.md)) | ✅ tested (not enabled in live env) |
+| 17 | Engineering standards & KT | CONTRIBUTING, PR template, CODEOWNERS, review checklist, coding standards, onboarding, client handover plan ([docs/engineering](docs/engineering/)) | ✅ |
 
 ## Evaluation (prompt v2, gpt-5-mini)
 | Metric | 4-doc corpus | 6-doc corpus (current) | Gate |
@@ -67,6 +77,17 @@ Details: [docs/architecture.md](docs/architecture.md)
 Adding the AI Ethics guidelines (overlapping topics) lowered recall/citation scores because the golden set's expected sources only list the Charter and Policy documents - some answers now correctly cite the Ethics guide but are scored as off-target. Extending the golden set's expected sources is tracked as a follow-up.
 
 The first run (prompt v1) **failed the gate** at a 0.72 answer rate. The root causes were F0 throttling, a narrow planner scope, and over-cautious handling of numbered lists. All three were fixed in v2, documented in [docs/evaluation-report.md](docs/evaluation-report.md).
+
+## Query classifier (M8)
+Fine-tuned `distilbert-base-multilingual-cased`, registered in Azure ML as `gov-policy-query-classifier` v1. Test set: 228 EN/AR questions (golden and red-team items only in test).
+
+| Slice | Accuracy | Macro-F1 | In-scope accuracy |
+|---|---|---|---|
+| English (117) | 0.81 | 0.81 | 0.95 |
+| Arabic (111) | 0.81 | 0.80 | 0.97 |
+| Overall (228) | 0.81 | 0.80 | 0.96 |
+
+Served as int8 ONNX (136 MB, ~20 ms/query on CPU). Only a confident out-of-scope prediction (≥ 0.9) skips the LLM; otherwise the LLM planner still decides. Details: [evaluation report](docs/evaluation-report.md), [dataset card](data/classifier/README.md).
 
 ## Quickstart (local)
 ```bash
@@ -86,15 +107,19 @@ Infrastructure: `az deployment sub create -l uaenorth --parameters infra/main.de
 src/gov_copilot/   ingestion/ retrieval/ agent/ api/ llm/ guardrails*.py pii.py observability.py
 prompts/v1, v2     versioned prompts
 frontend/          bilingual SPA (no build step)
-eval/              golden + red-team sets, runner, thresholds, baseline results
+eval/              golden + red-team sets, runner, thresholds, baselines, drift comparison
+ml/                classifier training, Azure ML registration, Hugging Face publish
+data/classifier/   bilingual query-classification dataset (train/val/test + card)
+deploy/            Helm chart + Kubernetes notes
 infra/             Bicep (main + modules), Entra setup script
 observability/     KQL queries + workbook
-docs/              architecture, ADRs, cards, RAI, PDPL, threat model, risks, runbook, eval report
-.github/workflows/ ci.yml, cd.yml
+docs/              architecture, ADRs, cards, RAI, PDPL, threat model, risks, runbook, eval report,
+                   engineering/ (standards, onboarding, KT plan), evidence/
+.github/workflows/ ci.yml, cd.yml, k8s.yml, drift.yml, train.yml
 ```
 
 ## Documentation
-[Architecture](docs/architecture.md) · [ADRs](docs/adr/) · [Model card](docs/model-card.md) · [Data card](docs/data-card.md) · [Responsible AI (UAE AI Charter)](docs/responsible-ai.md) · [PDPL & residency](docs/pdpl-data-residency.md) · [Threat model](docs/threat-model.md) · [Risk register](docs/risk-register.md) · [Runbook](docs/runbook.md) · [Evaluation report](docs/evaluation-report.md) · [Fabric & Purview](docs/governance-fabric-purview.md) · [Observability](observability/README.md) · [Changelog](CHANGELOG.md)
+[Architecture](docs/architecture.md) · [ADRs](docs/adr/) · [Model card](docs/model-card.md) · [Data card](docs/data-card.md) · [Responsible AI (UAE AI Charter)](docs/responsible-ai.md) · [PDPL & residency](docs/pdpl-data-residency.md) · [Threat model](docs/threat-model.md) · [Risk register](docs/risk-register.md) · [Runbook](docs/runbook.md) · [Evaluation report](docs/evaluation-report.md) · [Fabric & Purview](docs/governance-fabric-purview.md) · [Observability](observability/README.md) · [Kubernetes](deploy/k8s/README.md) · [Engineering standards & KT](docs/engineering/) · [Evidence](docs/evidence/) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 ## Cost
 | Item | Tier | Approx. monthly |

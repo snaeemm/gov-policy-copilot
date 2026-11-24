@@ -74,16 +74,16 @@ async def collect(
 
 
 async def upload(docs_chunks: list[tuple[SourceDocument, list[Chunk]]], recreate: bool) -> None:
-    from azure.identity.aio import DefaultAzureCredential
     from azure.search.documents.indexes.aio import SearchIndexClient
 
     from gov_copilot.config import get_settings
+    from gov_copilot.credentials import async_credential
     from gov_copilot.llm.clients import embed
     from gov_copilot.retrieval.index import build_index, to_search_doc
     from gov_copilot.retrieval.retriever import search_client
 
     s = get_settings()
-    async with SearchIndexClient(s.azure_search_endpoint, DefaultAzureCredential()) as ic:
+    async with SearchIndexClient(s.azure_search_endpoint, async_credential()) as ic:
         if recreate:
             with contextlib.suppress(Exception):  # index may not exist yet
                 await ic.delete_index(s.azure_search_index)

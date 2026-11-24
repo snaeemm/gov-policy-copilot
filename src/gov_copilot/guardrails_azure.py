@@ -13,9 +13,9 @@ import logging
 from typing import Any
 
 import httpx
-from azure.identity.aio import DefaultAzureCredential
 
 from gov_copilot.config import Settings
+from gov_copilot.credentials import async_credential
 from gov_copilot.guardrails import Guardrails, GuardResult, NoopGuardrails
 from gov_copilot.pii import regex_mask
 
@@ -32,7 +32,7 @@ BACKOFF_S = 0.5
 class AzureGuardrails:
     def __init__(self, s: Settings) -> None:
         self.s = s
-        self.cred = DefaultAzureCredential()
+        self.cred = async_credential()
         self.http = httpx.AsyncClient(timeout=15)
 
     async def _post(self, endpoint: str, path: str, body: dict[str, Any]) -> dict[str, Any]:

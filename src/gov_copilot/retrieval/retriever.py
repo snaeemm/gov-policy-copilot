@@ -2,11 +2,11 @@
 
 from typing import Any
 
-from azure.identity.aio import DefaultAzureCredential
 from azure.search.documents.aio import SearchClient
 from azure.search.documents.models import VectorizedQuery
 
 from gov_copilot.config import RerankerKind, Settings, get_settings
+from gov_copilot.credentials import async_credential
 from gov_copilot.ingestion.text import normalize_arabic
 from gov_copilot.llm.clients import embed
 from gov_copilot.models import RetrievedChunk
@@ -33,7 +33,7 @@ def search_client(s: Settings) -> SearchClient:
 
         cred = AzureKeyCredential(s.azure_search_api_key.get_secret_value())
     else:
-        cred = DefaultAzureCredential()
+        cred = async_credential()
     return SearchClient(s.azure_search_endpoint, s.azure_search_index, cred)
 
 

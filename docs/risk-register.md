@@ -17,3 +17,8 @@ L/I: 1 (low) – 5 (high). Owner: project engineer unless stated.
 | R11 | Misuse as legal advice | 3 | 4 | Refusal rules, disclaimer, red-team `legal_advice` | Mitigated |
 | R12 | Cold start latency (scale-to-zero) | 5 | 1 | Accepted for demo; `minReplicas: 1` in production | Accepted |
 | R13 | Users see unverified streamed draft briefly | 3 | 2 | Draft replaced on escalation (ADR-0011); buffered mode for high-risk use | Accepted |
+| R14 | Query classifier misroutes an in-scope question as out-of-scope | 2 | 3 | Short-circuit only at confidence ≥ 0.9; otherwise LLM planner decides; `CLASSIFIER_ENABLED` off by default; per-language metrics tracked; label mix in drift KQL | Mitigated |
+| R15 | Model supply chain (classifier downloaded from Hugging Face Hub) | 2 | 4 | Pin repo revision/commit hash; prefer Azure ML registry or baked-in artifact in production; ONNX only (no pickle) | Open |
+| R16 | Quality drift undetected between weekly drift runs | 3 | 3 | Every deploy runs the eval gate; App Insights outcome KQL; alert rules available (`deployAlerts`) | Mitigated |
+| R17 | Data-quality false positives block ingestion | 2 | 2 | Warnings vs errors split; thresholds tuned on real corpus (0 errors / 34 warnings); `--dq-only` dry run | Mitigated |
+| R18 | Private networking not enabled in the live environment | 4 | 3 | Bicep module tested and evidenced; production needs `publicNetworkAccess: Disabled`, VNet-integrated ACA, AI Search Basic+ | Accepted (demo) |

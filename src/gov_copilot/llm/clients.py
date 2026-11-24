@@ -3,20 +3,20 @@
 Both expose the same OpenAI-compatible async client, so callers don't care which is active.
 """
 
-from functools import lru_cache
+from typing import Any
 
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+from azure.identity import get_bearer_token_provider
 from openai import AsyncAzureOpenAI, AsyncOpenAI
 
 from gov_copilot.config import LLMProvider, Settings, get_settings
+from gov_copilot.credentials import credential
 
 COGNITIVE_SCOPE = "https://cognitiveservices.azure.com/.default"
 AZURE_CHAT_API_VERSION = "2025-04-01-preview"
 
 
-@lru_cache
-def _credential() -> DefaultAzureCredential:
-    return DefaultAzureCredential()
+def _credential() -> Any:
+    return credential()
 
 
 def make_client(settings: Settings | None = None) -> AsyncOpenAI:

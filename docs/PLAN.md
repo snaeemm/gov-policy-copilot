@@ -9,6 +9,12 @@
 | M5 | Eval gate | 50 EN/AR golden + 24 red-team, Azure AI Evaluation SDK, thresholds, CI gate | ✅ Done (v1 failed, v2 passing) |
 | M6 | Azure deploy & observability | Bicep for all services, Container Apps, managed identity, Key Vault, OIDC deploy, OpenTelemetry → App Insights, KQL | ✅ Done |
 | M7 | Docs & governance | Architecture, ADRs, cards, RAI vs UAE AI Charter, PDPL, STRIDE, risks, runbook, eval report, Fabric/Purview design, README | ✅ Done (Fabric/Purview designed, not deployed) |
+| M8 | Azure ML fine-tuning | Bilingual query classifier, Azure ML MLflow + registry, ONNX in-container router | ✅ Done (live flag off; HF publish pending token) |
+| M9 | Kubernetes | Helm chart + kind CI smoke test, ADR vs AKS | ✅ Done |
+| M10 | Drift detection | Weekly sampled eval vs baseline → GitHub issue; drift KQL; alert rules (off) | ✅ Done |
+| M11 | Data-quality gates | DQ checks fail ingestion before embedding; DQ report | ✅ Done |
+| M12 | Private networking + Fabric | PE test deployed/verified/torn down; Fabric lakehouse | ◐ PE done; Fabric documented design |
+| M13 | Standards & KT | CONTRIBUTING, templates, standards, onboarding, KT plan | ✅ Done |
 
 ## Cost policy
 Everything uses free tiers where possible:

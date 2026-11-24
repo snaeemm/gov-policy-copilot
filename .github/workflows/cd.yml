@@ -50,6 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     env:
+      # Used by gov_copilot.credentials to mint fresh GitHub OIDC assertions (no secrets)
+      AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
       AZURE_OPENAI_ENDPOINT: ${{ vars.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_CHAT_DEPLOYMENT: gpt-5-mini
       AZURE_OPENAI_EMBEDDING_DEPLOYMENT: text-embedding-3-small

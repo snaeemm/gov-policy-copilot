@@ -1,0 +1,129 @@
+name: cd
+# Build -> evaluation gate -> deploy. Azure auth is OIDC workload identity federation:
+# no Azure secrets are stored in GitHub (only non-secret IDs in repository variables).
+on:
+  push:
+    branches: [main]
+    paths: ["src/**", "prompts/**", "frontend/**", "eval/**", "Dockerfile", "pyproject.toml", "uv.lock", ".github/workflows/cd.yml"]
+  workflow_dispatch:
+    inputs:
+      full_eval: { description: "Run the full eval suite (74 prompts) instead of the smoke subset", type: boolean, default: true }
+  schedule:
+    - cron: "0 3 * * 1" # weekly full evaluation (drift detection)
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+concurrency: { group: cd-main, cancel-in-progress: false }
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}
+  RESOURCE_GROUP: rg-govcopilot-dev
+  CONTAINER_APP: ca-govcopilot-dev
+
+jobs:
+  quality:
+    uses: ./.github/workflows/ci.yml
+
+  build:
+    needs: quality
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.meta.outputs.image }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+      - id: meta
+        run: echo "image=${IMAGE,,}:${GITHUB_SHA::12}" >> "$GITHUB_OUTPUT"
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.image }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  eval-gate:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      AZURE_OPENAI_ENDPOINT: ${{ vars.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_CHAT_DEPLOYMENT: gpt-5-mini
+      AZURE_OPENAI_EMBEDDING_DEPLOYMENT: text-embedding-3-small
+      AZURE_SEARCH_ENDPOINT: ${{ vars.AZURE_SEARCH_ENDPOINT }}
+      CONTENT_SAFETY_ENDPOINT: ${{ vars.CONTENT_SAFETY_ENDPOINT }}
+      LANGUAGE_ENDPOINT: ${{ vars.LANGUAGE_ENDPOINT }}
+      RERANKER: none
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: astral-sh/setup-uv@v5
+        with: { enable-cache: true }
+      - run: uv python install 3.12 && uv sync --frozen --extra eval
+      - name: Evaluation gate
+        run: |
+          LIMIT=""
+          if [[ "${{ github.event_name }}" == "push" || "${{ inputs.full_eval }}" == "false" ]]; then LIMIT="--limit 12"; fi
+          uv run python eval/run_eval.py --gate $LIMIT
+      - name: Publish eval summary
+        if: always()
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          p = pathlib.Path("eval/results/latest.json")
+          if not p.exists():
+              print("No eval results"); raise SystemExit
+          r = json.loads(p.read_text())
+          print(f"### Eval gate: {'✅ passed' if r['gate']['passed'] else '❌ failed'}")
+          print(f"model `{r['model']}` · prompt `{r['prompt_version']}` · {r['n_golden']} golden / {r['n_redteam']} red-team\n")
+          print("| metric | value |\n|---|---|")
+          for k, v in r["metrics"].items(): print(f"| {k} | {v} |")
+          for f in r["gate"]["failures"]: print(f"- ❌ {f}")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: eval-results, path: eval/results/latest.json }
+
+  deploy:
+    needs: [build, eval-gate]
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - id: deploy
+        name: Deploy new revision
+        run: |
+          az extension add --name containerapp --upgrade -y --only-show-errors
+          SUFFIX="r${GITHUB_SHA::7}"
+          az containerapp update -n "$CONTAINER_APP" -g "$RESOURCE_GROUP" \
+            --image "${{ needs.build.outputs.image }}" --revision-suffix "$SUFFIX" \
+            --set-env-vars "GIT_SHA=${GITHUB_SHA::12}" -o none
+          FQDN=$(az containerapp show -n "$CONTAINER_APP" -g "$RESOURCE_GROUP" --query properties.configuration.ingress.fqdn -o tsv)
+          echo "url=https://$FQDN" >> "$GITHUB_OUTPUT"
+          echo "revision=$CONTAINER_APP--$SUFFIX" >> "$GITHUB_OUTPUT"
+      - name: Smoke test
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS "${{ steps.deploy.outputs.url }}/healthz"; then exit 0; fi
+            sleep 10
+          done
+          echo "Smoke test failed - rolling traffic back to previous revision"
+          PREV=$(az containerapp revision list -n "$CONTAINER_APP" -g "$RESOURCE_GROUP" --query "sort_by([?properties.active && name!='${{ steps.deploy.outputs.revision }}'], &properties.createdTime)[-1].name" -o tsv)
+          [[ -n "$PREV" ]] && az containerapp ingress traffic set -n "$CONTAINER_APP" -g "$RESOURCE_GROUP" --revision-weight "$PREV=100" -o none
+          exit 1

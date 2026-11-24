@@ -2,6 +2,7 @@ name: ci
 on:
   push: { branches: [main] }
   pull_request:
+  workflow_call:
 permissions:
   contents: read
 jobs:
@@ -19,3 +20,5 @@ jobs:
         run: uv run mypy
       - name: Unit tests
         run: uv run pytest --cov=gov_copilot --cov-report=term-missing tests/unit
+      - name: Bicep build
+        run: az bicep build --file infra/main.bicep --stdout > /dev/null

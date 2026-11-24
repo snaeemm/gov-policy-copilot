@@ -57,6 +57,12 @@ class Settings(BaseSettings):
     price_embedding_per_m: float = 0.02
     review_db_path: str = "data/reviews.db"
 
+    # Fine-tuned query classifier (M8) - cheap pre-filter before the LLM
+    classifier_enabled: bool = False
+    classifier_model_path: str = "ml/artifacts/gov-policy-query-classifier"
+    classifier_hf_repo: str = ""
+    classifier_oos_threshold: float = Field(default=0.9, ge=0, le=1)
+
     auth_enabled: bool = False
     entra_tenant_id: str = ""
     entra_api_audience: str = "api://gov-policy-copilot"

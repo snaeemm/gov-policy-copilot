@@ -9,9 +9,10 @@ const I18N = {
     placeholder: "Ask in English or Arabic…",
     disclaimer: "Reference implementation on public data. Not an official government service and not legal advice.",
     reviewsTitle: "Human review queue", refresh: "Refresh",
-    steps: { planning: "Planning", retrieving: "Searching documents", answering: "Writing answer", verifying: "Checking sources" },
+    steps: { routing: "Routing", planning: "Planning", retrieving: "Searching documents", answering: "Writing answer", verifying: "Checking sources" },
     outcome: { answered: "Verified", escalated: "Sent to human review", not_found: "Not in documents", out_of_scope: "Out of scope", blocked: "Blocked by safety filter" },
-    grounded: "Groundedness", sources: "Sources", page: "page", open: "Open document",
+    grounded: "Groundedness", router: "Router",
+    topics: { charter: "AI Charter", international_policy: "International policy", ethics: "AI ethics", data_protection: "Data protection", out_of_scope: "Out of scope" }, sources: "Sources", page: "page", open: "Open document",
     approve: "Approve", reject: "Reject", noReviews: "Nothing waiting for review.", draft: "Draft answer", reason: "Reason",
     error: "Something went wrong. Please try again.",
     suggestions: [
@@ -30,9 +31,10 @@ const I18N = {
     placeholder: "اكتب سؤالك بالعربية أو الإنجليزية…",
     disclaimer: "تطبيق مرجعي على بيانات عامة. ليس خدمة حكومية رسمية ولا يُعدّ استشارة قانونية.",
     reviewsTitle: "قائمة المراجعة البشرية", refresh: "تحديث",
-    steps: { planning: "التخطيط", retrieving: "البحث في الوثائق", answering: "صياغة الإجابة", verifying: "التحقق من المصادر" },
+    steps: { routing: "التوجيه", planning: "التخطيط", retrieving: "البحث في الوثائق", answering: "صياغة الإجابة", verifying: "التحقق من المصادر" },
     outcome: { answered: "تم التحقق", escalated: "أُحيلت للمراجعة البشرية", not_found: "غير موجود في الوثائق", out_of_scope: "خارج النطاق", blocked: "حُظر بواسطة مرشح الأمان" },
-    grounded: "الاستناد للمصادر", sources: "المصادر", page: "صفحة", open: "فتح الوثيقة",
+    grounded: "الاستناد للمصادر", router: "الموجّه",
+    topics: { charter: "ميثاق الذكاء الاصطناعي", international_policy: "السياسة الدولية", ethics: "أخلاقيات الذكاء الاصطناعي", data_protection: "حماية البيانات", out_of_scope: "خارج النطاق" }, sources: "المصادر", page: "صفحة", open: "فتح الوثيقة",
     approve: "اعتماد", reject: "رفض", noReviews: "لا توجد عناصر بانتظار المراجعة.", draft: "مسودة الإجابة", reason: "السبب",
     error: "حدث خطأ. يرجى المحاولة مرة أخرى.",
     suggestions: [
@@ -161,6 +163,10 @@ function renderAnswer(node, result) {
   meta.className = "meta";
   const cls = { answered: "ok", escalated: "warn", not_found: "warn", out_of_scope: "warn", blocked: "bad" }[result.outcome];
   meta.innerHTML = `<span class="badge ${cls}">${esc(t().outcome[result.outcome] || result.outcome)}</span>`;
+  if (result.classifier) {
+    const c = result.classifier;
+    meta.innerHTML += `<span class="badge" title="Fine-tuned multilingual classifier (Azure ML)">${t().router}: ${esc(t().topics[c.label] || c.label)} · ${Math.round(c.confidence * 100)}%</span>`;
+  }
   if (result.verification) meta.innerHTML += `<span class="badge">${t().grounded}: ${Math.round(result.verification.groundedness * 100)}%</span>`;
   meta.innerHTML += `<span class="badge">${(result.latency_ms / 1000).toFixed(1)}s</span><span class="badge">${esc(result.model)} · prompt ${esc(result.prompt_version)}</span>`;
   bubble.appendChild(meta);

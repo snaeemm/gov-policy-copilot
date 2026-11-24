@@ -50,13 +50,19 @@ class ReviewDecision(BaseModel):
 
 
 def build_copilot() -> Copilot:
+    from gov_copilot.classifier import make_classifier
     from gov_copilot.guardrails_azure import make_guardrails
     from gov_copilot.llm.clients import make_client
     from gov_copilot.retrieval.retriever import HybridRetriever
 
     s = get_settings()
     return Copilot(
-        s, make_client(s), HybridRetriever(s), ReviewQueue(s.review_db_path), make_guardrails(s)
+        s,
+        make_client(s),
+        HybridRetriever(s),
+        ReviewQueue(s.review_db_path),
+        make_guardrails(s),
+        make_classifier(s),
     )
 
 

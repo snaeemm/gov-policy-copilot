@@ -29,6 +29,9 @@ param deployAlerts bool = false
 @description('Object ID of the GitHub Actions OIDC service principal')
 param ciPrincipalId string = ''
 
+@description('Azure ML workspace for MLflow tracking + model registry (storage-only cost). Normally deployed standalone via modules/ml.bicep.')
+param deployMl bool = false
+
 var prefix = 'govcopilot-${env}'
 var tags = { project: 'gov-policy-copilot', env: env, costCenter: 'portfolio' }
 
@@ -112,6 +115,22 @@ module alerts 'modules/alerts.bicep' = if (deployApp && deployAlerts) {
     tags: tags
     appInsightsId: monitoring!.outputs.appInsightsId
     email: budgetEmail
+  }
+}
+
+module ml 'modules/ml.bicep' = if (deployApp && deployMl) {
+  scope: rg
+  name: 'ml'
+  params: {
+    location: location
+    prefix: prefix
+    tags: tags
+    keyVaultName: app!.outputs.keyVaultName
+    appInsightsName: monitoring!.outputs.appInsightsName
+    dataScientistPrincipals: concat(
+      empty(developerPrincipalId) ? [] : [ { id: developerPrincipalId, type: 'User' } ],
+      empty(ciPrincipalId) ? [] : [ { id: ciPrincipalId, type: 'ServicePrincipal' } ]
+    )
   }
 }
 

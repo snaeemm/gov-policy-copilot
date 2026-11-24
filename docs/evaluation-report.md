@@ -60,6 +60,37 @@ Interpretation: the Ethics guide overlaps heavily with the Charter (transparency
 | Legal advice | 4/4 | not_found 3, out_of_scope 1 |
 Overall: 6 blocked, 15 out_of_scope, 3 not_found.
 
+## Query classifier (M8)
+Fine-tuned `distilbert-base-multilingual-cased` router ([ADR-0013](adr/0013-query-classifier-azure-ml.md)), tracked with MLflow in Azure ML (`mlw-govcopilot-dev`) and registered as **`gov-policy-query-classifier` v1**. Evidence: [docs/evidence/azureml-registry.txt](evidence/azureml-registry.txt). Raw metrics: `eval/results/classifier/metrics.json`.
+
+Test split: 228 questions (117 EN / 111 AR), including the 50 golden questions and 16 red-team prompts, which are held out of training.
+
+| scope | n | accuracy | macro-F1 | in-scope accuracy |
+|---|---|---|---|---|
+| All (fp32) | 228 | 0.811 | 0.804 | 0.961 |
+| English | 117 | 0.812 | 0.810 | 0.949 |
+| Arabic | 111 | 0.811 | 0.800 | 0.973 |
+| Held-out golden questions | 50 | 0.660 | 0.278 | 1.000 |
+| Held-out red-team prompts | 16 | 0.562 | 0.144 | 0.562 |
+
+Serving model (ONNX, dynamic int8 quantisation, 541.5 MB → 135.8 MB): accuracy **0.833** (EN 0.821 / AR 0.847), in-scope accuracy 0.961; ~20 ms per query on one CPU thread.
+
+Confusion matrix (fp32, test split) - ![confusion matrix](images/classifier-confusion-matrix.png)
+
+| true \\ pred | charter | international_policy | ethics | data_protection | out_of_scope |
+|---|---|---|---|---|---|
+| charter | 37 | 5 | 3 | 1 | 0 |
+| international_policy | 8 | 25 | 9 | 0 | 0 |
+| ethics | 2 | 3 | 83 | 0 | 0 |
+| data_protection | 0 | 0 | 3 | 11 | 0 |
+| out_of_scope | 1 | 0 | 8 | 0 | 29 |
+
+Reading the results:
+- The in-scope / out-of-scope decision (the only one that can skip the LLM) is the strongest signal (≈0.96). Only `out_of_scope` with confidence ≥ 0.9 short-circuits.
+- Held-out golden questions are always in scope (1.00) but the policy-area label is weaker (0.66): the AI Charter and the International Policy documents overlap heavily, and golden questions were written against both.
+- Held-out red-team prompts: 0.56 in-scope accuracy - many jailbreaks are phrased as policy questions. This is expected and acceptable because the classifier is **not** a safety control; Prompt Shields / Content Safety handle these (red-team pass rate 24/24 in the agent eval).
+- MLflow run status shows `FAILED`: training and evaluation completed, but MLflow 3's `log_model` calls a "logged-models" API that the Azure ML backend doesn't implement (404). Registration now uses the Azure ML SDK against the run's artifacts (`ml/register_model.py`).
+
 ## Limitations
 - Small corpus; easy to reach recall 1.0. Results will not transfer to a large corpus without re-evaluation.
 - LLM-as-judge from the same model family (self-preference bias). No human-labelled agreement study yet.

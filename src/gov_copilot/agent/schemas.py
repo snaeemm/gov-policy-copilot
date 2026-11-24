@@ -4,6 +4,7 @@ from enum import StrEnum
 
 from pydantic import BaseModel, Field
 
+from gov_copilot.classifier import Classification
 from gov_copilot.models import Language
 
 NOT_FOUND = {
@@ -74,6 +75,7 @@ class AgentResult(BaseModel):
         default_factory=list, description="Retrieved passages given to the model"
     )
     verification: Verification | None = None
+    classifier: Classification | None = None
     review_id: str | None = None
     prompt_version: str
     model: str

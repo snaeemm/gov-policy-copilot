@@ -1,0 +1,762 @@
+{"id": "train-00000", "text": "What is the definition of bias in the context of automated decision-making systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00001", "text": "UAE AI safety standards — are there rules about modifying or removing high-risk AI systems?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00002", "text": "What kind of explanation can I request if an AI denied my credit card or benefit application?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00003", "text": "كيف تدعم الإمارات تطوير أنظمة ذكاء اصطناعي آمنة ومسؤولة على الصعيد العالمي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00004", "text": "What's a simple weeknight recipe for creamy garlic chicken with rice?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00005", "text": "كيف يمكن تقدير أثر الكربون لنموذج ذكاء اصطناعي طوال دورة حياته؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00006", "text": "هل يُعَدّ شات بوت يردّ بنصوص معدّة سلفاً ذكاءً اصطناعيًا أم لا؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00007", "text": "كيف تتعامل سياسات الإمارات مع سلامة أنظمة الذكاء الاصطناعي وإمكانية إزالتها أو تعديلها؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00008", "text": "ما هي مبادئ الإمارات المتعلقة بإمكانية تفسير أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00009", "text": "هل يضع الميثاق ضوابط لحماية الأمن الإنساني والحقوق الأساسية من أثر تقنيات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00010", "text": "ما السبب وراء تركيز الميثاق على الشفافية والقيم الأخلاقية في استخدام الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00011", "text": "ما المشروبات المفيدة لتهدئة التهاب الحلق وكيف أعد واحدة في المنزل؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00012", "text": "Where can I find good deals on DSLR cameras right now and what should I look for?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00013", "text": "How can a data subject request erasure (right to be forgotten) under the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00014", "text": "What's the best AI photo editor app for cleaning up portrait photos on mobile?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00015", "text": "How can people challenge or appeal an AI-driven decision that affects them in UAE public services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00016", "text": "ما هي علامة الإمارات للذكاء الاصطناعي وهل أصبحت متاحة تجارياً الآن؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00017", "text": "Where can I find EU rules about data protection and automated decision-making?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00018", "text": "Where can I find international guidelines referenced in UAE AI ethics (e.g., UNESCO, IEEE, Google, Microsoft)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00019", "text": "أردت شراء شقة استثمارية صغيرة، ما العوامل الأساسية التي أنظر إليها قبل الشراء؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00020", "text": "ما المبادرات الإماراتية التي تستخدم الذكاء الاصطناعي لمعالجة تحديات بيئية مثل تحلية المياه وإدارة النفايات؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00021", "text": "ما هي آليات تقليل الانبعاثات عند تشغيل أنظمة الذكاء الاصطناعي (متى وأين نستخدم الطاقة من الشبكة)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00022", "text": "Can citizens rely on the AI ethics principles provided by the office, or are users solely liable for misuse?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00023", "text": "Are there rules about overriding an AI decision that affects a person's life?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00024", "text": "كيف يمكن للمواطنين أو الأطراف الخارجية تقديم ملاحظات إذا كان نظام الذكاء الاصطناعي قد ينتهك الحقوق الأساسية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00025", "text": "كيف يمكن للمطورين ضمان مرونة النظام وحمايته من هجمات تلوث البيانات وتسريب النماذج؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00026", "text": "هل يلزم الامتثال للاتفاقيات الدولية والقوانين الإماراتية عند تطوير أنظمة الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00027", "text": "Do AI systems have to provide a way to opt out of important automated decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00028", "text": "How does the UAE participate in international efforts like the Hiroshima AI Process to set sustainability and safety standards?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00029", "text": "What are some home remedies to relieve a sore throat and hoarseness?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00030", "text": "ما أفضل شواطئ في الإمارات للغوص والسنوركلينج ومدى ملاءمتها للعائلات؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00031", "text": "AI in agriculture and infrastructure: real-world benefits and typical percentages of resource reduction?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00032", "text": "ما أفضل شواطئ دبي للعائلات وهل يوجد بها مرافق للعب الأطفال؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00033", "text": "كيف نضمن قابلية تكرار مخرجات نظام ذكاء اصطناعي وحماية النظام من تسميم البيانات وتسريب النماذج؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00034", "text": "هل يُسمح لأنظمة الذكاء الاصطناعي باستخدام أساليب التلاعب أو التحفيز النفسي وكيف يجب مراقبتها والتحكم فيها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00035", "text": "هل توجد في الإمارات وظيفة وزير دولة للذكاء الاصطناعي وتطبيقات العمل عن بعد؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00036", "text": "ما هي معايير اكتمال وتحديث البيانات لضمان ملاءمة الذكاء الاصطناعي لاستخدام حكومي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00037", "text": "هل يتعين على مطوري أنظمة الذكاء الاصطناعي استشارة خبراء اجتماعيين أو متخصصين في المجال قبل نشر أنظمة تؤثر على المجتمع؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00038", "text": "What's the best way to remove a red wine stain from a white cotton tablecloth?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00039", "text": "Does the UAE require AI systems to follow international treaties and domestic laws?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00040", "text": "How should developers document demographic groups that might be harmed by an AI system?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00041", "text": "How should developers test AI hiring tools to avoid discriminating based on names or nationality?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00042", "text": "هل ينطبق قانون PDPL على الشركات الأجنبية التي تقدم خدمات لمقيمين في الإمارات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00043", "text": "هل يجب إجراء تدقيق خارجي ونشر نتائجه لقرارات الذكاء الاصطناعي ذات المصلحة العامة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00044", "text": "ما مبادئ الإمارات بشأن حوكمة ومسؤولية استخدام الذكاء الاصطناعي بشكل أخلاقي وشفاف؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00045", "text": "كيف يؤكد الميثاق على حماية الحقوق الأساسية ورفاهية الإنسان عند تطوير الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00046", "text": "How should an AI that influences human emotions obtain consent and distinguish between adults and children?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00047", "text": "What does the framework say about accountability for government AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00048", "text": "How is the UAE supporting development of indigenous AI tools and infrastructure like HPC clusters and AI-optimized data centers?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00049", "text": "How is the UAE supporting local AI development — research centers, funding, or startups?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00050", "text": "What is a 'collective challenge' (mass complaints) process for AI decisions and how does it affect investigations into decision integrity?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00051", "text": "What documentation should an AI operator keep to explain how an algorithm makes decisions in government services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00052", "text": "هل يمكنك اقتراح سلسلة راديو أو بودكاست خفيفة باللغة العربية لسماعها أثناء الطبخ؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00053", "text": "ما هي البرامج والحاضنات والإرشاد التي تدعم الشركات الناشئة في مجال الذكاء الاصطناعي بالإمارات؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00054", "text": "ما المقصود بالتحيُّز في سياق أنظمة الذكاء الاصطناعي وكيف يمكن أن يضر بجماعة أو فرد؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00055", "text": "هل تدعم الإمارات قواعد دولية تُلزم الدول بمسؤولية تطوير أدوات ذكاء اصطناعي ضارة؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00056", "text": "How do I set up a basic web server with Node.js on an AWS EC2 instance?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00057", "text": "Why did the UAE open-source Falcon LLM and how does it fit into its global AI strategy?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00058", "text": "What measures are in place to prevent unequal access to AI technologies?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00059", "text": "Does the UAE have principles or a charter guiding its international AI cooperation and governance?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00060", "text": "ما هي أعراض نقص فيتامين د وكيف يمكن تحسين مستوياته بالغذاء؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00061", "text": "What international AI governance bodies is the UAE involved with?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00062", "text": "What is a required justification form for contesting an AI decision and why is it used?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00063", "text": "كيف أتعامل مع حروق المطبخ الطفيفة في المنزل وما الإسعافات الأولية؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00064", "text": "Is there a UAE minister specifically for artificial intelligence and remote work applications?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00065", "text": "مراجع حول الذكاء الاصطناعي وحماية البيانات للقطاع الحكومي في الإمارات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00066", "text": "Are there laws or international agreements the UAE follows when deploying AI?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00067", "text": "What steps can we take to check and correct biased assumptions made about people by AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00068", "text": "Are there rules in the UAE AI ethics about robustness, safety and security of AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00069", "text": "كيف يساهم الذكاء الاصطناعي في تحسين جودة الحياة في الإمارات؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00070", "text": "ما توقعات الطقس لعطلة نهاية الأسبوع القادم في الشارقة وهل مناسب للغوص؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00071", "text": "What are the UAE's key principles for responsible AI policy?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00072", "text": "Does the UAE support international rules to hold states accountable for harmful AI tools?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00073", "text": "هل توجد قائمة بتوصيات الشركات والحكومات حول «الذكاء الاصطناعي المسؤول» يمكنني الاطلاع عليها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00074", "text": "What protections does the UAE AI Charter provide for citizens’ rights when AI systems are developed or used?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00075", "text": "أين توجد إرشادات العدالة والشفافية في وثيقة أخلاقيات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00076", "text": "ما الالتزامات والاستراتيجيات التي تتبناها الدولة لاستخدام الذكاء الاصطناعي لحلول مستدامة؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00077", "text": "من هو ممثل الإمارات في سياسات الذكاء الاصطناعي الدولية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00078", "text": "How should AI teams check their training data for demographic gaps and bias?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00079", "text": "أين أجد أمثلة على أطر أخلاقية لحكومة تتعلق بالذكاء الاصطناعي من دول أخرى؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00080", "text": "كيف نتأكد من أن نظم الذكاء الاصطناعي الحكومية لا تميّز ضد فئات معينة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00081", "text": "Will it rain this weekend in Barcelona and how much should I expect?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00082", "text": "بأي شكل تساهم الإمارات في مبادرات دولية مثل مجموعة هيروشيما للذكاء الاصطناعي لوضع معايير الاستدامة والأمن؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00083", "text": "Who is legally responsible if someone misuses the AI ethics guidelines published by the UAE?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00084", "text": "هل يجب أن تتيح الشركات المزودة فحوصات ومراجعات ونشر توثيق لضمان إمكانية إعادة إنتاج نتائج النظام واستمرارية أمانه؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00085", "text": "ما هي التقارير الحكومية الدولية حول أخلاقيات الذكاء الاصطناعي التي أستطيع الاطلاع عليها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00086", "text": "Who is responsible if an AI tool used by a public agency gives a harmful or unfair outcome?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00087", "text": "What's a healthy meal plan for someone trying to gain weight and build muscle?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00088", "text": "أين أستطيع مشاهدة عروض الألعاب النارية في يوم الوطني الإماراتي وما توقيتها التقريبي؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00089", "text": "What does the UAE Charter say about governance and accountability in AI?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00090", "text": "What kind of information should AI operators disclose about their systems to the people affected?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00091", "text": "Are there any exemptions for government entities or national security that limit the PDPL's scope?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00092", "text": "هل هناك التزام بحماية الحقوق الأساسية عند ابتكار تطبيقات ذكاء اصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00093", "text": "Are the AI Ethics: Principles & Guidelines mandatory for government agencies or just recommendations?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00094", "text": "كيف تضمن الإمارات عدالة وشفافية وحماية الخصوصية في أنظمة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00095", "text": "Can AI projects in the UAE be prioritised for social good and sustainable development?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00096", "text": "ما العقوبات التي قد تواجه شركة تتعامل بانتهاك أحكام قانون حماية البيانات الاتحادي؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00097", "text": "هل يمكن فتح تحقيق أو تنظيم تطبيق طبي يعمل بالذكاء الاصطناعي بعد شكاوى الأطباء؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00098", "text": "ما الإجراءات الواجب اتباعها عند جمع واستخدام بيانات التدريب لضمان اليقظة والإشراف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00099", "text": "كيف تُعرّف الإرشادات القرار الذي له أثر فردي كبير؟ هل هناك مثال واضح؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00100", "text": "What counts as an AI developer versus an AI operator under UAE policy?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00101", "text": "ما الإجراءات التي يجب على مطوري الذكاء الاصطناعي اتخاذها للتأكد من عدالة نتائج الفحص المسبق للمتقدمين للوظائف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00102", "text": "ما الفرق بين حذف البيانات وتصحيحها وفق أحكام PDPL؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00103", "text": "ما أفضل وجهات سياحية لقضاء عطلة نهاية الأسبوع داخل الإمارات مع أطفال صغار؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00104", "text": "What types of AI systems does the UAE guidance apply to — all AI or only those that make significant decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00105", "text": "Definitions: when is an organization treated as using AI (developing, buying data, operating)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00106", "text": "What determines if an organization is an AI developer or an operator under UAE guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00107", "text": "Do global reports (e.g., from the EU, US, Singapore, France) recommend common AI governance principles?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00108", "text": "هل يمكن أن يُعتبر قرار آلي يقترح عقوبة سجن قرارًا ذو مخاطرة عالية على فرد؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00109", "text": "ما أهمية إشراك أفراد من خلفيات ديموغرافية متنوعة في مراحل تصميم وتطوير ونشر أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00110", "text": "What records and documentation must a controller maintain to demonstrate PDPL compliance?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00111", "text": "ما هي وصفة بسيطة وسريعة لعمل مجبوس الدجاج على الطريقة الخليجية؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00112", "text": "ما هي الضمانات المطلوبة لجعل نظم الذكاء الاصطناعي قابلة للتحكم طوال فترة تشغيلها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00113", "text": "Who is considered affected when an AI makes decisions that reach many people?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00114", "text": "Are decisions about using lethal force or life-and-death situations allowed to be automated by AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00115", "text": "Where can I find international AI ethics guidelines referenced by governments (EU, UNESCO, IEEE, Google)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00116", "text": "ما الحقوق المتاحة للفرد المتأثر بقرار صادر عن نظام ذكاء اصطناعي في الخدمة الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00117", "text": "Role of UAE in international AI safety and governance standards — what actions has it taken?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00118", "text": "What role do platforms like MGX and 2PointZero play in UAE AI infrastructure and semiconductors?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00119", "text": "risk assessment for AI decision systems — when is human review required for false positives?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00120", "text": "UAE position on AI energy use: are they involved in international sustainability standard-setting?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00121", "text": "Who represents the UAE on international AI policy matters?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00122", "text": "privacy guidelines for AI in UAE government — where can I find them?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00123", "text": "Will companies be able to get a government-backed AI quality/ethics certification in the UAE soon?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00124", "text": "Can you help me debug this Python error: 'TypeError: list indices must be integers or slices, not str'?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00125", "text": "Can you suggest family-friendly beaches near Abu Dhabi with calm waters and facilities?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00126", "text": "How does the UAE participate in international AI standard-setting forums?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00127", "text": "هل يطبّق PDPL على المؤسسات المالية الأجنبية التي تقدم خدمات في الإمارات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00128", "text": "ما هي خطوات الاعتراض وطلب التعويض عندما تتخذ جهة حكومية قرارًا آليًا، ومن الفريق المسؤول عن ذلك؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00129", "text": "How do I choose the right DSLR lens for portrait photography on a budget?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00130", "text": "ما نوع التوثيق الذي يجب أن يحتفظ به مشغل نظام ذكاء اصطناعي لشرح كيفية اتخاذ القرارات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00131", "text": "ما أشهر مراكز التسوق في دبي التي تحتوي على حديقة ألعاب داخلية للأطفال؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00132", "text": "Can we use synthetic data for AI testing to protect real people's privacy, and are there guidelines for doing so?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00133", "text": "Who can submit external feedback about AI systems that may violate fundamental rights, and how is that feedback handled?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00134", "text": "UAE AI policy role in global digital inclusion and sustainable development?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00135", "text": "كيف يمكن لمشغلي الذكاء الاصطناعي تقدير تأثير القرارات الخاطئة على المواطنين وما التدابير الممكنة للتخفيف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00136", "text": "كيف يجب التعامل مع إنهاء خدمة نظام ذكاء اصطناعي لحماية خصوصية وأمن المستخدمين؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00137", "text": "Where can I find international AI ethics policy reports referenced by governments?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00138", "text": "هل تناول الزنجبيل يومياً آمن أم يسبب تداخلات مع الأدوية الشائعة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00139", "text": "UAE AI ministry contact or role — which ministry oversees foreign affairs on AI issues?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00140", "text": "ما هي الحقوق المتعلقة بالاعتراض على معالجة البيانات لأغراض التسويق المباشر؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00141", "text": "How do I move funds between two brokerage accounts with minimal fees?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00142", "text": "How should government AI tools be documented so they're interpretable and accountable?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00143", "text": "ما هي الضمانات المطلوبة لتمكين المستخدمين أو الآباء من إيقاف نظام ذكاء اصطناعي ضار أو رفض تفاعلاته العاطفية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00144", "text": "How can governments and developers involve community stakeholders when creating AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00145", "text": "What's the nutritional difference between grilling and frying chicken?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00146", "text": "ما الفرق بين المسؤول عن المعالجة والمُعالِج وفقًا للـ PDPL؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00147", "text": "Where in the UAE AI Ethics guidelines can I find the definitions section?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00148", "text": "What are the main lawful bases for processing personal data under the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00149", "text": "How can I stop my sourdough starter from getting too sour?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00150", "text": "Can a medical symptom‑checking app be audited or pulled from use if clinicians report it misses serious conditions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00151", "text": "ما هي التدابير اللازمة لحماية خصوصية المستخدمين في أنظمة الذكاء الاصطناعي طوال دورة حياتها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00152", "text": "When are the UAE National Day fireworks usually scheduled in major cities like Dubai?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00153", "text": "What is the UAE's goal for AI leadership by 2031?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00154", "text": "Does firing one employee by an AI-driven HR tool qualify as an important decision, and how does that differ from many small automated choices that affect lots of people?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00155", "text": "ما المعلومات التي يجب على مشغلي أنظمة الذكاء الاصطناعي إفشاؤها للأشخاص المتأثرين بطريقة مفهومة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00156", "text": "Are there recommended checklists or assessment steps for ensuring AI reliability during deployment?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00157", "text": "هل يمكن نقل البيانات الشخصية خارج الإمارات؟ وما الشروط المطلوبة للانتقال العابر للحدود؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00158", "text": "Are there exemptions in the PDPL for processing personal data for national security or public interest?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00159", "text": "What types of AI systems do these UAE ethical guidelines apply to?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00160", "text": "هل يمكن أن تخبرني بتوقيت عروض الألعاب النارية في يوم العيد الوطني للإمارات هذا العام تقريبيًا؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00161", "text": "هل يحق لنظام ذكاء اصطناعي تقييد الخيارات المتاحة للأشخاص المعنيين أو التأثير على أحكامهم القيمية دون موافقة صريحة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00162", "text": "عند استخدام محكمة نظام ذكاء اصطناعي لاقتراح أحكام قضايا الدعاوى الصغيرة، كيف يتم إخطار المدعي والمدعى عليه وما مستوى التفسير المطلوب؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00163", "text": "ما هي خطوات بسيطة لتقليل نفقات التسوق الأسبوعي والبقاء ضمن ميزانية؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00164", "text": "For high-impact AI systems, what controls are recommended to allow humans to revoke or reverse automated decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00165", "text": "هل يشترط الميثاق وضع القيم الإنسانية وحماية الحقوق الأساسية في صميم ابتكار الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00166", "text": "ما هي آليات إلغاء القرار الآلي المتاحة إذا رُفض طلبي للقرض عبر نظام ذكي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00167", "text": "How does the AI charter relate to the UAE Strategy for Artificial Intelligence and the 2031 goal?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00168", "text": "ما الالتزامات بشأن إفصاح المطورين عن البيانات والخوارزميات المستخدمة في نظام طبي يعمل بالذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00169", "text": "هل ختم UAI جاهز الآن أم أنه ما يزال قيد التطوير ومتى سَيُطلق؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00170", "text": "Who should be involved when the government develops AI policies and wellbeing metrics?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00171", "text": "How can AI systems miss disadvantaged groups after a natural disaster and what can be done to fix that?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00172", "text": "كيف تدعم مؤسسات الإمارات الابتكار في تطبيقات الذكاء الاصطناعي في القطاع المالي والصحي والبيئي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00173", "text": "هل هناك تطبيقات جيدة لتحرير الصور بالذكاء الاصطناعي للهواتف المحمولة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00174", "text": "أي جهة حكومية في الإمارات تتولى ملف الذكاء الاصطناعي وتطبيقات العمل عن بعد؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00175", "text": "ما هي المراجع الدولية (مثل اليونسكو أو ISO أو المفوضية الأوروبية) التي تشير إليها إرشادات الإمارات حول إدارة مخاطر الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00176", "text": "ما التدابير المتوقعة لتجنب سباق تسلح في الأسلحة الذاتية التشغيل ومراقبتها بإحكام؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00177", "text": "هل إطار أخلاقيات الذكاء الاصطناعي في الإمارات يتطور بمرور الوقت وكيف يؤثر ذلك على الخدمات الحكومية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00178", "text": "من يتحمل المسؤولية القانونية إذا أُسيء استخدام مبادئ وإرشادات أخلاقيات الذكاء الاصطناعي المنشورة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00179", "text": "What responsibilities do AI developers and operators have to retrain models when the operating environment changes?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00180", "text": "Any tips for negotiating a better price when buying a used car from a private seller?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00181", "text": "ما الهدف من هذه الإرشادات غير الملزمة لأخلاقيات الذكاء الاصطناعي وكيف يُفترض لأصحاب المصلحة الاستفادة منها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00182", "text": "If an AI-assisted medical diagnosis caused harm, what documentation or enforcement steps are expected?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00183", "text": "كيف تسعى الإمارات لاستخدام الذكاء الاصطناعي لتعزيز السلام والاستقرار إقليميًا وعالميًا؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00184", "text": "Can AI systems be designed to influence user emotions or nudge behavior, and what controls should be in place?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00185", "text": "هل يُطلب تتبع حالات فشل النظام وتشخيصها لمثل تطبيقات الذكاء الاصطناعي العالية المخاطر في الرعاية الصحية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00186", "text": "Can an AI system unduly limit the options shown to people or steer their value judgments without explicit consent?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00187", "text": "How is the UAE ensuring fair access to AI for all segments of society?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00188", "text": "ما الضوابط المطلوبة لاستشارة الأشخاص المتأثرين أثناء تصميم ونشر نظم الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00189", "text": "How does the UAE promote ethical AI use in its global agreements and standards work?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00190", "text": "لماذا تطلب الجهات ملء نموذج لتبرير الطعن ومنع الاعتراض بدون سبب وجيه؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00191", "text": "How does the document require transparency for AI systems used by government agencies?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00192", "text": "Does the UAE policy require human values or rights to be prioritized when developing AI?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00193", "text": "هل توجد تقييمات موصى بها لاكتشاف وتخفيف تحيزات البيانات قبل إطلاق نظام ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00194", "text": "I'm going to Tokyo for 5 days — what are must-see neighborhoods and a simple itinerary?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00195", "text": "What are popular brunch spots in Dubai Marina that are kid-friendly and not too expensive?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00196", "text": "What does UAE guidance say about ensuring AI systems treat different demographic groups fairly?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00197", "text": "ما الذي طوّره قسم DeepMind لتقليل طاقة تبريد مراكز بيانات جوجل وما مقدار التوفير؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00198", "text": "How does the UAE plan to protect citizens' rights when using AI?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00199", "text": "هل يجب نشر شفرة المصدر أو شرح طريقة عمل أنظمة الذكاء الاصطناعي في حالات الاستخدام العام غير الحساسة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00200", "text": "كيف يمكن للجهات الحكومية ضمان عدم التمييز عند استخدام الخوارزميات في اتخاذ القرار العام؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00201", "text": "Should AI developers consult social scientists or domain experts before deploying a system that affects public health or legal outcomes?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00202", "text": "How can AI developers ensure their systems are accessible and fair to different user groups?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00203", "text": "How can civil society or private companies participate in the ongoing dialogue to shape these guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00204", "text": "كيف يمكن للمستخدم الإبلاغ عن انتهاك الخصوصية أو سحب الموافقة من نظام ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00205", "text": "How do I submit an access request (SAR) to a controller under the PDPL and what information must they provide?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00206", "text": "What penalties and fines can the UAE regulator impose for non-compliance with the PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00207", "text": "Which UAE government office handles AI and remote work applications?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00208", "text": "Do AI teams need to consult the people affected to avoid biased assumptions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00209", "text": "How do I center a div both vertically and horizontally using CSS flexbox?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00210", "text": "What documentation should developers keep to make AI decisions auditable in case of harm?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00211", "text": "كيف يمكن لهيئة حكومية ضمان الشفافية والقابلية للمساءلة لأنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00212", "text": "كيف تشارك الإمارات في المنتديات الدولية لوضع معايير الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00213", "text": "What is a “crowd challenge” and how could complaints trigger a review of an AI decision process?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00214", "text": "Who is responsible for AI policy and digital economy initiatives in the UAE government?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00215", "text": "What's the weather typically like in Ras Al Khaimah in February and what should I pack?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00216", "text": "Can an individual object to automated decision-making or profiling under the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00217", "text": "What's a beginner-friendly running plan to prepare for a 5K in eight weeks?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00218", "text": "هل يمكنني الاعتراض على قرار آلي والحصول على مراجعته من قبل بشري؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00219", "text": "What safeguards does the UAE charter require to ensure human oversight of AI decision-making?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00220", "text": "كيف تضمن الجهات الحكومية أن مجموعات بيانات التدريب على الذكاء الاصطناعي ذات جودة عالية وتحت إشراف مستمر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00221", "text": "UAE AI policy — must developers ensure conformity with local legislation and international agreements?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00222", "text": "How does the UAE plan to use AI to support sustainable development and close the digital divide?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00223", "text": "متى يتحول روبوت خدمة العملاء إلى نظام ذكاء اصطناعي — فقط عندما يغيّر سلوكه بناءً على نتائج القضايا السابقة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00224", "text": "Where can I find the Toronto Declaration and other sources about non-discrimination in machine learning?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00225", "text": "What measures are recommended to prevent dual‑use misuse of AI in public services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00226", "text": "كيف أحسب المتوسط والانحراف المعياري لمجموعة بيانات يدوية في الرياضيات؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00227", "text": "What policies exist to promote peaceful coexistence between people and AI technologies?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00228", "text": "Is there a living framework in the UAE for addressing new AI ethical challenges and how can it affect public services?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00229", "text": "How can a government regulator require traceability for high-risk AI systems used in healthcare?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00230", "text": "كيف تساهم الإمارات في دمج اعتبارات السلامة والأخلاق في سياسات الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00231", "text": "What are best practices for using synthetic data to protect privacy in AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00232", "text": "أين أجد مراجع وتقارير برلمانية حول الذكاء الاصطناعي وأثره على حقوق الإنسان، مثل أدلة مجلس اللوردات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00233", "text": "What constitutes a notifiable personal data breach in the UAE and where should it be reported?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00234", "text": "كيف يُحدد ما إذا كانت جهة ما مطوِّرة لنظام ذكاء اصطناعي أم مشغّلًا له وفق الإرشادات الإماراتية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00235", "text": "هل ينطبق قانون حماية البيانات الاتحادي على الشركات الأجنبية التي تعالج بيانات مواطنين إماراتيين؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00236", "text": "هل هذه الإرشادات إلزامية للقطاع الحكومي أم مجرد توصيات قابلة للتطبيق؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00237", "text": "Can an organization rely on implied consent for marketing communications in the UAE?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00238", "text": "كم تكلفة تذكرة متوقعة لرحلة داخلية بين دبي ومسقط في ذروة الموسم؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00239", "text": "أقترح لي قائمة أفلام عائلية مناسبة للأطفال فوق الثامنة للسهرة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00240", "text": "هل توجد أمثلة على تشريعات محلية حول أدوات القرار الآلي مذكورة في الوثيقة (مثل قانون مدينة نيويورك)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00241", "text": "Is cross-border transfer of personal data outside the UAE permitted, and what safeguards are required?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00242", "text": "Which UAE initiatives use AI to tackle environmental problems like water scarcity or waste management?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00243", "text": "هل يُسمح لأدوات الذكاء الاصطناعي بجمع بيانات تكشف الميول الدينية أو السياسية للأفراد وما الضوابط؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00244", "text": "What procurement practices can government agencies use to ensure AI vendors allow future testing, monitoring and audits?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00245", "text": "ما الخطوات المتخذة لضمان وصول عادل للتكنولوجيا والفرص المتعلقة بالذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00246", "text": "كيف يجب إعلام الأشخاص المتأثرين بالخيارات الجوهرية التي يتخذها الذكاء الاصطناعي وما الضمانات لمنع تلاعب النظام بقراراتهم؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00247", "text": "هل هناك مبادئ توجه حماية حقوق المجتمع الإماراتي عند تطوير أو استخدام تقنيات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00248", "text": "What are effective stretches to do before and after a weightlifting session?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00249", "text": "كيف يتم تقديم اعتراض على معالجة محددة لبياناتي الشخصية وما هي المواعيد المتوقعة للرد؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00250", "text": "Which international standards or guidelines should UAE agencies consider when managing AI risk?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00251", "text": "كيف تضمن الإمارات أن يستفيد جميع فئات المجتمع من تقنيات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00252", "text": "Are there recommended methods to ensure AI recruitment tools are fair and accessible to different user groups?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00253", "text": "كيف يُمكن لمطوري الذكاء الاصطناعي تقييم مجموعات البيانات لاكتشاف تحيزات ديموغرافية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00254", "text": "هل تلتزم الإمارات بالاتفاقيات الدولية عند تطوير واستخدام الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00255", "text": "ما هو مستند خارطة الطريق لنظام ضمان الذكاء الاصطناعي الفعّال الصادر عن الحكومة البريطانية وكيف يمكن الوصول إليه؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00256", "text": "UAE stance on AI governance and accountability — what principles do they promote?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00257", "text": "How should organizations document their chosen definition of fairness for an AI application?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00258", "text": "UAE AI strategy sustainability — what commitments has the government made?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00259", "text": "What measures are suggested to make AI benefits accessible to all segments of society?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00260", "text": "كيف أحسب نسبة الفائدة الشهرية لقرض بمعدل سنوي 5% ومبلغ 50,000 درهم لمدة ثلاث سنوات؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00261", "text": "ما نصائح لتجنب الشلل النصفي المؤقت بعد الجلوس الطويل أثناء الألعاب أو العمل؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00262", "text": "ما دور وزارة الخارجية مقارنة بمكتب وزير الدولة للذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00263", "text": "هل مكتب وزير الدولة للذكاء الاصطناعي يتحمّل مسؤولية سوء استخدام إرشادات أخلاقيات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00264", "text": "How does a data subject exercise the right to erasure in the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00265", "text": "كيف تضمن الإمارات حماية الخصوصية والسلامة في أنظمة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00266", "text": "What does the principle of respecting people’s privacy mean for government AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00267", "text": "كيف يؤثر تحيّز نظام ذكاء اصطناعي في موقع حكومي مشهور على عدد كبير من المواطنين؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00268", "text": "Does an AI medical diagnostic tool have to log and link each step of its analysis to the input data?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00269", "text": "Does the policy encourage government agencies to use AI and support private sector R&D for government problems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00270", "text": "ما حقوق الفرد في الطعن أو طلب تعويض فعّال إذا رفض النظام الآلي طلبه؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00271", "text": "table of contents AI Ethics UAE - where are the fairness and transparency guidelines located?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00272", "text": "Does an algorithm that recommends prison sentences qualify as making a high-stakes individual decision?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00273", "text": "Are there requirements for making AI explanations accessible, free, and easy to understand (for example like the NHS Predict tool)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00274", "text": "هل يجوز استخدام بيانات اصطناعية لاختبار أنظمة الذكاء الاصطناعي لحماية الخصوصية وهل هناك إرشادات لذلك؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00275", "text": "Can government AI tools collect behavioral data that reveals religion or political views, and what limits apply?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00276", "text": "هل يُعتبر روبوت دردشة يعتمد على ردود مكتوبة مسبقًا نظام ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00277", "text": "هل سياسة الشراء ستدعم البحث والتطوير وتشجيع القطاع الخاص لتطوير حلول عند عدم توفر منتجات جاهزة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00278", "text": "كيف تتناول الإرشادات مسؤولية ومساءلة الجهات الحكومية عند استخدام الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00279", "text": "Why might an AI system list the top factors that influenced its decision?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00280", "text": "What counts as a \"significant-at-scale\" AI decision in government services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00281", "text": "What steps should be taken to assess the environmental footprint of an AI system during development and deployment?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00282", "text": "How can I appeal an automated government decision and what information do I need to provide?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00283", "text": "هل يمكنني نشر وتعديل هذا المستند للاستخدام في شركة خاصة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00284", "text": "Should AI systems that influence major decisions be designed to be impartial and follow community norms?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00285", "text": "How can I improve my free throw form in basketball to make more shots?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00286", "text": "Which running shoes are best for people with flat feet who want more stability?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00287", "text": "If a government agency buys and uses a facial recognition tool, are they considered an AI operator or developer?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00288", "text": "Who is liable if someone misuses the AI ethics guidelines — the AI Office or the user?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00289", "text": "Can synthetic data be used to protect privacy while still matching test environment statistics?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00290", "text": "Are these UAE AI ethics principles mandatory for government agencies or voluntary?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00291", "text": "هل هذه المبادئ إلزامية للقطاع العام أم مجرد توجيهات غير ملزمة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00292", "text": "كيف أكتب استعلام SQL بسيط لاستخراج أسماء العملاء الذين لديهم رصيد أكبر من 1000؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00293", "text": "كيف يعامل القانون البيانات الحسّاسة مثل السجلات الطبية أو الانتماء السياسي؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00294", "text": "ما هي آليات الإشراف البشري المنصوص عليها في ميثاق الإمارات للذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00295", "text": "هل يُسمح لوكيل دردشة اصطناعي بإجراء مكالمات ويخفي أنه روبوت؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00296", "text": "ماذا يجب إبلاغ المريض به عندما يتخذ نظام ذكاء اصطناعي قرارات مهمة تتعلق بعلاجه؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00297", "text": "ما الفرق بين متحكم البيانات ومعالج البيانات في إطار PDPL؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00298", "text": "هل يضع الميثاق معايير رقابية أخلاقية لاستخدام الذكاء الاصطناعي في الجهات الحكومية والخاصة؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00299", "text": "What makes a system qualify as an AI system under these guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00300", "text": "Is AI development in the UAE required to avoid discrimination and ensure equality?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00301", "text": "Where can I find ISO, UNESCO, EU or Microsoft materials on responsible AI and AI assurance mentioned in the UAE guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00302", "text": "Where can I find referenced documents like the UNESCO AI ethics recommendation or the EU AI Act proposal?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00303", "text": "هل يمكنك توقع الطقس لصباح الغد في أبوظبي وما مدى احتمال الأمطار؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00304", "text": "هل يمكنني استخدام حليب جوز الهند بدلاً من الكريمة في وصفة صلصة الفطر؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00305", "text": "ما هي أفضل أماكن السباحة في الشارقة بعيداً عن الشواطئ السياحية؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00306", "text": "When is UAE National Day fireworks usually scheduled in Abu Dhabi — approximate time of evening displays?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00307", "text": "هل تشارك الإمارات في وضع معايير دولية لاستدامة الذكاء الاصطناعي بسبب ارتفاع استهلاك الطاقة؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00308", "text": "كيف يمكن إشراك المجتمع وأصحاب المصلحة في حوكمة وتطوير أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00309", "text": "How should AI developers involve affected people during the design and deployment phases?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00310", "text": "ما هي الإجراءات التي يجب توافرها لتمكين الأفراد من الطعن في قرار اتخذته منظومة ذكية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00311", "text": "What is the UAE AI Seal and how will it affect AI companies operating here?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00312", "text": "UAE approach to AI governance and transparency — what mechanisms are proposed?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00313", "text": "Is it mandatory to appoint a Data Protection Officer (DPO) for all organizations?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00314", "text": "كيف تضمن السياسة الإماراتية للذكاء الاصطناعي الحفاظ على القيم الإنسانية ومكافحة خطاب الكراهية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00315", "text": "متى تعتبر قرارات نظام ذكاء اصطناعي ذات تأثير كبير على المجتمع رغم أن كل قرار بمفرده يبدو تافهاً؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00316", "text": "ما الضوابط المطلوبة للوصول إلى بيانات أنظمة الذكاء الاصطناعي ومن يجب أن يكون مسؤول حماية البيانات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00317", "text": "Which records should developers keep about training data and model changes for systems used in high-risk decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00318", "text": "ما الذي يجب أن تُطلعني عليه الجهة المشغلة للذكاء الاصطناعي إذا أثر النظام على قرار يخصني؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00319", "text": "ما نوع التفسير الذي يجب أن يقدمه نظام ذكاء اصطناعي إذا رفض طلبي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00320", "text": "How does the UAE plan to balance AI innovation with ethical governance and safety?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00321", "text": "Can you explain how to solve this algebra problem: find x if 3(x - 2) = 2x + 5?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00322", "text": "ما المقصود بوضع القيم الإنسانية في قلب الابتكار التكنولوجي ضمن الميثاق؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00323", "text": "كيف أبرمج ساعة رقمية بسيطة باستخدام بايثون مع مكتبة tkinter؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00324", "text": "What does UAE guidance say about tracing how an AI system reached a harmful decision?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00325", "text": "What are examples of AI lowering energy use in data centers (like Google's DeepMind)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00326", "text": "هل يتضمن الميثاق إجراءات لتصحيح التحيزات في أنظمة الذكاء الاصطناعي وحماية جودة الحياة للمجتمع؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00327", "text": "كيف تدعم الإمارات استخدام الذكاء الاصطناعي بشكل مسؤول وتكافح خطاب الكراهية والمعلومات المضللة دولياً؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00328", "text": "ما هي المبادئ الستة التي اعتمدتها الإمارات لسياسة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00329", "text": "How should I submit a meaningful challenge to an automated decision—do I have to fill out a form?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00330", "text": "هل يجب على الجهات إبلاغ المتضررين عند حدوث خرق للبيانات؟ وما هي المهل الزمنية؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00331", "text": "هل يستطيع الذكاء الاصطناعي تقليل استخدام المياه والأسمدة في الزراعة مع زيادة الإنتاج؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00332", "text": "How should a government agency prepare fallback plans and thresholds for AI systems in high-risk situations?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00333", "text": "كيف تتعامل الإمارات مع زيادة استهلاك الطاقة بسبب مراكز بيانات الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00334", "text": "How should government agencies ensure datasets for AI training are high-quality and well-supervised?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00335", "text": "كيف يلتزم مطورو ومشغلو أنظمة الذكاء الاصطناعي بمعايير وقيم المجتمع المحلي عند النشر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00336", "text": "ما هي الضوابط المطلوبة لمنع أنظمة الذكاء الاصطناعي من التمييز ضد الأشخاص بناءً على العمر أو الدين أو الآراء السياسية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00337", "text": "هل أستطيع استخدام أجزاء من وثيقة مبادئ أخلاقيات الذكاء الاصطناعي في الإمارات لأغراض تجارية مع الإشارة إلى مصدرها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00338", "text": "When does a decision by an AI count as \"high-impact\" for society even if each individual decision seems trivial?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00339", "text": "من يطوّر سياسة الشراء الخاصة بالذكاء الاصطناعي في الحكومة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00340", "text": "How does UAE policy ensure everyone can access AI benefits?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00341", "text": "What recourse do people have if they want to challenge an automated decision made about them by a UAE public service?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00342", "text": "ما هي الإجراءات المتاحة للمواطن للطعن في قرار آلي اتخذ بحقه من جهة حكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00343", "text": "What explanation should a government AI give if it denies my application?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00344", "text": "هل تنص سياسة الإمارات للذكاء الاصطناعي على ضرورة التقيد بالمعاهدات الدولية؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00345", "text": "What data quality practices (completeness, timely updates, contextual fit) are recommended when building AI used in important decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00346", "text": "What's a good recipe for a quick weeknight chicken stir-fry with vegetables?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00347", "text": "كيف يضمن الإطار الإماراتي حماية حقوق المجتمع عند استخدام تقنيات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00348", "text": "متى يجب توفير مراجعة بشرية لأنظمة التعرف الآلي التي قد تستهدف أشخاصاً بشكل خاطئ؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00349", "text": "هل هناك أمثلة عملية توضح نسبة تقليل الموارد بفضل الذكاء الاصطناعي في الزراعة ومراكز البيانات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00350", "text": "What penalties and fines can be imposed for non-compliance with PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00351", "text": "Can you help me solve this algebra problem: solve for x in 3x + 5 = 2x - 7?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00352", "text": "ما هو مسمى المنصب الرسمي لوزير الدولة للذكاء الاصطناعي والاقتصاد الرقمي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00353", "text": "How can a government agency ensure its AI systems don't discriminate against certain groups?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00354", "text": "Which UAE institutions are involved in AI innovation and international collaboration?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00355", "text": "ما تمارين تقوية أسفل الظهر التي يمكن ممارستها في المنزل بدون معدات؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00356", "text": "Are AI explanations required to be free and easy to access for users?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00357", "text": "What’s a quick method to estimate compound interest for an investment over 7 years?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00358", "text": "من هو الوزير المسؤول عن الذكاء الاصطناعي والاقتصاد الرقمي وتطبيقات العمل عن بُعد في الإمارات؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00359", "text": "هل هناك إجراءات لضمان وصول جميع فئات المجتمع الإماراتي إلى فوائد الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00360", "text": "How must government AI projects protect people's privacy under these guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00361", "text": "privacy preserving AI UAE - requirements for handling personal data?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00362", "text": "ما معنى آلية «تحدي الجمهور» وكيف تؤدي الشكاوى إلى تحقيق في عدالة قرارات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00363", "text": "ما دور الإمارات في تطوير معايير الاستدامة الدولية المتعلقة بمراكز البيانات واستهلاك الطاقة الناجم عن الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00364", "text": "Can AI reduce fertilizer and water use in UAE farms while increasing yields?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00365", "text": "How does the UAE promote ethical AI and combat hate speech and disinformation globally?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00366", "text": "ما العقوبات والغرامات المحتملة لجهة تخالف أحكام قانون حماية البيانات الاتحادي؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00367", "text": "Which government white papers on AI (e.g., US, Canada, Japan, UK) are cited as references here?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00368", "text": "What types of personal information are considered 'sensitive personal data' under Federal Decree-Law No. 45 of 2021?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00369", "text": "Are there UAE guidelines about autonomous weapons and whether AI can make life-or-death decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00370", "text": "في أي مولات دبي يمكنني العثور على ماركات أحذية رياضية محددة مثل New Balance؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00371", "text": "Where in the guidelines can I find definitions and scope for AI ethics and governance?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00372", "text": "هل يجب على نظام ذكاء صناعي للتشخيص الطبي توثيق كل مرحلة من تحليلاته وربطها ببيانات الإدخال؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00373", "text": "كيف يمكن تقليل التحيز في أنظمة الذكاء الاصطناعي المستخدمة في فرز المتقدِّمين للوظائف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00374", "text": "Which international AI ethics or standards documents does the UAE guidance reference for AI risk management and trustworthy AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00375", "text": "هل يجب إجراء تدقيق خارجي للأنظمة الذكية التي تتخذ قرارات حرجة في الجهات الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00376", "text": "When is it acceptable for an AI system to be used in critical decision‑making about people?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00377", "text": "هل يحق لي طلب توضيح لكيفية وصول نظام الذكاء الاصطناعي إلى توصية تخصني؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00378", "text": "Which official reports discuss fairness and non-discrimination in machine learning (e.g., Toronto Declaration)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00379", "text": "ما المعلومات التي يجب أن تتضمنها صفحة تفسير نظام الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00380", "text": "كيف تقترح الإمارات ضمان الشفافية وآليات المساءلة داخل أدوات الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00381", "text": "هل يمكن نقل البيانات الشخصية الحساسة إلى دولة خارج الإمارات دون موافقة صريحة؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00382", "text": "ما المعايير الدولية (مثل ISO أو توجيهات مايكروسوفت) التي يجب على الجهات الحكومية الإماراتية الاطلاع عليها لإدارة مخاطر الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00383", "text": "كيف أعد ميزانية شهرية بسيطة لتوفير 20% من دخلي؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00384", "text": "كيف تضمن الإمارات توافق تقنيات الذكاء الاصطناعي مع القيم الأخلاقية وحماية الخصوصية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00385", "text": "ما الإرشادات التي ستتبعها الجهات الاتحادية عند شراء أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00386", "text": "What is a discrimination impact assessment and when should it be applied to AI hiring tools?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00387", "text": "Do banks need to offer a human review if an AI decides my loan terms?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00388", "text": "I'm visiting Dubai for five days—what are must-see attractions and a suggested itinerary?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00389", "text": "Will the procurement policy support R&D and local private sector solutions when no off‑the‑shelf AI product exists?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00390", "text": "هل يمكن نقل البيانات الشخصية خارج الإمارات إلى دولة لا تمتلك مستوى حماية معادل؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00391", "text": "أين أجد وثائق إرشادية دولية عن أخلاقيات الذكاء الاصطناعي مثل توصية اليونسكو وإرشادات المفوضية الأوروبية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00392", "text": "كيف ينبغي لجهات الحكومة أن تضمن شفافية أنظمة الذكاء الاصطناعي وفق المبدأ 3-3؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00393", "text": "هل يجب أن تقدم أنظمة الذكاء الاصطناعي خيار الانسحاب من القرارات الآلية الهامة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00394", "text": "مقاييس العدالة وحماية الخصوصية في إرشادات أخلاقيات الذكاء الاصطناعي: كيف تُطبّق عمليًا؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00395", "text": "أي وزارة أو مسؤول في الإمارات يتولى قضايا الاقتصاد الرقمي والذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00396", "text": "What principles guide the UAE's approach to ensuring AI benefits society and protects human rights?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00397", "text": "ما هي العقوبات المحتملة على الشركات التي تخالف متطلبات حماية البيانات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00398", "text": "How should AI systems adapt their ethical standards over time as societal norms change?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00399", "text": "Can an AI-based medical app be investigated or regulated after doctors raise concerns?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00400", "text": "What is the purpose of these non-binding AI ethics guidelines and how should stakeholders use them?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00401", "text": "ما هي أفضل أفلام الخيال العلمي في العقد الأخير لتنزيل قائمة مشاهدة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00402", "text": "ما هي الوثائق العالمية التي استُندت إليها إرشادات الإمارات لأخلاقيات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00403", "text": "Can synthetic data generated by AI be used to protect privacy when sharing datasets with third parties?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00404", "text": "ما هي الأنظمة التي تنطبق عليها إرشادات أخلاقيات الذكاء الاصطناعي في الإمارات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00405", "text": "What is the Toronto Declaration and how does it relate to preventing discrimination in machine learning systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00406", "text": "من ينبغي إشراكه من المجتمع والمؤسسات عند تصميم معايير الرفاهية لحلول الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00407", "text": "كيف يمكن للموظف طلب الوصول إلى بياناته الشخصية لدى صاحب المعالجة؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00408", "text": "ما الفرق بين أنواع القهوة العربية التقليدية والمحمصة حديثاً؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00409", "text": "What does ‘crowd challenge’ mean for AI decisions and how can complaints trigger a review?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00410", "text": "لماذا أصدرت معهد التكنولوجيا للابتكار نموذج Falcon كمصدر مفتوح وكيف يساهم ذلك في التعاون الدولي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00411", "text": "What does UAE guidance say about making AI systems explainable to users?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00412", "text": "What safeguards should be in place to allow humans to overturn AI decisions that affect people's lives?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00413", "text": "هل يجب أن تتوافر آليات استئناف مدمجة يمكن للأفراد الطعن من خلالها على قرارات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00414", "text": "When a court uses an AI to propose small-claims rulings, how should parties be notified and what explanations must be provided?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00415", "text": "How does PDPL allocate responsibilities between controllers and processors in a cloud outsourcing arrangement?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00416", "text": "How do the rules define an individually significant decision? Can you give an example?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00417", "text": "How is the UAE ensuring AI projects follow ethical and privacy standards?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00418", "text": "Who in a government agency is allowed to access citizens' personal data under UAE privacy rules?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00419", "text": "What steps must businesses take before making a cross-border transfer to a non-compliant jurisdiction?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00420", "text": "ما هو ميثاق الإمارات لتطوير واستخدام الذكاء الاصطناعي ومن يستفيد منه؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00421", "text": "How can AI systems be designed to reduce carbon emissions from data centers?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00422", "text": "What options do I have to appeal an automated loan refusal in the UAE?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00423", "text": "كيف يعرّف القانون البيانات الحساسة وما هي أمثلة على تلك الفئات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00424", "text": "ما نوع الشرح الذي يمكنني طلبه عندما يرفض النظام الآلي طلبي للحصول على قرض أو بطاقة ائتمان؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00425", "text": "How will the upcoming AI Procurement Guidelines change how federal agencies buy AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00426", "text": "If an automated system denies a citizen a benefit, what rights do they have to appeal and get an explanation of the decision?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00427", "text": "How does the UAE Charter say AI decisions should be explained to the public?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00428", "text": "Who is considered an affected person or end-user under these AI ethics guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00429", "text": "هل هناك توجيه في الإمارات لضمان أن تقنيات الذكاء الاصطناعي تعزز الرفاهية وتحمي الحقوق الأساسية؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00430", "text": "Examples of national AI strategies and ethics guidelines (France, US, Japan, Canada) — what documents exist?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00431", "text": "Where can I find examples of government AI ethics frameworks from other countries?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00432", "text": "ما الإجراءات التي يجب على المعالِج اتّباعها عند التعاقد مع طرف ثالث لمعالجة البيانات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00433", "text": "ما هي المتطلبات المتعلقة بالموافقة والحماية عند استخدام نظم ذكاء اصطناعي تؤثر على سلوك الناس بطريقة \"التوجيه\"؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00434", "text": "How does the UAE ensure fair access to AI technologies for all citizens?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00435", "text": "ما هي القيود عند استخدام وثيقة الأدوات هذه في مشاريع الذكاء الاصطناعي لدى مؤسسات خاصة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00436", "text": "هل يحق للفرد طلب الوصول إلى كل بياناته التي تحتفظ بها شركة خاصة؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00437", "text": "Which categories of data are considered sensitive personal data under the UAE law?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00438", "text": "ما الجهة الحكومية التي تتعامل مع سياسات الإمارات الدولية بشأن الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00439", "text": "Can I opt out if a government service uses AI to make a major decision about me?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00440", "text": "What is the UAE's international position on responsible AI and global digital governance?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00441", "text": "كيف نحدد أن مجموعة من قرارات نظام واحد تشكل تأثيراً واسع النطاق (مثل تحيّزات خوارزميات عرض المحتوى)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00442", "text": "أين أجد مراجع مثل استراتيجية الروبوت في اليابان أو ورقة كندا حول الذكاء الاصطناعي الحكومي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00443", "text": "كيف يمكن لجهة حكومية تقييم وتقليل مخاطر الأخطاء الناتجة عن تطابق بيانات غير دقيق (مثل أخطاء تهجئة الأسماء)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00444", "text": "How does the UAE Charter say AI should protect fundamental rights?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00445", "text": "كيف يُطالِب ميثاق الإمارات أن تُفسَّر قرارات الذكاء الاصطناعي للمواطنين؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00446", "text": "Are there legal obligations to follow international agreements when deploying AI in the UAE?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00447", "text": "كيف يجب حماية البيانات الحساسة (كالبيومترية أو الصحية أو المتعلقة بالعرق) أثناء تجميعها واستخدامها لتدريب أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00448", "text": "Can using social media data for relief planning create bias against areas with low smartphone use?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00449", "text": "هل هناك إرشادات لمراقبة الأخلاقيات في استخدام الذكاء الاصطناعي بالدولة؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00450", "text": "UAE role in UN and WEF AI discussions — which forums and initiatives does it lead or join?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00451", "text": "ما هي آليات تقييم الأثر البيئي لاستهلاك الطاقة في مراكز بيانات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00452", "text": "How does the UAE plan to use AI to promote regional and global peace and stability?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00453", "text": "best practices for overseeing collection and use of AI training data", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00454", "text": "كيف يضمن الميثاق أن تكنولوجيا الذكاء الاصطناعي تخدم المصلحة العامة؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00455", "text": "كيف يتعامل الميثاق مع التحيز والأخطاء في أنظمة الذكاء الاصطناعي وهل هناك إشراف بشري دائم؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00456", "text": "أين أجد نصوص توصية اليونسكو بشأن أخلاقيات الذكاء الاصطناعي أو مقترح الاتحاد الأوروبي لقانون الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00457", "text": "ما هي وصفة سهلة لعمل الكوسا المحشية باللحم المفروم للأسبوع؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00458", "text": "How does the policy address bias and mistakes in AI systems — are humans always involved?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00459", "text": "هل من وصفة كعكة شوكولاتة سريعة لاستخدام دقيق الشوفان بدلاً من الدقيق الأبيض؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00460", "text": "ما المقاييس الخاصة بالرفاهية التي يجب مراعاتها عند تصميم أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00461", "text": "What are the main differences between consent and legitimate interest under the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00462", "text": "هل يجب تصميم أنظمة الذكاء الاصطناعي التي تؤثر على قرارات مهمة لتكون محايدة وتلتزم بقيم المجتمع؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00463", "text": "ما هي الخطوات المطلوبة لتقييم البصمة البيئية لنظام ذكاء اصطناعي أثناء التطوير والنشر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00464", "text": "ما هي مبادئ الإمارات لجعل أنظمة الذكاء الاصطناعي قابلة للتفسير؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00465", "text": "ما الضوابط المطلوبة لضمان سلامة المستخدمين وإمكانية إلغاء قرارات الأنظمة ذات التأثير الكبير على الحياة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00466", "text": "كيف يجب على نظام ذكاء اصطناعي يحفز المشاعر الحصول على موافقة المستخدم والتفريق بين البالغين والأطفال؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00467", "text": "كيف يمكن للأطراف المعنية مثل الشركات والمواطنين الانخراط في الحوار المستمر لتطوير هذه المبادئ؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00468", "text": "Best AI photo editor app recommendations for someone who wants quick enhancements on phone?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00469", "text": "What initiatives has the UAE launched to use AI for environmental challenges like desalination or waste recycling?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00470", "text": "What rights or controls should users (or parents) have to stop an emotional or harmful AI system—is a kill switch required?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00471", "text": "Do I need a waterproof jacket for a trip to London in late March?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00472", "text": "كيف أحل هذه المسألة في الرياضيات: حل المعادلة 2x+3=11 وخطوات التحقق؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00473", "text": "Does the charter require AI to avoid bias and protect privacy?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00474", "text": "How does the UAE ensure AI systems respect privacy and safety?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00475", "text": "كيف أضع ميزانية شهرية بسيطة لتوفير 20% من دخلي وما أدوات المتابعة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00476", "text": "ما هي إجراءات الإخطار عند حدوث خرق بيانات وفقًا للقانون الاتحادي رقم 45 لسنة 2021؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00477", "text": "ما الفرق بين المؤسسة المطورة للمذكاء الاصطناعي والمؤسسة المشغلة في هذه الإرشادات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00478", "text": "What role does the UAE Cybersecurity Council play in AI security and resilience?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00479", "text": "How do I calculate compound interest on a savings account monthly versus annually?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00480", "text": "ما هي تبعات استخدام المواطن لإرشادات أخلاقيات الذكاء الاصطناعي؟ هل المستخدم وحده مسؤول؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00481", "text": "ما هي تقييمات أثر التمييز ومتى يجب إجراؤها لمشغلات الذكاء الاصطناعي في التوظيف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00482", "text": "Can AI projects be prioritized if they clearly improve public wellbeing?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00483", "text": "ما أفضل نصائح للحفظ على البطارية في هاتف أندرويد قديم؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00484", "text": "How will the federal government be guided when procuring AI systems—are there specific purchasing principles?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00485", "text": "How can organisations participate in updating or contributing to the UAE AI ethics framework?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00486", "text": "What initiatives does the UAE have to support AI startups and research collaboration?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00487", "text": "كيف أمارس حقي في الوصول إلى بياناتي الشخصية لدى شركة مقرها الإمارات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00488", "text": "ما هي البروتوكولات والسياسات التي يجب تطبيقها لضمان أن البيانات المستخدمة في الذكاء الاصطناعي ليست سببًا للتمييز غير العادل؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00489", "text": "Which beaches in the UAE are best for families with small children?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00490", "text": "Which TV shows are similar in tone to Stranger Things for fans of supernatural mysteries?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00491", "text": "What are the timelines for a controller to respond to data subject rights requests under the law?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00492", "text": "من يتحمل المسؤولية إذا أسيء استخدام إرشادات أخلاقيات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00493", "text": "هل هناك ضوابط تمنع التمييز أو الإقصاء في تطبيقات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00494", "text": "What are the UAE's main principles for using AI responsibly in national security and privacy?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00495", "text": "من المسؤول في الحكومة الإماراتية عن سياسات الذكاء الاصطناعي والاقتصاد الرقمي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00496", "text": "Is a Data Protection Officer mandatory for all organizations under the PDPL and what are the DPO's responsibilities?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00497", "text": "How does the UAE plan to balance promoting AI innovation with ethical governance and accountability?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00498", "text": "What does the UAE policy say about privacy-preserving AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00499", "text": "What must authorities tell me if an AI system influenced a government decision about me?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00500", "text": "كيف تُعرِّف المبادئ التحيز أو التمييز غير العادل في قرارات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00501", "text": "هل توجد إرشادات حول ضمان متانة وسلامة وأمن أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00502", "text": "Can AI chatbots call people without saying they’re not human?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00503", "text": "Sources and reports about AI and discrimination — where can I find international policy documents like the Toronto Declaration or UK parliamentary evidence?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00504", "text": "What information must be included on an AI system's explanation page?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00505", "text": "ما هي المبادئ الأخلاقية الأساسية التي يجب اعتمادها عند استخدام الذكاء الاصطناعي في الجهات الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00506", "text": "What penalties and fines can be imposed for non-compliance with the PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00507", "text": "Is it allowed to republish the guidelines on my news site and imply endorsement by the Minister’s office?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00508", "text": "كيف أطلب تفسيرًا لقرار آلي أثر على حقي، مثل رفض بطاقة ائتمان أو استحقاق دعم؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00509", "text": "كيف أشتري تذاكر طيران رخيصة إلى المغرب وما أفضل أوقات الحجز؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00510", "text": "ما الإجراءات التي يجب اتباعها للتحقق من افتراضات المطورين حول الأشخاص وتجنب التحيز في أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00511", "text": "ما المقصود بقدرة الوحدة الوظيفية على \"الاستدلال والتعلّم والتحسّن الذاتي\" في إرشادات الإمارات للذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00512", "text": "Which PS5 games are great for cooperative play with a friend who’s new to gaming?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00513", "text": "Should government AI projects prefer smaller models to save energy, and what trade-offs are involved?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00514", "text": "كيف يمكن تحديث أنظمة الذكاء الاصطناعي الحكومية لتجنُّب تكرار الإشارات الخاطئة (مثل تصنيف إيماءة طبية عند الحدود كمؤشّر خطر)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00515", "text": "Does the charter require peaceful coexistence between people and AI, and what does that entail?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00516", "text": "What does a 'risk‑averse' approach to AI development mean in practice for public sector services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00517", "text": "هل يسمح للذكاء الاصطناعي باتخاذ قرارات تتعلق بالحياة أو الموت أم يجب إبقاء التحكم البشري؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00518", "text": "ما هي مواعيد الألعاب المهمة لكرة القدم الأسبوع القادم في الدوري الإنجليزي؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00519", "text": "Which UAE ministry or official is responsible for AI and digital economy policies?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00520", "text": "كيف أختار حذاء ركض مناسب لنمط مشيتي (pronation)؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00521", "text": "هل يمكن للشركات استخدام نماذج الموافقة المجمعة (opt-out) أم يتطلب PDPL موافقة صريحة؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00522", "text": "ما الإرشادات الواجب اتباعها في المشاريع الحكومية لحفظ سرية بيانات الأشخاص؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00523", "text": "Who is responsible for ongoing monitoring and auditing of AI decision-making in government services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00524", "text": "ما المعايير المطلوبة لضمان السيطرة البشرية على قرارات الذكاء الاصطناعي المتعلقة بالقتل والحياة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00525", "text": "هل يمكن استخدام البيانات الاصطناعية لتعزيز الخصوصية مع الحفاظ على نفس الخصائص الإحصائية لبيئة الاختبار؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00526", "text": "كيف تدعم الإمارات البحث والتطوير المحلي في الذكاء الاصطناعي وبناء بنى تحتية مثل مراكز الحوسبة عالية الأداء؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00527", "text": "كيف أقدّم طلب تصحيح بياناتي الشخصية وما هي المستندات المطلوبة؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00528", "text": "هل يجب أن تكون تفسيرات القرارات التي يتخذها الذكاء الاصطناعي متاحة وسهلة الوصول ومجانية للمواطنين؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00529", "text": "What international AI governance groups is the UAE involved in?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00530", "text": "هل يجب أن تكون تفسيرات أنظمة الذكاء الاصطناعي متاحة مجانًا وبسهولة للمستخدمين؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00531", "text": "Is there an AI procurement policy in place yet, and who is preparing it?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00532", "text": "AI and human rights in the UAE — will the framework prevent harms to basic rights and human security?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00533", "text": "من هو وزير الدولة المسؤول عن الذكاء الاصطناعي والاقتصاد الرقمي في الإمارات؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00534", "text": "ما هي المبادئ الرئيسية التي تتبعها الإمارات لتنظيم الذكاء الاصطناعي مع حماية البيانات والخصوصية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00535", "text": "How does the UAE propose to ensure transparency and accountability in AI tools?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00536", "text": "ماذا تنص مبادئ الإمارات على حماية الخصوصية في أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00537", "text": "أين أجد محلات تبيع أدوات الخياطة عالية الجودة في أبوظبي؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00538", "text": "ماذا تنص المبادئ حول مساءلة أنظمة الذكاء الاصطناعي في القطاع الحكومي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00539", "text": "ما الإجراءات لحماية الفئات الضعيفة وضمان استفادتها من خدمات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00540", "text": "Can AI bias unfairly favor or discriminate against a group, and how is 'bias' defined in policy?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00541", "text": "What counts as a high-risk or 'significant individual decision' when AI affects a person's life?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00542", "text": "Does the charter set ethical oversight rules for government and private use of AI in the UAE?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00543", "text": "كيف نحدد من المخول له الوصول إلى بيانات الأفراد وما هي مسؤوليات موظفي حماية البيانات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00544", "text": "كيف أختار حذاء جري مناسب للمبتدئين وما الفرق بين حذاء الركض وحذاء التدريب؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00545", "text": "Which UAE institutions lead international AI partnerships and R&D collaborations?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00546", "text": "Can a government agency both build an AI system and operate it, or must those roles be separate?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00547", "text": "Are government entities fully subject to Federal Decree-Law No. 45 of 2021 or are there exemptions?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00548", "text": "How should civil servants handle personal data when using AI tools?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00549", "text": "Could an AI that uses social media data miss needy communities after a disaster?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00550", "text": "متى يُصنَّف برنامج يجمع الأدلة ويعدل طريقة عمله استنادًا للحالات السابقة كنظام ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00551", "text": "Does the UAE support global rules to prevent harmful or destabilizing AI developments?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00552", "text": "ما الإجراءات المتوقعة عند استخدام نظام ذكاء اصطناعي لاتخاذ قرارات مصيرية تتعلق بحياة الناس؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00553", "text": "Who in an organization should be allowed to access personal data collected by AI, and how do we define their responsibilities?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00554", "text": "How does the UAE view the role of AI in improving quality of life and public services?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00555", "text": "كيف نمنع أنظمة المراقبة الآلية من خطأ تفسير حركات مَرِيض متلازمة توريت كشبهات عند نقاط الحدود؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00556", "text": "هل يمكن استخدام بيانات تركيبية مُنشأة بالذكاء الاصطناعي لحماية الخصوصية عند مشاركة البيانات مع أطراف ثالثة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00557", "text": "كيف يمكن لمشغلي أنظمة الذكاء الاصطناعي تقييم سلوك النظام في ظروف غير متوقعة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00558", "text": "ماذا تطلب المبادئ الإماراتية بشأن تتبع العوامل التي أدت إلى قرار آلي مؤثر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00559", "text": "How can AI help farmers use less water and fertilizer while increasing yields?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00560", "text": "ما دور معهد الابتكار التكنولوجي وإتاحة نموذج Falcon في تعزيز التعاون والابتكار في مجتمع الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00561", "text": "ما هدف ميثاق الإمارات لتطوير واستخدام الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00562", "text": "ما هي متطلبات \"حفظ الخصوصية\" في الذكاء الاصطناعي حسب الدليل؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00563", "text": "How does the UAE contribute to global standards and policies for responsible AI?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00564", "text": "من يجب أن يعين ضابط حماية البيانات وهل هناك متطلبات تأهيلية لهذا المنصب؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00565", "text": "Which home espresso machine gives great crema without costing thousands?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00566", "text": "ما هي أهم التوصيات في إعلان تورنتو لحماية المساواة ومنع التمييز في أنظمة التعلم الآلي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00567", "text": "Are AI vendors required to allow testing, monitoring and auditing as part of procurement to ensure ongoing robustness?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00568", "text": "كيف تتعامل الإمارات مع الشراكات الدولية لوضع معايير أخلاقية للذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00569", "text": "ما الفرق بين قرض شخصي وقرض تمويل عقاري من ناحية الفائدة وفترات السداد؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00570", "text": "هل أستطيع إعادة استخدام وتكييف الوثيقة لأغراض تجارية وما شروط النسبة/الاعتماد المطلوبة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00571", "text": "What are simple ways to reduce screen time and improve sleep quality?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00572", "text": "What consent and safeguards are required before deploying AI systems that nudge people?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00573", "text": "هل يمكن للجهة الحكومية أن تطوّر نظامًا للذكاء الاصطناعي وتديره بنفسها أم يجب فصل الدورين؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00574", "text": "ما القطاعات ذات الأولوية لتطبيقات الذكاء الاصطناعي في الإمارات (الرعاية الصحية، المالية، النقل، الزراعة)؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00575", "text": "Can I republish and modify the UAE AI Ethics document for a company handbook?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00576", "text": "How do I treat a sprained ankle at home and when should I see a doctor?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00577", "text": "ما أفضل محرر صور بالذكاء الاصطناعي لتجميل الصور على الهاتف؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00578", "text": "What rights does a person have when affected by an AI decision in a government service?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00579", "text": "Can I transfer personal data outside the UAE and what safeguards are needed?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00580", "text": "ما النصائح لشراء حقيبة سفر متينة للرحلات الجوية الطويلة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00581", "text": "ما هي الجهات الإماراتية المسؤولة عن التعاون الدولي في مجال الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00582", "text": "What privacy-impact assessments are required before deploying algorithmic systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00583", "text": "Why does the Charter stress transparency and human judgment in AI?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00584", "text": "ما هو ختم علامة الإمارات للذكاء الاصطناعي (UAI) ومن سيمنحه للشركات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00585", "text": "How should AI systems notify affected individuals about important choices they will make, and what protections are required to avoid manipulating those users?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00586", "text": "Are humans required to oversee AI systems under UAE policy?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00587", "text": "How is the UAE making AI accessible to all parts of society?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00588", "text": "أين أجد معلومات التواصل بمكتب وزير الدولة للذكاء الاصطناعي ووزارة الخارجية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00589", "text": "Does the PDPL give me the right to have inaccurate personal data corrected or completed?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00590", "text": "Can a government agency be both a developer and an operator of an AI system?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00591", "text": "Does making an employee redundant qualify as an individually significant automated decision?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00592", "text": "Are there recommended assessments or steps to detect and mitigate dataset bias before releasing an AI service?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00593", "text": "How should public agencies ensure transparency and accountability when deploying AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00594", "text": "What rights do I have if an algorithm makes a decision about me, like automated profiling or loan denial?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00595", "text": "ما المعايير الواجب اتباعها للتأكد من شمولية ودقة مجموعات البيانات وعدم تحيزها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00596", "text": "ما هي رؤية الإمارات القيادية عالمياً في مجال الذكاء الاصطناعي من حيث الأخلاقيات والشفافية؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00597", "text": "Is it better to refinance a student loan at a private bank if interest rates have dropped?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00598", "text": "What is the UAE Charter for the Development and Use of AI and who does it protect?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00599", "text": "What counts as a 'critical decision' under UAE AI ethics?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00600", "text": "ما هي المعايير التي تجعل النظام يُصنَّف كنظام ذكاء اصطناعي بموجب هذه الإرشادات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00601", "text": "How does UAE policy address AI safety and risky systems?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00602", "text": "Do organizations need to appoint a Data Protection Officer (DPO) under the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00603", "text": "Is this AI ethics document mandatory for government agencies or just advisory best practices?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00604", "text": "كيف يمكن للذكاء الاصطناعي خفض استهلاك المياه والأسمدة مع رفع محصول المحاصيل؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00605", "text": "Where are the best late-night restaurants in Abu Dhabi for shawarma and desserts?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00606", "text": "كيف أتعلم أساسيات الجولف وما المعدات الأولية التي أحتاجها؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00607", "text": "هل يغطي قانون PDPL بيانات المعاملات التجارية بين شركات دولية؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00608", "text": "Can I appeal an automated decision made about me and ask for a human review?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00609", "text": "How are UAE institutions supporting AI applications in fintech, healthcare, and green tech?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00610", "text": "أين أفضل المطاعم لتجربة المأكولات البحرية في دبي على مستوى متوسط السعر؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00611", "text": "ما الإرشادات العملية لجعل تطبيقات الذكاء الاصطناعي صديقة للبيئة وتحترم الخصوصية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00612", "text": "data freshness AI model drift monitoring?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00613", "text": "Do I need permission or attribution to use parts of the guidelines in a commercial product?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00614", "text": "ما هي حقوق الاعتراض على معالجة البيانات، وكيف أقدّم طلب اعتراض عملياً؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00615", "text": "How can a public agency ensure AI accountability and transparency in services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00616", "text": "ما المقصود بآلية «تحدي الجمهور» وكيف تؤدي الشكاوى المتكررة إلى فتح تحقيق في آلية اتخاذ القرار؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00617", "text": "Which running shoes are best for a person with flat feet and mild overpronation?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00618", "text": "ما أشهر مراكز التزلج الداخلي في الإمارات وهل تحتاج الحجز المسبق؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00619", "text": "ما أفلام الأكشن الحديثة الممتعة التي تستحق المشاهدة مع العائلة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00620", "text": "هل توجد إرشادات لتقليل استهلاك الطاقة وانبعاثات الكربون عند تدريب أو تشغيل نماذج الذكاء الاصطناعي في مشاريع الحكومة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00621", "text": "ما هي الإجراءات المقترحة لضمان التعايش السلمي بين البشر والذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00622", "text": "ما دور الإمارات الدولي في سد الفجوة الرقمية وتعزيز بيئة رقمية شاملة ومستدامة؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00623", "text": "من يحق له الوصول إلى بيانات الأفراد داخل جهة حكومية وفق بروتوكولات الخصوصية الوطنية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00624", "text": "هل يمكن للشخص سحب موافقته على معالجة البيانات الشخصية، وما الآثار القانونية لهذا السحب؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00625", "text": "أين أجد مستندات Microsoft أو GSMA أو OECD أو لجنة الخبراء الأوروبية حول أخلاقيات الذكاء الاصطناعي المذكورة في الدليل؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00626", "text": "Are there guidelines in the UAE AI charter for correcting AI bias and ensuring transparent use by government agencies?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "train-00627", "text": "When must a human operator be involved in life-or-death decisions made with AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00628", "text": "أين أجد مصادر أو مراجع حول الحفاظ على الخصوصية في أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00629", "text": "What does the policy say about involving the public and stakeholders in AI governance?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00630", "text": "أين أجد استراتيجيات الذكاء الاصطناعي وأدلة السلوك لدول مثل فرنسا والولايات المتحدة واليابان وكندا؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00631", "text": "Is the Office of the Minister of State for AI responsible if someone misuses the AI ethics guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00632", "text": "كيف يعمل الإمارات على ضمان وصول تقنيات الذكاء الاصطناعي لجميع فئات المجتمع؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00633", "text": "Which categories of personal data are considered sensitive under Federal Decree-Law No. 45 of 2021?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00634", "text": "من يتحمل المسؤولية عند إساءة استخدام مبادئ وإرشادات أخلاقيات الذكاء الاصطناعي، مكتب الذكاء الاصطناعي أم المستخدم؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00635", "text": "When does a software aid for judges become classified as an AI system?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00636", "text": "What's a binge-worthy crime drama series on Netflix right now?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00637", "text": "هل الوثيقة تشير إلى بيان تورونتو لحماية الحق في المساواة وعدم التمييز في نظم التعلم الآلي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00638", "text": "Under PDPL, how long does a controller have to respond to a data subject's correction or erasure request?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00639", "text": "هل يشترط الميثاق التعايش السلمي مع الذكاء الاصطناعي وكيف يضمن ذلك عدم الإساءة للأمن الإنساني؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00640", "text": "ما المبادرات الإماراتية التي تستخدم الذكاء الاصطناعي لمواجهة التحديات البيئية مثل تغير المناخ وإدارة النفايات؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00641", "text": "ما هي المبادئ الأساسية التي تعتمدها الإمارات في تطوير وحوكمة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00642", "text": "Which major tech companies and governments have published responsible AI principles I should read?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00643", "text": "مثال عملي: إذا طوّرت شركة نظام تعرف على الوجوه وباعته لقوات حدودية، من المسؤول طبقًا للمبادئ؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00644", "text": "من يُسمح له بالاطلاع على بيانات الأفراد داخل أنظمة الذكاء الاصطناعي الحكومية وما هي شروط ذلك؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00645", "text": "كيف أستطيع معرفة العوامل التي اعتمدت عليها خوارزمية عند رفض طلبي للحصول على بطاقة ائتمان؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00646", "text": "Can I ask for an explanation of how an AI system reached a recommendation about me?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00647", "text": "ما هي المبادئ الأساسية لأخلاقيات الذكاء الاصطناعي في الإمارات وماذا تعني؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00648", "text": "ما الوسائل المتاحة لتلقي ردود فعل من الجمهور حول أنظمة الذكاء الاصطناعي التي قد تنتهك الحقوق الأساسية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00649", "text": "Is source code required to be public for AI systems used by the government, and when is it acceptable to release only explanations instead?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00650", "text": "Explain what 'decision journey' logging means for an AI diagnostic tool and what inputs need to be recorded.", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00651", "text": "Are public-sector AI systems required to publish source code or explanations for non-sensitive public service uses?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00652", "text": "هل يشترط الميثاق معايير سلامة للأنظمة الذكية وإمكانية تعديل أو إزالة الأنظمة ذات المخاطر؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00653", "text": "What counts as a 'system' under the AI guidelines — just software, or does hardware count too?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00654", "text": "هل يَجب وجود إشراف بشري على أنظمة الذكاء الاصطناعي بحسب الميثاق؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00655", "text": "Will AI services be made available fairly to all communities in the UAE?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00656", "text": "How do we determine if a series of automated choices by a system creates large-scale effects (e.g., content recommendation bias)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00657", "text": "ما دور منصات مثل MGX و2PointZero في تطوير البنية التحتية وأشباه الموصلات للذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00658", "text": "ما الإرشادات المتاحة للتعامل مع بيانات الأفراد عند استخدام الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00659", "text": "كيف يمكن للمستخدم سحب موافقته على معالجة بياناته الشخصية؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00660", "text": "Any tips to reduce seasonal allergies without medication?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00661", "text": "Are there national programs to train UAE residents and professionals in AI skills?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00662", "text": "كيف يجب على المؤسسة توثيق تعريف العدالة الذي تختاره لتطبيق ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00663", "text": "Why did TII release the Falcon LLM open source and how does it help international collaboration?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "train-00664", "text": "What restrictions are there on using the toolkit content for private sector AI projects?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00665", "text": "How does a chatbot become classified as an AI system rather than just an automated tool?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00666", "text": "What's the typical weather like in the UAE during National Day in early December?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00667", "text": "policy: recruiting participants from different demographics for AI development — what are the recommended practices?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00668", "text": "ما الذي ينص عليه ميثاق الإمارات بشأن حوكمة المسؤولية والمساءلة في الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00669", "text": "My Python script is raising a KeyError when accessing a dictionary—how can I fix it?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00670", "text": "What is the UAE charter on AI and who does it protect?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00671", "text": "ما أنواع السجلات التي يجب الاحتفاظ بها لجعل قرارات الذكاء الاصطناعي قابلة للتتبع والمساءلة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00672", "text": "ما المقصود بالانحياز أو التحيز ضد شخص أو مجموعة في أنظمة اتخاذ القرار الآلي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00673", "text": "What's the fastest route by train from London to Edinburgh and are there scenic stretches?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00674", "text": "Who is liable if I misuse the UAE AI Ethics Guidelines in my project?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00675", "text": "ما هي المصادر الرسمية التي تتناول حوكمة ومسؤولية الذكاء الاصطناعي في القطاع العام (حكومة المملكة المتحدة، Al NOW، IEEE)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00676", "text": "ما المقصود بمبدأ احترام خصوصية الناس في أنظمة الذكاء الاصطناعي الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00677", "text": "Where can I find international AI ethics guidelines referenced by UAE policymakers?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00678", "text": "ما المبادئ الإنسانية التي توجه تطوير واستخدام الذكاء الاصطناعي لدعم الصالح العام؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "train-00679", "text": "How can I save an extra $200 a month on groceries without eating boring food?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00680", "text": "كيف يمكن للأطراف المعنية الانضمام للحوار والمساهمة في تطوير هذه الإرشادات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00681", "text": "Which AI photo editor app gives the best automatic background removal on mobile?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00682", "text": "What requirements exist for ongoing monitoring and tuning of AI models used in critical public services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00683", "text": "How should AI systems used at border checkpoints be updated to avoid repeatedly flagging the same person for a harmless medical condition?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00684", "text": "ما هي الإجراءات الموصى بها للكشف عن التحيز في مجموعات البيانات والتخفيف منه؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00685", "text": "ما هو هدف الإمارات في مجال الذكاء الاصطناعي حتى عام 2031؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00686", "text": "من هم اللاعبون المحليون الرئيسيون في منظومة الذكاء الاصطناعي الإماراتية وما القطاعات التي يركزون عليها؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00687", "text": "What are family-friendly beaches near Dubai Marina that aren’t too crowded?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00688", "text": "هل يمكن للذكاء الاصطناعي اتخاذ قرارات حياة أو موت بمفرده؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00689", "text": "كيف تساهم الإمارات في الحد من الفجوة الرقمية وضمان بيئة رقمية شاملة وآمنة؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00690", "text": "What principles ensure AI development stays aligned with human values and societal benefit?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00691", "text": "كيف أطبخ رز بأعواد القرفة والهيل ليصبح منفوشًا وغير لزج؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00692", "text": "هل توجد قائمة تقييم موثوقة يجب تبنيها عند تطوير أو نشر نظام ذكاء اصطناعي في الجهات الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00693", "text": "ما هي المدة التي يلتزم خلالها المسؤول بالإبلاغ عن اختراق البيانات إلى الجهات المختصة؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00694", "text": "على أي أنظمة ذكاء اصطناعي تنطبق هذه الوثيقة — كل الأنظمة أم فقط تلك التي تتخذ قرارات مهمة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00695", "text": "Can the UAE support joint R&D projects and knowledge exchange on emerging AI technologies?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00696", "text": "What steps should developers take to detect and reduce bias in training datasets?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00697", "text": "Can a data subject request correction of inaccurate personal data under PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00698", "text": "كيف يمكن للأنظمة الذكية تعديل معاييرها الأخلاقية مع تغير القيم المجتمعية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00699", "text": "What are the UAE's main principles for its national AI policy and priorities?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "train-00700", "text": "Are there guidelines in the UAE for protecting citizens' rights when AI is developed or used?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00701", "text": "أي أنواع التوثيق يجب أن يحتفظ بها مطورو نظم الذكاء الاصطناعي عند استخدامها في قرارات عالية الخطورة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00702", "text": "ما دور الإمارات في مبادرات مثل مجموعة أصدقاء هيروشيما والهيئة الاستشارية العليا للأمم المتحدة بشأن الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00703", "text": "How do I marinate salmon so it stays moist when pan-seared?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00704", "text": "ما هي متطلبات الموافقة بموجب قانون حماية البيانات الاتحادي الإماراتي رقم 45 لسنة 2021؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "train-00705", "text": "هل هناك إرشادات تسمح للأشخاص المخولين بإلغاء قرار اتخذه نظام ذكاء اصطناعي يؤثر على حياة مواطن؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00706", "text": "إذا تسببت أداة ذكاء اصطناعي في ضرر، ما الإجراءات التصحيحية والتحقيقية المتوقعة وفق الإرشادات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00707", "text": "هل يجب على مطوري الذكاء الاصطناعي استشارة الفئات المتأثرة إذا كانت فرضياتهم قد تكون خاطئة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00708", "text": "What are the key ethical principles governments should enforce for AI systems?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00709", "text": "كيف يرتبط ميثاق الذكاء الاصطناعي بأهداف استراتيجية الإمارات للذكاء الاصطناعي وخطة 2031؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00710", "text": "ما تعريف المؤسسة للعدالة المطلوب توثيقه وكيف نحدد المجموعات السكانية المعرضة للخطر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00711", "text": "What measures should AI operators take to protect systems from attacks like DeepLocker?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00712", "text": "ما هي أدوات البرمجة الأساسية التي يجب أن أعرفها لتعلم تطوير الويب؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00713", "text": "ما الضمانات المطلوبة عند استخدام أجهزة أو برمجيات لاتخاذ قرارات قانونية مصيرية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00714", "text": "Who is considered an AI institution if a company builds a facial recognition tool and a border agency uses it?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00715", "text": "هل من وصفة صحية لحلوى قليلة السكر مناسبة لمرضى السكري؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00716", "text": "How can AI systems be scheduled or located to lower their carbon footprint?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00717", "text": "What are examples of laws or municipal rules about automated hiring tools like New York City's local law?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00718", "text": "هل يلتزم البنك بمراجعة بشرية لقرارات الذكاء الاصطناعي المتعلقة بمنح القروض وتحديد الفائدة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00719", "text": "What steps are recommended to assess and mitigate discrimination risk before deploying an AI service?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00720", "text": "هل تُصنّف الجهة التي تشتري نظام ذكاء اصطناعي وتستخدمه كمشغّل أم كمطوّر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00721", "text": "كيف يمكن لمشغلي الذكاء الاصطناعي ضمان استقرار النماذج عند نشرها في بيئات ديناميكية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00722", "text": "What safeguards are required when AI is used with children or other vulnerable groups and consent can't be obtained?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00723", "text": "What safeguards are recommended for AI systems used in life-or-death decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00724", "text": "ما المقصود بـ«نظام» في الإرشادات؟ هل يشمل الأجهزة بالإضافة إلى البرمجيات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00725", "text": "هل توصي تقارير الاتحاد الأوروبي والولايات المتحدة وسنغافورة وفرنسا بمبادئ مشتركة لحوكمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00726", "text": "هل يجوز الاعتماد على نظام ذكي في الحكم بإدانة جنائية قد تصل عقوبتها إلى السجن المؤبد؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00727", "text": "هل تتعاون الدولة مع دول أخرى في مشاريع بحث وتطوير وتبادل أفضل الممارسات في مجال الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "train-00728", "text": "هل توجد سياسة شراء/تعاقد للذكاء الاصطناعي الآن ومن يقوم بتطويرها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00729", "text": "What are the top-rated malls in Dubai for designer shopping and dining?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00730", "text": "ماذا يقصد بأن الوحدة الوظيفية قادرة على التفكير المنطقي والتعلّم وتحسين ذاتها؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00731", "text": "Do processors have direct liabilities under the PDPL or only controllers?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00732", "text": "Are AI systems used for important government decisions required to undergo external audits?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00733", "text": "How should government AI systems be updated to avoid repeating false positives (e.g., repeatedly flagging someone with a medical tic at a border)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00734", "text": "equal access to AI benefits — what policies exist to include underserved groups?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "train-00735", "text": "How can AI systems used for job applicant screening be adjusted to avoid bias?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00736", "text": "ما الفرق بين الجهة المطوِّرة والجهة المشغِّلة للنظام عند شراء حل ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00737", "text": "Can an AI system be allowed to make life-or-death decisions in healthcare or policing according to these guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00738", "text": "ما نصائح الإمارات بشأن الحفاظ على الخصوصية عند استخدام الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00739", "text": "How can citizens or external parties provide feedback if an AI system may violate fundamental rights?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00740", "text": "هل تضمن الميثاق منع التحيز وحماية خصوصية الأفراد عند تطوير الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "train-00741", "text": "ما هي المبادرات والدعم المتوفر لحاضنات الشركات والباحثين في مجال الذكاء الاصطناعي داخل الإمارات؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00742", "text": "كيف أقدّم طعناً مجدياً على قرار آلي؟ هل يجب علي تعبئة نموذج يشرح سبب الاستئناف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00743", "text": "Which entities are outside the scope of the federal PDPL because they are covered by sectoral laws or free zone regimes?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "train-00744", "text": "Are there required appeal mechanisms when an AI makes significant decisions about citizens?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00745", "text": "من يتحمل المسؤولية عند حدوث ضرر بسبب نظام ذكاء اصطناعي في جهة حكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00746", "text": "أي وزارة إماراتية تتولى الشؤون الخارجية المتعلقة بسياسة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00747", "text": "أين أجد تعريفات ونطاق تطبيق أخلاقيات الذكاء الاصطناعي في المستند؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00748", "text": "ما الإجراءات لتصحيح نظام توظيف آلي يميز ضد فئات سكانية معينة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00749", "text": "Does a company that only tunes and maintains AI models qualify as an AI developer?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00750", "text": "ما أمثلة على استخدام الذكاء الاصطناعي لتخفيض استهلاك الطاقة في مراكز البيانات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00751", "text": "كيف نوثق المجموعات الديموغرافية المعرضة للضرر عند تطوير نظام ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00752", "text": "كيف يُفترض بمشغلي أنظمة الذكاء الاصطناعي توثيق وقابلية تكرار النتائج عبر التشغيل والتوثيق؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00753", "text": "What makes a government service qualify as an AI system rather than a regular automated tool?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00754", "text": "كيف أتعامل مع توتر قبل مقابلة عمل؟ هل هناك تمارين تنفس مفيدة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00755", "text": "هل لديّ خيار الانسحاب إذا اتخذ الذكاء الاصطناعي قرارًا مهمًا بحقي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "train-00756", "text": "Are the AI Ethics Guidelines final or will they be updated in the future?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "train-00757", "text": "كيف أكتب دالة في بايثون لتحويل قائمة من الأرقام إلى قائمة بها مربعاتها؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "train-00758", "text": "هل من الأفضل استخدام نماذج أصغر في مشاريع الدولة لتقليل استهلاك الطاقة وما هي المحاذير؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "train-00759", "text": "كيف تعمل الإمارات على وضع أطر ومعايير أخلاقية للذكاء الاصطناعي مع شركائها الدوليين؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "train-00760", "text": "Where are the best shopping malls in the UAE for electronics and late-night dining?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "train-00761", "text": "How does the UAE approach international partnerships on ethical AI and shared standards?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}

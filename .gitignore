@@ -19,3 +19,5 @@ eval/results/*.local.json
 data/*.db
 eval/results/latest.json
 eval/results/drift-report.md
+ml/artifacts/
+mlruns/

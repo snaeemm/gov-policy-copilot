@@ -25,6 +25,7 @@ from typing import Any
 from gov_copilot.agent.orchestrator import Copilot
 from gov_copilot.agent.review_queue import ReviewQueue
 from gov_copilot.agent.schemas import AgentResult
+from gov_copilot.classifier import make_classifier
 from gov_copilot.config import get_settings
 from gov_copilot.guardrails_azure import make_guardrails
 from gov_copilot.ingestion.text import normalize_arabic
@@ -80,7 +81,12 @@ def make_judges() -> tuple[Any, Any]:
 async def main(limit: int | None, gate: bool) -> int:
     s = get_settings()
     copilot = Copilot(
-        s, make_client(s), HybridRetriever(s), ReviewQueue(":memory:"), make_guardrails(s)
+        s,
+        make_client(s),
+        HybridRetriever(s),
+        ReviewQueue(":memory:"),
+        make_guardrails(s),
+        make_classifier(s),
     )
     retriever = HybridRetriever(s)
     golden = load("golden.jsonl")[:limit]

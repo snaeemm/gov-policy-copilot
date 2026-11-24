@@ -27,14 +27,41 @@ dependencies = [
   "pypdf>=7.1.1",
   "pillow>=13.0.0",
   "pypdfium2>=5.15.2",
+  # Query classifier runtime (ONNX, no torch in the serving image)
+  "onnxruntime>=1.19",
+  "tokenizers>=0.20",
+  "huggingface-hub>=0.25",
+  "numpy>=1.26",
 ]
 
 [project.optional-dependencies]
 rerank = ["sentence-transformers>=3.0"]
 eval = ["azure-ai-evaluation>=1.0"]
+# Training the query classifier (CPU). Not installed in the serving image.
+ml = [
+  "torch>=2.4",
+  "transformers>=4.45",
+  "datasets>=3.0",
+  "scikit-learn>=1.5",
+  "mlflow>=2.16",
+  "azureml-mlflow>=1.57",
+  "azure-ai-ml>=1.20",
+  "matplotlib>=3.9",
+  "onnx>=1.16",
+  "accelerate>=0.34",
+]
 
 [dependency-groups]
 dev = ["pytest>=8", "pytest-asyncio>=0.24", "pytest-cov>=5", "ruff>=0.6", "mypy>=1.11", "respx>=0.21"]
+
+# CPU-only torch wheels on Linux (GitHub runners): avoids multi-GB CUDA downloads.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
 
 [build-system]
 requires = ["hatchling"]
@@ -52,6 +79,8 @@ ignore = ["S101", "RUF001", "RUF002", "RUF003"]  # Arabic text is intentional
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S", "N"]
 "src/gov_copilot/agent/schemas.py" = ["E501"]
+"ml/**" = ["S311", "S603", "S607", "E501"]  # offline training scripts: seeded RNG, az/git CLI
+"scripts/build_classifier_dataset.py" = ["S311", "E501"]
 
 [tool.mypy]
 python_version = "3.12"

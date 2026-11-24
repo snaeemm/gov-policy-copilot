@@ -48,3 +48,10 @@ Every document carries a `classification` label (`public` / `internal` / `confid
 | ocr | 0 | 28 | Mostly "Al" for "AI" in the English Charter and Ethics PDFs (a known OCR confusion) |
 | length | 0 | 5 | Cover/title-page chunks |
 | language | 0 | 1 | Arabic Ethics guide chunk dominated by English bibliography references |
+
+## Classifier dataset (M8)
+Bilingual query-routing dataset for the fine-tuned classifier - full card: [data/classifier/README.md](../data/classifier/README.md).
+- 762 train / 162 val / 228 test questions, EN and AR, 5 labels.
+- Generated with gpt-5-mini from the indexed public chunks (same- and cross-language), plus synthetic data-protection topic questions and generic off-topic questions (~$0.07 LLM cost).
+- Golden and red-team evaluation questions are placed **only in the test split** (leakage control); normalised-text dedupe.
+- No personal data; derived from public documents; released under the repo licence.

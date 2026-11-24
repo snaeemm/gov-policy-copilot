@@ -36,3 +36,17 @@
 - Same model family generates and judges answers (judge bias).
 - GlobalStandard inference may leave the UAE (ADR-0007).
 - Relevance scores penalize short, precise answers.
+
+## Query classifier (secondary model, M8)
+| | |
+|---|---|
+| Model | `gov-policy-query-classifier` v1 (Azure ML registry), fine-tuned from `distilbert-base-multilingual-cased` (Apache-2.0) |
+| Task | 5-way routing: charter / international_policy / ethics / data_protection / out_of_scope |
+| Languages | Arabic, English |
+| Training | 4 epochs, lr 4e-5, max_len 64, CPU (local / GitHub Actions), MLflow-tracked in Azure ML |
+| Serving | ONNX int8 (135.8 MB) via onnxruntime inside the Container App; `CLASSIFIER_ENABLED` flag (default off) |
+| Metrics (test) | accuracy EN 0.812 / AR 0.811; macro-F1 EN 0.810 / AR 0.800; in-scope accuracy 0.961 |
+| Use in system | Confident out-of-scope (≥ 0.9) answered without an LLM call; label shown in UI/API and logged for drift monitoring |
+| Not for | Safety filtering, legal classification, decisions about people |
+| Limitations | Synthetic training questions; Charter vs International Policy confusion; jailbreaks phrased as policy questions look in-scope (handled by Content Safety) |
+| Details | [ADR-0013](adr/0013-query-classifier-azure-ml.md), [evaluation report](evaluation-report.md#query-classifier-m8), [dataset card](../data/classifier/README.md) |

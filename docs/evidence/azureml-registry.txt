@@ -1,0 +1,24 @@
+# Azure ML evidence (captured 2026-11-24)
+
+workspace: mlw-govcopilot-dev  location: uaenorth  resource group: rg-govcopilot-dev
+compute targets: none (training runs on GitHub-hosted CPU runners)
+online endpoints: none (served in-container via onnxruntime)
+
+## Model registry
+- gov-policy-query-classifier v1  type=custom_model  created=2026-11-24 13:40Z
+    base_model: distilbert-base-multilingual-cased
+    framework: onnxruntime
+    int8_accuracy: 0.833
+    labels: charter,international_policy,ethics,data_protection,out_of_scope
+    mlflow_run_id: 66c24e17-47cb-4f5a-8481-0dc6582fe4a0
+    repo: https://github.com/snaeemm/gov-policy-copilot
+    test_accuracy_ar: 0.811
+    test_accuracy_en: 0.812
+    test_macro_f1_ar: 0.800
+    test_macro_f1_en: 0.810
+
+## MLflow runs (experiment gov-policy-query-classifier)
+- run 66c24e17-47cb-4f5a-8481-0dc6582fe4a0 (distilbert-mbert-e4) status=FAILED
+    params: base_model=distilbert-base-multilingual-cased, epochs=4, lr=4e-05, max_len=64, n_train_balanced=2060
+    metrics: test_en_accuracy=0.812, test_en_macro_f1=0.810, test_ar_accuracy=0.811, test_ar_macro_f1=0.800, test_overall_in_scope_accuracy=0.961, int8_all_accuracy=0.833
+    artifacts: confusion_matrix.png, metrics.json, model

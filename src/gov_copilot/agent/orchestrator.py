@@ -1,5 +1,6 @@
 """Gov Policy Copilot agent: plan -> retrieve -> answer -> self-check -> respond or escalate."""
 
+import asyncio
 import json
 import logging
 import re
@@ -28,6 +29,7 @@ from gov_copilot.agent.schemas import (
     Verification,
 )
 from gov_copilot.agent.tools import PolicyTools, format_sources
+from gov_copilot.classifier import Classification, Classifier
 from gov_copilot.config import Settings
 from gov_copilot.guardrails import Guardrails, NoopGuardrails
 from gov_copilot.ingestion.chunker import count_tokens
@@ -64,8 +66,10 @@ class Copilot:
         retriever: HybridRetriever,
         review_queue: ReviewQueue,
         guardrails: Guardrails | None = None,
+        classifier: Classifier | None = None,
     ) -> None:
         self.s = settings
+        self.classifier = classifier
         self.client = client
         self.model = chat_model(settings)
         self.kw = completion_kwargs(self.model)
@@ -120,6 +124,7 @@ class Copilot:
         usage = Usage()
         lang: Language = "ar" if detect_language(question) == "ar" else "en"
         masked_q = await self.guard.mask_pii(question, lang)
+        routed: Classification | None = None
 
         def final(answer: str, outcome: Outcome, **extra: Any) -> Event:
             usage.cost_usd = self._cost(usage)
@@ -133,6 +138,7 @@ class Copilot:
                 model=self.model,
                 latency_ms=int((time.perf_counter() - t0) * 1000),
                 usage=usage,
+                classifier=routed,
                 **extra,
             )
             # Only PII-masked text is ever logged.
@@ -153,7 +159,8 @@ class Copilot:
                     if result.verification
                     else None,
                     "language": lang,
-                    "classifier_label": None,  # populated by the M8 query classifier
+                    "classifier_label": routed.label if routed else None,
+                    "classifier_confidence": routed.confidence if routed else None,
                 },
             )
             span = trace.get_current_span()
@@ -171,6 +178,17 @@ class Copilot:
                 span.set_attribute("copilot.blocked_reason", guard_in.reason or "")
                 yield final(BLOCKED[lang], Outcome.BLOCKED)
                 return
+
+            if self.classifier is not None:
+                yield {"type": "status", "step": "routing"}
+                with tracer.start_as_current_span("step.classify") as cspan:
+                    routed = await asyncio.to_thread(self.classifier.predict, question)
+                    cspan.set_attribute("copilot.classifier.label", routed.label)
+                    cspan.set_attribute("copilot.classifier.confidence", routed.confidence)
+                if not routed.in_scope and routed.confidence >= self.s.classifier_oos_threshold:
+                    # Confident out-of-scope: answer without any LLM call (cost + latency saving).
+                    yield final(OUT_OF_SCOPE[lang], Outcome.OUT_OF_SCOPE)
+                    return
 
             yield {"type": "status", "step": "planning"}
             with tracer.start_as_current_span("step.plan"):

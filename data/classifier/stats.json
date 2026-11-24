@@ -1,0 +1,64 @@
+{
+  "train": {
+    "n": 762,
+    "by_label_language": {
+      "ethics/en": 206,
+      "charter/en": 42,
+      "international_policy/ar": 49,
+      "out_of_scope/en": 53,
+      "ethics/ar": 206,
+      "charter/ar": 42,
+      "out_of_scope/ar": 53,
+      "data_protection/en": 31,
+      "international_policy/en": 49,
+      "data_protection/ar": 31
+    },
+    "by_source": {
+      "corpus": 594,
+      "synthetic_oos": 106,
+      "synthetic_topic": 62
+    }
+  },
+  "val": {
+    "n": 162,
+    "by_label_language": {
+      "ethics/en": 44,
+      "out_of_scope/ar": 11,
+      "ethics/ar": 44,
+      "charter/en": 9,
+      "data_protection/ar": 7,
+      "out_of_scope/en": 11,
+      "international_policy/ar": 10,
+      "charter/ar": 9,
+      "data_protection/en": 7,
+      "international_policy/en": 10
+    },
+    "by_source": {
+      "corpus": 126,
+      "synthetic_oos": 22,
+      "synthetic_topic": 14
+    }
+  },
+  "test": {
+    "n": 228,
+    "by_label_language": {
+      "ethics/ar": 44,
+      "out_of_scope/en": 22,
+      "charter/en": 24,
+      "international_policy/en": 20,
+      "charter/ar": 22,
+      "ethics/en": 44,
+      "data_protection/ar": 7,
+      "out_of_scope/ar": 16,
+      "international_policy/ar": 22,
+      "data_protection/en": 7
+    },
+    "by_source": {
+      "corpus": 126,
+      "redteam": 16,
+      "synthetic_oos": 22,
+      "golden": 50,
+      "synthetic_topic": 14
+    }
+  }
+}

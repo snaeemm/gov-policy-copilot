@@ -1,0 +1,162 @@
+{"id": "val-00000", "text": "Who is responsible if an AI system bought from a vendor causes harm — the purchaser or the original developer?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00001", "text": "ما هي أفضل طرق تنظيف الفرن المدمج دون استخدام مواد كيميائية قوية؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00002", "text": "How should AI operators test resilience against attacks like the DeepLocker example?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00003", "text": "ما هي الإجراءات المتوقعة إذا اشتكى الأطباء من أن تطبيق ذكاء اصطناعي لتقييم الأعراض يفوّت علامات خطيرة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00004", "text": "What transparency or explainability rules exist so AI decisions can be understood?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "val-00005", "text": "كيف أتعلم السباحة بسرعة وما هي التمارين الأساسية للمبتدئين؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00006", "text": "أين أجد قوانين حماية البيانات في الاتحاد الأوروبي المتعلقة بالمعالجة الآلية للبيانات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00007", "text": "ما هي التقارير الدولية حول أخلاقيات الذكاء الاصطناعي المشار إليها في هذه الوثيقة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00008", "text": "كيف نضمن إشراك أفراد من خلفيات ديموغرافية متنوعة في تصميم ونشر أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00009", "text": "أريد اقتراحات لهدايا عيد ميلاد صديق مراهق يحب الرياضيات والتكنولوجيا وبميزانية محدودة", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00010", "text": "هل تتطلب معالجة البيانات الحساسة موافقة صريحة أم يمكن الاعتماد على أساس قانوني آخر؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00011", "text": "هل يمكن للشكاوى الجماعية أن تؤدي إلى مراجعة نظام اتخاذ قرار قائم على الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00012", "text": "What's a good gift idea for someone who loves baking but already has all the common gadgets?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00013", "text": "UAE AI policy goals — leadership, ethics, transparency?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "val-00014", "text": "هل مبادئ أخلاقيات الذكاء الاصطناعي في الإمارات نهائية أم ستخضع لمراجعات مستقبلية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00015", "text": "ما أفضل الممارسات لتنظيم ملفات مشروع برمجي في Git وGitHub؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00016", "text": "كيف يمكن تدريب نماذج الذكاء الاصطناعي مع تقليل الاعتماد على البيانات الحساسة أو الشخصية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00017", "text": "كيف تدعم الإمارات تطوير تقنيات الذكاء الاصطناعي محلياً — مراكز أبحاث أو تمويل أو برامج حضانة؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "val-00018", "text": "هل يجب على الجهات الاحتفاظ بخطط طوارئ واختبارها وتحديد عتبات قبول للنتائج عند إدارة أنظمة ذات مخاطر سلامة عالية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00019", "text": "هل يمكن أن يعتبر عرض محتوى مختلف لمستخدمي موقع شهير تحيزًا واسع النطاق؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00020", "text": "كيف تخطط الدولة للتعامل مع التحيز الخوارزمي وضمان إنصاف الجميع عند استخدام تقنيات الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "val-00021", "text": "ما هي متطلبات الموافقة بموجب قانون حماية البيانات الشخصية الإماراتي (PDPL)؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00022", "text": "ما تمارين الإطالة الجيدة لآلام أسفل الظهر بعد الجلوس الطويل؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00023", "text": "هل يعتمد قرار توزيع المساعدات على وسائل التواصل قد يهمش مجتمعات لديها انتشار أقل للهواتف الذكية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00024", "text": "ما الإجراءات التعاقدية التي ينبغي إدراجها عند شراء نظام ذكاء اصطناعي لضمان إمكانية الاختبار والمراقبة لاحقًا؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00025", "text": "ما هي المبادئ التوجيهية الستة التي تعتمدها الإمارات في سياسة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "val-00026", "text": "Can an employee withdraw consent for their employer to process payroll data, and what happens next?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00027", "text": "What are the main obligations of data controllers under the UAE PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00028", "text": "What privacy-by-design requirements should AI systems follow in the UAE?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00029", "text": "كيف تضمن الدولة أن تقنيات الذكاء الاصطناعي تحمي الأمن وحقوق الإنسان؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "val-00030", "text": "هل يعتبر الشات بوت القائم على قواعد محددة ذكاءً اصطناعيًا إذا لم يتعلم من التفاعلات السابقة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00031", "text": "هل تعتبر الجهة التي تشتري بيانات لاستخدامها في نظام ذكاء اصطناعي \"مؤسسة\" بموجب هذا التعريف؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00032", "text": "training data representativeness guidance for AI — what checks should operators run?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00033", "text": "sources on AI and data protection for government use (reports, standards, white papers)", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00034", "text": "Are public-sector AI tools required to explain the reasons behind significant decisions and allow experts to review mistakes?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00035", "text": "What international AI policy documents influenced the UAE AI ethics guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00036", "text": "ما هو نهج الإمارات وقيمها الأساسية في تنظيم وتوجيه تطبيقات الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "val-00037", "text": "ما هو ميثاق الإمارات لتطوير واستخدام الذكاء الاصطناعي وما الحقوق التي يحميها للمجتمع؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "val-00038", "text": "What does the guideline on AI accountability cover in UAE policy?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00039", "text": "ما موقف الإمارات من المشاركة في المنتديات الدولية المتعلقة بالذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "val-00040", "text": "Guidance for monitoring and evaluating AI systems that use persuasive or emotional stimulation?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00041", "text": "ما المقصود بقرار ذو تأثير واسع النطاق يصدر عن نظام ذكاء اصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00042", "text": "لماذا يعطيني هذا الكود خطأ NullPointerException في جافا وكيف أصلحه؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00043", "text": "ما هي نصائح لتنظيف وصيانة قدر الضغط لمنع تراكم الروائح؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00044", "text": "ما المبادئ الإرشادية لجعل أنظمة الذكاء الاصطناعي عادلة ومنصفة وفق الدليل؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00045", "text": "Are there any good family-friendly hiking trails near Dubai that are easy to access?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00046", "text": "AI transparency requirements UAE — key principles and practical guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00047", "text": "How should AI operators design systems to keep monitoring whether they still meet intended purposes?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00048", "text": "Does the PDPL apply to companies outside the UAE that process UAE residents' personal data?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00049", "text": "ما معنى اتباع نهج وقاية من المخاطر عند تطوير أنظمة الذكاء الاصطناعي في الجهات الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00050", "text": "كيف أبدأ مشروعًا صغيرًا لبيع منتجات يدوية عبر الإنترنت وكم رأس المال المبدئي تقريبيًا؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00051", "text": "How do I request access to my personal data from a company covered by the PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00052", "text": "What are the key principles for fair and accountable AI in UAE government policy documents?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00053", "text": "Which government office handles international AI policy for the UAE?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "val-00054", "text": "contact information or title for the UAE Minister of State for AI and digital economy?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "val-00055", "text": "What is the UAE AI mark (UAI) and is it already available for commercial use?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00056", "text": "كيف يضمن الميثاق التوازن بين تشجيع الابتكار في الذكاء الاصطناعي والالتزام بالمعايير الأخلاقية والشفافية؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "val-00057", "text": "Where can I find the section about making AI systems transparent and accountable?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00058", "text": "What are the UAE's official ethical principles for AI and how many principles are there?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "val-00059", "text": "Who in an organization is responsible for making sure an AI system is fair and how should they be trained?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00060", "text": "ما الموقف الرسمي من إشراك المجتمع وأصحاب المصلحة في تطوير وحوكمة تقنيات الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00061", "text": "privacy protocols for AI data access and anonymization techniques?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00062", "text": "If a decision-support tool for judges learns from past cases and changes its behavior, does that classify it as AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00063", "text": "How can users revoke consent or report privacy issues with an AI service in the UAE?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00064", "text": "هل تشجّع السياسة اعتماد الذكاء الاصطناعي داخل الجهات الحكومية ودعم أبحاث وتطوير القطاع الخاص لحل تحديات حكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00065", "text": "What steps can we take if an employment AI is unfairly screening candidates from certain ethnicities?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00066", "text": "Is a chatbot that only uses scripted replies considered artificial intelligence?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00067", "text": "ما الممارسات المتوقعة للحفاظ على دقة البيانات (اكتمالها وتحديثها وملاءمتها للسياق) عند تصميم أنظمة تستخدم في قرارات مهمة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00068", "text": "Can an AI chatbot legally impersonate a human in phone calls, or must it identify itself to the person on the other end?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00069", "text": "ما الإجراءات المتاحة لضمان وصول أنظمة الذكاء الاصطناعي في التوظيف واستخدامها بشكل عادل بين جميع المجموعات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00070", "text": "متى يجب على مشغلي نماذج الذكاء الاصطناعي إعادة ضبط أو إعادة تدريب النماذج بسبب تغيرات بيئة التشغيل؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00071", "text": "ما هي واجبات مسؤول حماية البيانات الذي يُعيَّن بموجب PDPL؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00072", "text": "أين أجد فصل الإرشادات 2-3-3 بشأن جعل أنظمة الذكاء الاصطناعي تتسم بالشفافية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00073", "text": "هل نشر الوثيقة برخصة المشاع الإبداعي يعني موافقة أو مصادقة مجلس الإمارات للذكاء الاصطناعي والبلوك تشين على استخدامي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00074", "text": "هل يجوز لوكيل محادثة بالذكاء الاصطناعي انتحال صفة إنسان أثناء مكالمة هاتفية أم يلزم إبلاغ الطرف الآخر بأنه نظام آلي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00075", "text": "How should developers design AI systems to prevent data poisoning or model leakage?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00076", "text": "هل يجب على أنظمة الذكاء الاصطناعي في الجهات الحكومية الإفصاح عن العوامل التي اعتمدت عليها عند اتخاذ قرارات حاسمة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00077", "text": "كيف أطعّن على قرار آلي لدى جهة حكومية وما المعلومات المطلوبة مني؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00078", "text": "Which streaming services have the most extensive selection of classic movies right now?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00079", "text": "Which UAE ministries handle artificial intelligence and foreign affairs coordination?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "val-00080", "text": "كيف يمكن لمشغلي الذكاء الاصطناعي ضمان الوصول العادل لأنظمتهم عبر مجموعات مستخدمين مختلفة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00081", "text": "Does showing different content to users on a popular site qualify as large-scale bias?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00082", "text": "How should AI operators handle models trained on static data when deployed in changing environments?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00083", "text": "Example of AI reducing energy use in data centers—what did DeepMind do and what savings were achieved?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00084", "text": "هل يحق للفرد طلب مسح بياناته (حق النسيان) في جميع الحالات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00085", "text": "Can I ask why an automated decision denied my credit card application — what factors were considered?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00086", "text": "Does a rules-based chatbot count as AI if it doesn't learn from past interactions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00087", "text": "Who is accountable if an AI-driven government decision causes financial loss to a citizen?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00088", "text": "What should I look for when buying a used laptop for software development?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00089", "text": "How does the UAE ensure AI is used in ways that protect human rights and safety?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "val-00090", "text": "How should organizations ensure AI respects local social norms and values when deployed in the UAE?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00091", "text": "Should government agencies include diverse community members during AI design and deployment?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00092", "text": "ما هي واجبات مسؤول حماية البيانات (DPO) وفقًا للقانون الاتحادي رقم 45 لسنة 2021؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00093", "text": "Are there rules about letting AI make life-or-death or lethal force decisions?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00094", "text": "How can I check my credit score and improve it if it's below 650?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00095", "text": "What's a simple weeknight recipe for chicken stir-fry with vegetables and rice?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00096", "text": "ما هي حمايات حقوق المجتمع التي ينص عليها ميثاق الذكاء الاصطناعي في الإمارات؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "val-00097", "text": "What international AI ethics and policy reports informed the UAE guidelines?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00098", "text": "ما هي المؤسسات الإماراتية المشاركة في منظومة الابتكار بالذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "val-00099", "text": "هل يجب أن تتوفر آلية طعن أو مراجعة للمستفيدين من قرارات تعتمد على أنظمة الذكاء الاصطناعي الحكومية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00100", "text": "أين يمكنني الاطلاع على قسم التعاريف في إرشادات أخلاقيات الذكاء الاصطناعي الإماراتية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00101", "text": "كيف تسعى الإمارات لتكون رائدة عالمياً في الرقابة الأخلاقية على الذكاء الاصطناعي؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "val-00102", "text": "What does it mean to keep AI systems auditable and traceable in critical government services?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00103", "text": "AI ethics guidelines UAE — fairness, privacy, sustainability: what do they mean in practice?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00104", "text": "AI assurance ecosystem roadmap — which UK government document is recommended and where to access it?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00105", "text": "هل تُعتبر الجهة التي تقوم بصيانة وضبط النماذج الفنية مطورة للذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00106", "text": "Who is responsible for quality checks and external audits when an AI system makes important decisions in a government context?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00107", "text": "Which sectors in the UAE are being targeted for AI adoption (healthcare, finance, transport, agriculture)?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "val-00108", "text": "ما الإجراءات المطلوبة لضمان سلامة وأمن أنظمة الذكاء الاصطناعي ضد هجمات خبيثة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00109", "text": "Which local organizations and startups are driving AI research and adoption in the UAE (e.g., G42, AI71) and what sectors do they target?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "val-00110", "text": "ما المبادئ أو الوثائق التي توجه سياسة الإمارات في تطوير ونشر الذكاء الاصطناعي على المستوى الدولي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "val-00111", "text": "How does the UAE AI Charter say AI should protect human rights and public welfare?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "val-00112", "text": "كيف يربط الميثاق بين تطوير الذكاء الاصطناعي وتحسين جودة الحياة والتقدم المستدام؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "val-00113", "text": "UAE AI ethical oversight — what framework guides it?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "val-00114", "text": "How do UK and EU approaches to AI assurance and trustworthy AI compare (roadmap, White Paper, ethics guidelines)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00115", "text": "What are some smart ways to save for a house deposit if I'm self-employed?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00116", "text": "هل توجد توجيهات في الإمارات بشأن الأسلحة الذاتية والقرار بقتل أو إبقاء الحياة بيد أنظمة الذكاء الاصطناعي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00117", "text": "كيف أستأنف قرار حكومي اتخذته خوارزمية آلية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00118", "text": "ما هي حقوقي إذا تعرضت لقرار آلي أو ملفات تعريف آلي (profiling)؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00119", "text": "كيف تهدف الإمارات لاستخدام الذكاء الاصطناعي لتعزيز الابتكار وتحسين جودة الحياة؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-en"}
+{"id": "val-00120", "text": "ما هي طرق سهلة لتخزين الخضار الطازجة في الثلاجة لإبقائها طازجة لأطول فترة؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00121", "text": "ما هي الموجبات على المراقب والمعالج عند نقل بيانات شخصية خارج دولة الإمارات؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00122", "text": "How do I solve this algebra problem: 3(x - 2) + 4 = 2x + 9?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00123", "text": "How do I calculate the area of a triangle when I'm given two sides and the included angle?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00124", "text": "هل هناك وثائق رسمية تتناول الحق في المساواة وعدم التمييز في أنظمة التعلم الآلي؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00125", "text": "هل توجد برامج وطنية في الإمارات لتأهيل السكان والمهنيين في مجال الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "val-00126", "text": "How does the UAE aim to lead globally on ethical AI oversight?", "label": "charter", "language": "en", "source": "corpus:ai-charter-en"}
+{"id": "val-00127", "text": "ما دور مجلس الأمن السيبراني الإماراتي في تأمين بنية الذكاء الاصطناعي التحتية؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-en"}
+{"id": "val-00128", "text": "ما المدة المسموح بها للاحتفاظ بالبيانات قبل الحاجة لمراجعتها أو حذفها؟", "label": "data_protection", "language": "ar", "source": "synthetic_topic"}
+{"id": "val-00129", "text": "كيف يمكن للجهات الحكومية فرض آليات إنفاذ وإجراءات تصحيحية إذا تسببت نظم الذكاء الاصطناعي بضرر؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00130", "text": "How does the UAE plan to balance AI advancement with human values and tolerance?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "val-00131", "text": "What counts as a high-impact decision by an AI system?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00132", "text": "Are there legal compliance rules for AI development in the UAE?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "val-00133", "text": "How should authorities handle sensitive data like biometric or health information when training AI?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00134", "text": "What are simple breathing exercises to help reduce anxiety before a presentation?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00135", "text": "What are the UAE's core AI ethics principles and what do they mean?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-en"}
+{"id": "val-00136", "text": "هل يمكن تفويض قرارات تتعلق بالقوة القاتلة أو الحياة والموت إلى أنظمة الذكاء الاصطناعي أم يجب أن تبقى تحت سيطرة بشرية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00137", "text": "What is the UAE AI ‘UAI’ mark and who will issue it?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00138", "text": "ما هي تمارين الإحماء المناسبة قبل الركض لمسافة 10 كيلومترات؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00139", "text": "How does the PDPL define controller and processor, and what are their respective responsibilities?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00140", "text": "ما هي متطلبات الخصوصية المضمنة في تصميم أنظمة الذكاء الاصطناعي وفق إرشادات الإمارات؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00141", "text": "ما هي متطلبات الالتزام القانوني لتقنيات الذكاء الاصطناعي في الإمارات؟", "label": "charter", "language": "ar", "source": "corpus:ai-charter-ar"}
+{"id": "val-00142", "text": "ما الضوابط والتدابير الوقائية لمراقبة وتقييم أنظمة الذكاء الاصطناعي التي تستخدم استراتيجيات تحفيزية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00143", "text": "Can you explain why putting human values at the center of AI innovation is important?", "label": "charter", "language": "en", "source": "corpus:ai-charter-ar"}
+{"id": "val-00144", "text": "هل يجوز نشر المبادئ على موقع إخباري وادعاء أن مكتب وزير الدولة للذكاء الاصطناعي يؤيد ذلك؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00145", "text": "ما هي طريقة عمل المسقعة السورية خطوة بخطوة مع نصائح لتجنب امتصاص الزيت؟", "label": "out_of_scope", "language": "ar", "source": "synthetic_oos"}
+{"id": "val-00146", "text": "How can I challenge an automated government decision about my benefits?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00147", "text": "What is the UAE's official stance on developing and leading in artificial intelligence?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "val-00148", "text": "هل تُفرض هذه المبادئ على الجهات الحكومية أم هي توجيهات طوعية فقط؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00149", "text": "ما الإجراءات المقترحة لضمان الشفافية والمساءلة في أدوات الذكاء الاصطناعي بالإمارات؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "val-00150", "text": "Is employee personal data protected differently than customer data under the PDPL?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00151", "text": "من يُعد \"منظمة مطورة للذكاء الاصطناعي\" وفق الإرشادات الإماراتية؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}
+{"id": "val-00152", "text": "How can I request an explanation if an automated decision affected me (e.g., loan or benefits rejection)?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00153", "text": "What does it mean when a system is described as having human-like capabilities such as reasoning and self-improvement?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00154", "text": "What are the UAE's guiding principles for developing and governing AI internationally?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "val-00155", "text": "How should government AI teams assess and mitigate risks from incorrect data matching (e.g., misspelled names) before deployment?", "label": "ethics", "language": "en", "source": "corpus:ai-ethics-en"}
+{"id": "val-00156", "text": "ما هي اللجان والمنصات الدولية التي تشارك فيها الإمارات بشأن حوكمة الذكاء الاصطناعي؟", "label": "international_policy", "language": "ar", "source": "corpus:ai-policy-ar"}
+{"id": "val-00157", "text": "How long do I have to notify the regulator and data subjects about a personal data breach?", "label": "data_protection", "language": "en", "source": "synthetic_topic"}
+{"id": "val-00158", "text": "How does the UAE ensure AI systems are fair, transparent and respect privacy?", "label": "international_policy", "language": "en", "source": "corpus:ai-policy-ar"}
+{"id": "val-00159", "text": "Which camera would you recommend for travel photography on a moderate budget?", "label": "out_of_scope", "language": "en", "source": "synthetic_oos"}
+{"id": "val-00160", "text": "ما هي المصادر الدولية والأوروبية حول أخلاقيات الذكاء الاصطناعي المذكورة في الوثيقة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-ar"}
+{"id": "val-00161", "text": "ما هي الضوابط اللازمة عند استخدام الذكاء الاصطناعي مع الأطفال أو الفئات الضعيفة عندما لا يمكن الحصول على موافقة مستنيرة؟", "label": "ethics", "language": "ar", "source": "corpus:ai-ethics-en"}

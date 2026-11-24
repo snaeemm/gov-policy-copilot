@@ -1,0 +1,45 @@
+name: train-classifier
+# Fine-tunes the bilingual query classifier on a FREE GitHub-hosted CPU runner, tracks the run
+# with MLflow in the Azure ML workspace and registers the model there (no AML compute cost).
+on:
+  workflow_dispatch:
+    inputs:
+      epochs: { description: "Training epochs", default: "4" }
+      publish_hf: { description: "Publish to Hugging Face Hub (needs HF_TOKEN secret + HF_USERNAME variable)", type: boolean, default: true }
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with: { enable-cache: true }
+      - run: uv python install 3.12 && uv sync --frozen --extra ml
+      # Log in after dependency install: the GitHub OIDC assertion is short-lived.
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Train, evaluate, register in Azure ML
+        run: uv run python -m ml.train_classifier --azureml --epochs "${{ inputs.epochs }}"
+      - name: Publish to Hugging Face Hub
+        if: inputs.publish_hf
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ vars.HF_USERNAME }}
+        run: uv run python ml/publish_hf.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: classifier
+          path: |
+            eval/results/classifier/
+            ml/artifacts/gov-policy-query-classifier/model.onnx
+            ml/artifacts/gov-policy-query-classifier/tokenizer.json
+            ml/artifacts/gov-policy-query-classifier/labels.json

@@ -5,7 +5,7 @@
 |---|---|---|---|---|
 | ai-charter-en / -ar | UAE Charter for the Development and Use of AI (2024) | EN / AR | UAE AI Office (ai.gov.ae) | Indexed |
 | ai-policy-en / -ar | The UAE's International Stance on AI Policy (2024) | EN / AR | UAE AI Office | Indexed |
-| pdpl-en / -ar | Federal Decree-Law No. 45 of 2021 (PDPL) | EN / AR | uaelegislation.gov.ae | **Pending** – site blocks automated download (Cloudflare); manual download required |
+| pdpl-en / -ar | Federal Decree-Law No. 45 of 2021 (PDPL) | EN / AR | uaelegislation.gov.ae | **Indexed** – official text supplied manually as cleaned Markdown (site blocks automated download); EN 23 chunks, AR 26 chunks, DQ clean |
 | ai-ethics-en / -ar | UAE AI Ethics: Principles & Guidelines (2022) | EN / AR | ai.gov.ae (UAE AI Office) | Indexed (44 EN + 58 AR chunks) |
 
 Metadata and source URLs: `data/manifest.json`. Raw PDFs are **not** redistributed in the repo (`data/raw` is git-ignored); they are fetched from the official URLs. Users should consult the publishers' terms; the AI Ethics guidelines are published under CC BY 4.0. Arabic is the authoritative language for UAE federal legislation; English texts may be translations.

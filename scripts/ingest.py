@@ -56,7 +56,9 @@ async def collect(
     for doc in docs:
         cache = PROCESSED / f"{Path(doc.file).stem}.layout.json"
         pdf = ROOT / "data/raw" / doc.file
-        if offline:
+        # Text-sourced documents (e.g. the PDPL, whose portal blocks automated PDF download)
+        # have no PDF; their cleaned Markdown is placed directly in the layout cache.
+        if offline or (not pdf.exists() and cache.exists()):
             if not cache.exists():
                 print(f"skip {doc.doc_id}: no cached layout")
                 continue

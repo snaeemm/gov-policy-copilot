@@ -25,7 +25,7 @@ How each capability of Gov Policy Copilot is implemented, its known limitations,
 
 ## Known limitations
 - It's a reference implementation on public data, not a government system. Only invited users of a personal tenant can sign in.
-- The corpus is small (6 documents, 147 chunks); the PDPL is pending a manual download because the legislation portal blocks automated access.
+- The corpus is small (8 documents, 196 chunks). The PDPL (EN/AR) was added from its official text as cleaned Markdown, because the legislation portal blocks automated PDF download.
 - Model inference is GlobalStandard, and the judge comes from the same model family.
 - The review queue is ephemeral, the eval on push is a 12-item subset, and there's no WCAG audit yet.
 - Fabric Gold layer is live (Delta tables in a OneLake lakehouse); Purview is design-only.

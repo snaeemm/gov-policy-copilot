@@ -1,0 +1,108 @@
+# Default values target AKS with Workload Identity + Key Vault CSI driver.
+replicaCount: 2
+
+image:
+  repository: ghcr.io/snaeemm/gov-policy-copilot
+  tag: ""            # defaults to .Chart.AppVersion
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  name: ""
+  # AKS Workload Identity: federated credential on a user-assigned managed identity.
+  workloadIdentity:
+    enabled: true
+    clientId: ""     # UAMI client ID (same identity as the Container App)
+    tenantId: ""
+
+# Non-secret configuration (mirrors infra/main.bicep envVars).
+config:
+  APP_ENV: prod
+  LLM_PROVIDER: azure_openai
+  AZURE_OPENAI_ENDPOINT: ""
+  AZURE_OPENAI_CHAT_DEPLOYMENT: gpt-5-mini
+  AZURE_OPENAI_EMBEDDING_DEPLOYMENT: text-embedding-3-small
+  AZURE_SEARCH_ENDPOINT: ""
+  CONTENT_SAFETY_ENDPOINT: ""
+  LANGUAGE_ENDPOINT: ""
+  RERANKER: none
+  GUARDRAILS_FAIL_CLOSED: "true"
+  REVIEW_DB_PATH: /tmp/reviews.db
+  AUTH_ENABLED: "true"
+  ENTRA_TENANT_ID: ""
+  ENTRA_API_AUDIENCE: ""
+  ENTRA_SPA_CLIENT_ID: ""
+
+# Secrets come from Azure Key Vault - never from values files.
+secrets:
+  # Option A (default): Secrets Store CSI driver + Azure Key Vault provider.
+  csi:
+    enabled: true
+    keyVaultName: ""
+    tenantId: ""
+    objects:
+      - keyVaultSecret: appinsights-connection-string
+        env: APPLICATIONINSIGHTS_CONNECTION_STRING
+  # Option B: External Secrets Operator (requires a ClusterSecretStore pointing at Key Vault).
+  externalSecret:
+    enabled: false
+    secretStoreRef: { name: azure-keyvault, kind: ClusterSecretStore }
+    refreshInterval: 1h
+    objects:
+      - keyVaultSecret: appinsights-connection-string
+        env: APPLICATIONINSIGHTS_CONNECTION_STRING
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+ingress:
+  enabled: false
+  className: nginx
+  host: ""
+  annotations: {}
+  tls: []
+
+resources:
+  requests: { cpu: 250m, memory: 512Mi }
+  limits: { cpu: "1", memory: 1Gi }
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 70
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+
+networkPolicy:
+  enabled: true
+  # Only the ingress controller may reach the pods.
+  ingressFromNamespaceLabels:
+    kubernetes.io/metadata.name: ingress-nginx
+  ingressFromPodLabels:
+    app.kubernetes.io/name: ingress-nginx
+  # Extra allowed sources (e.g. CI smoke-test pod).
+  extraIngressFrom: []
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 10001
+  runAsGroup: 10001
+  fsGroup: 10001
+  seccompProfile: { type: RuntimeDefault }
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities: { drop: [ALL] }
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

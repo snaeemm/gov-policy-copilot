@@ -1,0 +1,9 @@
+apiVersion: v2
+name: gov-policy-copilot
+description: Bilingual (AR/EN) RAG copilot over public UAE policy documents - portable Kubernetes/AKS packaging
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+home: https://github.com/snaeemm/gov-policy-copilot
+sources: [https://github.com/snaeemm/gov-policy-copilot]
+keywords: [rag, azure-openai, semantic-kernel, fastapi]

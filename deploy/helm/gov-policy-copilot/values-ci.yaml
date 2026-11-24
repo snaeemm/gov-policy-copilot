@@ -1,0 +1,30 @@
+# kind-in-CI overrides: no Azure, no CSI driver, single replica, locally loaded image.
+replicaCount: 1
+image:
+  repository: gov-policy-copilot
+  tag: ci
+  pullPolicy: Never
+serviceAccount:
+  workloadIdentity: { enabled: false }
+config:
+  AUTH_ENABLED: "false"
+  CONTENT_SAFETY_ENDPOINT: ""
+  LANGUAGE_ENDPOINT: ""
+  AZURE_OPENAI_ENDPOINT: https://dummy.openai.azure.com/
+  AZURE_SEARCH_ENDPOINT: https://dummy.search.windows.net
+  GUARDRAILS_FAIL_CLOSED: "false"
+secrets:
+  csi: { enabled: false }
+  externalSecret: { enabled: false }
+resources:
+  requests: { cpu: 100m, memory: 256Mi }
+  limits: { cpu: "1", memory: 1Gi }
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 2
+podDisruptionBudget: { enabled: false }
+networkPolicy:
+  enabled: true
+  extraIngressFrom:
+    - podSelector: { matchLabels: { role: smoke-test } }

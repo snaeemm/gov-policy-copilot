@@ -1,0 +1,79 @@
+name: k8s
+# Validates the Helm chart and runs it on an ephemeral kind cluster inside the GitHub runner.
+# No cloud Kubernetes cluster is created ($0).
+on:
+  pull_request:
+    paths: ["deploy/**", "Dockerfile", ".github/workflows/k8s.yml"]
+  push:
+    branches: [main]
+    paths: ["deploy/**", "Dockerfile", ".github/workflows/k8s.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CHART: deploy/helm/gov-policy-copilot
+  KUBE_VERSION: "1.30.0"
+
+jobs:
+  kind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+        with: { version: v3.16.2 }
+      - name: Install kubeconform
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz | tar xz -C /usr/local/bin kubeconform
+      - name: Helm lint
+        run: |
+          helm lint "$CHART" -f "$CHART/values-ci.yaml"
+          helm lint "$CHART" --set serviceAccount.workloadIdentity.clientId=00000000-0000-0000-0000-000000000001 \
+            --set secrets.csi.keyVaultName=kv-example --set secrets.csi.tenantId=00000000-0000-0000-0000-000000000002
+      - name: Schema validation (kubeconform)
+        run: |
+          AKS="--set serviceAccount.workloadIdentity.clientId=00000000-0000-0000-0000-000000000001 --set secrets.csi.keyVaultName=kv-example --set secrets.csi.tenantId=00000000-0000-0000-0000-000000000002"
+          # CRDs (SecretProviderClass, ExternalSecret) have no public schema -> skipped, not failed.
+          helm template gpc "$CHART" $AKS | kubeconform -strict -summary -ignore-missing-schemas -kubernetes-version "$KUBE_VERSION"
+          helm template gpc "$CHART" $AKS --set secrets.csi.enabled=false --set secrets.externalSecret.enabled=true \
+            --set ingress.enabled=true --set ingress.host=copilot.example.ae \
+            | kubeconform -strict -summary -ignore-missing-schemas -kubernetes-version "$KUBE_VERSION"
+          helm template gpc "$CHART" -f "$CHART/values-ci.yaml" | kubeconform -strict -summary -kubernetes-version "$KUBE_VERSION"
+      - name: Build image
+        run: docker build -t gov-policy-copilot:ci .
+      - uses: helm/kind-action@v1
+        with: { cluster_name: gpc-ci, wait: 120s }
+      - name: Load image and install chart
+        run: |
+          kind load docker-image gov-policy-copilot:ci --name gpc-ci
+          helm install gpc "$CHART" -f "$CHART/values-ci.yaml" --wait --timeout 5m
+          kubectl rollout status deploy/gov-policy-copilot --timeout=180s
+      - name: Smoke tests
+        run: |
+          kubectl port-forward svc/gov-policy-copilot 18080:80 >/tmp/pf.log 2>&1 &
+          sleep 5
+          curl -fsS http://127.0.0.1:18080/healthz | tee /dev/stderr | grep -q '"status":"ok"'
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:18080/)" = "200"
+          kubectl get hpa gov-policy-copilot
+          kubectl get networkpolicy gov-policy-copilot
+      - name: NetworkPolicy - allowed client reaches the service
+        run: |
+          kubectl run smoke-ok --rm -i --restart=Never --image=curlimages/curl:8.10.1 --labels=role=smoke-test \
+            --command -- curl -fsS -m 10 http://gov-policy-copilot/healthz
+      - name: NetworkPolicy - unlabelled client is blocked
+        run: |
+          OUT=$(kubectl run smoke-deny --rm -i --restart=Never --image=curlimages/curl:8.10.1 \
+            --command -- sh -c 'curl -s -m 8 -o /dev/null -w %{http_code} http://gov-policy-copilot/healthz || echo BLOCKED' 2>/dev/null || true)
+          echo "result: $OUT"
+          echo "$OUT" | grep -q BLOCKED
+      - name: Security context check
+        run: |
+          kubectl get pod -l app.kubernetes.io/name=gov-policy-copilot -o jsonpath='{.items[0].spec.containers[0].securityContext.readOnlyRootFilesystem}' | grep -q true
+          kubectl get pod -l app.kubernetes.io/name=gov-policy-copilot -o jsonpath='{.items[0].spec.securityContext.runAsNonRoot}' | grep -q true
+      - name: Diagnostics on failure
+        if: failure()
+        run: |
+          kubectl get all,networkpolicy,hpa -o wide
+          kubectl describe pods -l app.kubernetes.io/name=gov-policy-copilot
+          kubectl logs -l app.kubernetes.io/name=gov-policy-copilot --tail=200

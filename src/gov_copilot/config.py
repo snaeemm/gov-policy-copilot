@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=(".env.azure", ".env"), extra="ignore")
 
     app_env: str = "local"
-    prompt_version: str = "v1"
+    prompt_version: str = "v2"
 
     llm_provider: LLMProvider = LLMProvider.AZURE_OPENAI
     azure_openai_endpoint: str = ""
@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     reranker: RerankerKind = RerankerKind.CROSS_ENCODER
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
     retrieval_top_k: int = Field(default=20, ge=1, le=50)
-    rerank_top_n: int = Field(default=5, ge=1, le=20)
+    rerank_top_n: int = Field(default=8, ge=1, le=20)
     groundedness_threshold: float = Field(default=0.7, ge=0, le=1)
     content_safety_severity_threshold: int = Field(default=2, ge=0, le=6)
     guardrails_fail_closed: bool = True

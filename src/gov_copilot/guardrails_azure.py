@@ -8,6 +8,7 @@ Auth is keyless (Entra ID token). Fail-closed is configurable: in production a g
 blocks requests rather than silently letting them through.
 """
 
+import asyncio
 import logging
 from typing import Any
 
@@ -23,6 +24,9 @@ SCOPE = "https://cognitiveservices.azure.com/.default"
 CS_API = "2024-09-01"
 LANG_API = "2024-11-01"
 PII_LANGS = {"en", "ar"}
+RETRY_STATUS = {429, 500, 502, 503, 504}
+MAX_RETRIES = 4
+BACKOFF_S = 0.5
 
 
 class AzureGuardrails:
@@ -32,15 +36,22 @@ class AzureGuardrails:
         self.http = httpx.AsyncClient(timeout=15)
 
     async def _post(self, endpoint: str, path: str, body: dict[str, Any]) -> dict[str, Any]:
+        """POST with retry + exponential backoff on throttling (F0 tiers rate-limit)."""
         token = (await self.cred.get_token(SCOPE)).token
-        r = await self.http.post(
-            f"{endpoint.rstrip('/')}{path}",
-            json=body,
-            headers={"Authorization": f"Bearer {token}"},
-        )
-        r.raise_for_status()
-        data: dict[str, Any] = r.json()
-        return data
+        for attempt in range(MAX_RETRIES + 1):
+            r = await self.http.post(
+                f"{endpoint.rstrip('/')}{path}",
+                json=body,
+                headers={"Authorization": f"Bearer {token}"},
+            )
+            if r.status_code in RETRY_STATUS and attempt < MAX_RETRIES:
+                retry_after = float(r.headers.get("retry-after", 0) or 0)
+                await asyncio.sleep(max(retry_after, BACKOFF_S * 2**attempt))
+                continue
+            r.raise_for_status()
+            data: dict[str, Any] = r.json()
+            return data
+        raise RuntimeError("unreachable")
 
     async def _harm(self, text: str) -> GuardResult:
         data = await self._post(

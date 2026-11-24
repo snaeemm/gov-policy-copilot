@@ -6,8 +6,8 @@ param location string
 param tags object
 param developerPrincipalId string
 @description('Capacity in thousands of tokens per minute')
-param chatCapacity int = 10
-param embeddingCapacity int = 10
+param chatCapacity int = 100
+param embeddingCapacity int = 100
 
 var suffix = uniqueString(resourceGroup().id)
 
@@ -150,3 +150,4 @@ output searchName string = search.name
 output docIntelName string = docIntel.name
 output contentSafetyName string = contentSafety.name
 output languageName string = language.name
+output cognitiveAccountIds array = [ openAi.id, docIntel.id, contentSafety.id, language.id ]

@@ -70,6 +70,9 @@ class AgentResult(BaseModel):
     language: Language
     outcome: Outcome
     citations: list[Citation] = Field(default_factory=list)
+    contexts: list[str] = Field(
+        default_factory=list, description="Retrieved passages given to the model"
+    )
     verification: Verification | None = None
     review_id: str | None = None
     prompt_version: str

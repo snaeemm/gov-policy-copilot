@@ -61,7 +61,10 @@ async def test_harm_threshold(guard: AzureGuardrails) -> None:
 
 
 @respx.mock
-async def test_fail_closed_on_outage(guard: AzureGuardrails) -> None:
+async def test_fail_closed_on_outage(
+    guard: AzureGuardrails, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr("gov_copilot.guardrails_azure.BACKOFF_S", 0)
     respx.post(url__regex=r".*").mock(return_value=httpx.Response(503))
     assert not (await guard.check_input("hi")).allowed
     guard.s.guardrails_fail_closed = False

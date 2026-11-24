@@ -268,12 +268,19 @@ class Copilot:
                 yield final(
                     ESCALATED[lang],
                     Outcome.ESCALATED,
+                    contexts=[c.content for c in chunks],
                     verification=verification,
                     review_id=review_id,
                 )
                 return
 
-            yield final(answer, Outcome.ANSWERED, citations=citations, verification=verification)
+            yield final(
+                answer,
+                Outcome.ANSWERED,
+                citations=citations,
+                verification=verification,
+                contexts=[c.content for c in chunks],
+            )
 
     async def ask(self, question: str, user: str = "anonymous") -> AgentResult:
         result: AgentResult | None = None

@@ -31,6 +31,8 @@ flowchart LR
   API --> AG[Semantic Kernel agent<br/>plan → retrieve → answer → verify]
   AG --> S
   AG --> LLM[Azure OpenAI gpt-5-mini]
+  AG -.->|LLM_PROVIDER=foundry| FD[Microsoft Foundry project<br/>GPT-5 family · Phi-4 · Llama 3.3]
+  FA[Foundry Agent Service<br/>baseline agent] -.-> S
   AG -->|low confidence| HQ[(Human review queue)]
   API --> PII[AI Language PII masking] --> OT[OpenTelemetry → App Insights]
   GH[GitHub Actions<br/>lint · types · tests · eval gate] -->|OIDC| ACA[Container Apps]
@@ -45,6 +47,7 @@ Details: [docs/architecture.md](docs/architecture.md)
 - **API:** Entra ID login with app roles (Viewer / Reviewer / Admin), per-user rate limiting, SSE streaming.
 - **Versioning and telemetry:** prompts are versioned; model, prompt version, tokens and cost are logged per request.
 - **Evaluation gate in CI/CD:** a quality drop blocks deployment.
+- **Microsoft Foundry:** a Foundry project with a model catalog (GPT-5 family, Phi-4, Llama 3.3) behind one keyless endpoint, a measured [model comparison](docs/model-comparison.md) on the same eval, and a Foundry Agent Service baseline agent compared with the custom pipeline.
 - **Infrastructure:** all in Bicep, keyless (managed identity, Key Vault, OIDC), with a $5 budget alert and private endpoints behind a flag.
 
 ## How this maps to enterprise requirements
@@ -67,6 +70,7 @@ Details: [docs/architecture.md](docs/architecture.md)
 | 15 | Data-quality gates | Metadata, classification label, length, language, duplicate and OCR checks; ingestion fails before embedding on errors; DQ report | ✅ |
 | 16 | Private networking | Private endpoints + privatelink DNS for AOAI, Doc Intelligence, Content Safety, Language, Key Vault — deployed, verified, torn down ([evidence](docs/evidence/private-endpoints-test.md)) | ✅ tested (not enabled in live env) |
 | 17 | Engineering standards & KT | CONTRIBUTING, PR template, CODEOWNERS, review checklist, coding standards, onboarding, client handover plan ([docs/engineering](docs/engineering/)) | ✅ |
+| 18 | Microsoft Foundry | Foundry resource + project in Bicep ([`foundry.bicep`](infra/modules/foundry.bicep)), keyless (Azure AI User); 5 model deployments; `LLM_PROVIDER=foundry` swaps the chat model without re-indexing; [`compare_models.py`](eval/compare_models.py) runs the full eval per model with one fixed judge; Foundry Agent Service agent with the Azure AI Search tool ([`foundry_agent.py`](scripts/foundry_agent.py)) ([ADR-0014](docs/adr/0014-microsoft-foundry-model-choice.md)) | ✅ live ([comparison](docs/model-comparison.md)) |
 
 ## Evaluation (prompt v2, gpt-5-mini)
 | Metric | 4-doc corpus | 6-doc corpus | 8-doc corpus incl. PDPL (current) | Gate |
@@ -127,7 +131,7 @@ docs/              architecture, ADRs, cards, RAI, PDPL, threat model, risks, ru
 ```
 
 ## Documentation
-[Architecture](docs/architecture.md) · [ADRs](docs/adr/) · [Model card](docs/model-card.md) · [Data card](docs/data-card.md) · [Responsible AI (UAE AI Charter)](docs/responsible-ai.md) · [PDPL & residency](docs/pdpl-data-residency.md) · [Threat model](docs/threat-model.md) · [Risk register](docs/risk-register.md) · [Runbook](docs/runbook.md) · [Evaluation report](docs/evaluation-report.md) · [Fabric & Purview](docs/governance-fabric-purview.md) · [Observability](observability/README.md) · [Kubernetes](deploy/k8s/README.md) · [Engineering standards & KT](docs/engineering/) · [Evidence](docs/evidence/) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
+[Architecture](docs/architecture.md) · [ADRs](docs/adr/) · [Model card](docs/model-card.md) · [Data card](docs/data-card.md) · [Responsible AI (UAE AI Charter)](docs/responsible-ai.md) · [PDPL & residency](docs/pdpl-data-residency.md) · [Threat model](docs/threat-model.md) · [Risk register](docs/risk-register.md) · [Runbook](docs/runbook.md) · [Evaluation report](docs/evaluation-report.md) · [Model comparison (Foundry)](docs/model-comparison.md) · [Fabric & Purview](docs/governance-fabric-purview.md) · [Observability](observability/README.md) · [Kubernetes](deploy/k8s/README.md) · [Engineering standards & KT](docs/engineering/) · [Evidence](docs/evidence/) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 ## Cost
 | Item | Tier | Approx. monthly |

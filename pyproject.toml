@@ -82,6 +82,8 @@ ignore = ["S101", "RUF001", "RUF002", "RUF003"]  # Arabic text is intentional
 "src/gov_copilot/agent/schemas.py" = ["E501"]
 "ml/**" = ["S311", "S603", "S607", "E501"]  # offline training scripts: seeded RNG, az/git CLI
 "scripts/fabric_publish.py" = ["E501"]
+"scripts/foundry_agent.py" = ["E501"]
+"eval/compare_models.py" = ["S603"]  # runs our own eval script per model
 "scripts/build_classifier_dataset.py" = ["S311", "E501"]
 
 [tool.mypy]

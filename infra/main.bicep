@@ -32,6 +32,9 @@ param ciPrincipalId string = ''
 @description('Azure ML workspace for MLflow tracking + model registry (storage-only cost). Normally deployed standalone via modules/ml.bicep.')
 param deployMl bool = false
 
+@description('Microsoft Foundry resource + project with a model catalog for comparison (pay-per-token, no idle cost)')
+param deployFoundry bool = true
+
 var prefix = 'govcopilot-${env}'
 var tags = { project: 'gov-policy-copilot', env: env, costCenter: 'portfolio' }
 
@@ -134,6 +137,19 @@ module ml 'modules/ml.bicep' = if (deployApp && deployMl) {
   }
 }
 
+module foundry 'modules/foundry.bicep' = if (deployFoundry) {
+  scope: rg
+  name: 'foundry'
+  params: {
+    prefix: prefix
+    location: location
+    tags: tags
+    developerPrincipalId: developerPrincipalId
+    servicePrincipalIds: filter(concat(deployApp ? [ app!.outputs.identityPrincipalId ] : [], empty(ciPrincipalId) ? [] : [ ciPrincipalId ]), p => !empty(p))
+    searchServiceName: ai.outputs.searchName
+  }
+}
+
 module budget 'modules/budget.bicep' = {
   name: 'budget'
   params: {
@@ -154,3 +170,5 @@ output contentSafetyEndpoint string = ai.outputs.contentSafetyEndpoint
 output languageEndpoint string = ai.outputs.languageEndpoint
 output appUrl string = deployApp ? app!.outputs.appUrl : ''
 output appName string = deployApp ? app!.outputs.appName : ''
+output foundryProjectEndpoint string = deployFoundry ? foundry!.outputs.projectEndpoint : ''
+output foundryEndpoint string = deployFoundry ? foundry!.outputs.openAiCompatibleEndpoint : ''

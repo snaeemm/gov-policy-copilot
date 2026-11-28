@@ -43,3 +43,26 @@ async def test_review_queue_lifecycle() -> None:
     assert done is not None and done.status is ReviewStatus.APPROVED and done.final_answer == "a"
     assert await q.list(ReviewStatus.PENDING) == []
     assert await q.decide("missing", approve=False, reviewer="x") is None
+
+
+def test_completion_kwargs_foundry_models() -> None:
+    assert completion_kwargs("gpt-5.4-mini")["reasoning_effort"] == "none"
+    assert completion_kwargs("gpt-5-nano")["reasoning_effort"] == "minimal"
+    assert "temperature" in completion_kwargs("Phi-4")
+    assert "temperature" in completion_kwargs("Llama-3.3-70B-Instruct")
+
+
+def test_foundry_provider_routes_chat_but_not_embeddings() -> None:
+    from gov_copilot.config import LLMProvider, Settings
+    from gov_copilot.llm.clients import chat_model, embedding_client, make_client
+
+    s = Settings(
+        _env_file=None,
+        llm_provider=LLMProvider.FOUNDRY,
+        foundry_endpoint="https://aif.openai.azure.com/",
+        foundry_chat_deployment="Phi-4",
+        azure_openai_endpoint="https://aoai.openai.azure.com/",
+    )
+    assert chat_model(s) == "Phi-4"
+    assert "aif" in str(make_client(s).base_url)
+    assert "aoai" in str(embedding_client(s).base_url)

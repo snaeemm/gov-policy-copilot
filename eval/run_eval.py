@@ -16,6 +16,7 @@ Usage: uv run python eval/run_eval.py [--limit N] [--gate]
 import argparse
 import asyncio
 import json
+import os
 import statistics
 import sys
 import time
@@ -33,7 +34,7 @@ from gov_copilot.llm.clients import make_client
 from gov_copilot.retrieval.retriever import HybridRetriever
 
 ROOT = Path(__file__).resolve().parent
-CONCURRENCY = 4
+CONCURRENCY = int(os.environ.get("EVAL_CONCURRENCY", "4"))
 
 
 def load(name: str) -> list[dict[str, Any]]:
@@ -79,7 +80,7 @@ def make_judges() -> tuple[Any, Any]:
     )
 
 
-async def main(limit: int | None, gate: bool) -> int:
+async def main(limit: int | None, gate: bool, out_path: str | None = None) -> int:
     s = get_settings()
     copilot = Copilot(
         s,
@@ -204,7 +205,8 @@ async def main(limit: int | None, gate: bool) -> int:
         "redteam": r_rows,
         "golden": [{k: v for k, v in r.items() if k != "answer"} for r in g_rows],
     }
-    out = ROOT / "results" / "latest.json"
+    out = Path(out_path) if out_path else ROOT / "results" / "latest.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2))
     print(
         json.dumps({"metrics": metrics, "by_language": by_lang, "gate": report["gate"]}, indent=2)
@@ -219,5 +221,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int)
     ap.add_argument("--gate", action="store_true")
+    ap.add_argument("--out", help="results file (default eval/results/latest.json)")
     a = ap.parse_args()
-    sys.exit(asyncio.run(main(a.limit, a.gate)))
+    sys.exit(asyncio.run(main(a.limit, a.gate, a.out)))

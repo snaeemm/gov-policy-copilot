@@ -3,6 +3,7 @@ All notable changes to this project are documented here (Keep a Changelog, SemVe
 
 ## [Unreleased]
 ### Added
+- M14: Microsoft Foundry - AIServices resource + project (Bicep, keyless, Azure AI User), deployments gpt-5-mini / gpt-5-nano / gpt-5.4-mini / Phi-4 / Llama-3.3-70B-Instruct; `foundry` LLM provider (chat only, embeddings stay on AOAI); `eval/compare_models.py` model comparison with fixed judge; Foundry Agent Service baseline agent with Azure AI Search tool via keyless project connection (`scripts/foundry_agent.py`); ADR-0014; `docs/model-comparison.md`.
 - M8: bilingual query classifier (distilbert-base-multilingual-cased) — dataset of 1,152 EN/AR questions, MLflow tracking + registry in Azure ML (`gov-policy-query-classifier` v1), EN/AR accuracy 0.81, int8 ONNX in-container router behind `CLASSIFIER_ENABLED`, `train.yml`, ADR-0013.
 - M9: Helm chart (HPA, PDB, NetworkPolicy, Workload Identity, Key Vault CSI) and kind-based CI smoke test; ADR-0012 Container Apps vs AKS.
 - M10: weekly drift workflow (eval sample vs baseline, opens `drift` issues), drift KQL, alert rules in Bicep (off by default).

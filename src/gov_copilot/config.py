@@ -10,6 +10,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class LLMProvider(StrEnum):
     AZURE_OPENAI = "azure_openai"
     GITHUB_MODELS = "github_models"
+    FOUNDRY = "foundry"  # Microsoft Foundry model catalog (GPT, Phi, Llama) - chat only
 
 
 class RerankerKind(StrEnum):
@@ -35,6 +36,12 @@ class Settings(BaseSettings):
     github_models_chat_model: str = "openai/gpt-4o-mini"
     github_models_embedding_model: str = "openai/text-embedding-3-small"
     embedding_dimensions: int = 1536
+    # Microsoft Foundry (AI Services resource + project). Embeddings stay on Azure OpenAI so the
+    # search index never needs re-embedding when the chat model changes.
+    foundry_endpoint: str = ""  # https://<aif>.openai.azure.com/ (OpenAI-compatible inference)
+    foundry_project_endpoint: str = ""  # https://<aif>.services.ai.azure.com/api/projects/<proj>
+    foundry_chat_deployment: str = "gpt-5-mini"
+    llm_max_retries: int = Field(default=6, ge=0, le=30)
 
     azure_search_endpoint: str = ""
     azure_search_api_key: SecretStr | None = None

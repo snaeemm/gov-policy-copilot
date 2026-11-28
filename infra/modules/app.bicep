@@ -185,3 +185,4 @@ output appName string = app.name
 output identityClientId string = uami.properties.clientId
 output keyVaultName string = kv.name
 output keyVaultId string = kv.id
+output identityPrincipalId string = uami.properties.principalId

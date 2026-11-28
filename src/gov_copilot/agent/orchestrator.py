@@ -48,7 +48,9 @@ Event = dict[str, Any]
 
 def completion_kwargs(model: str) -> dict[str, Any]:
     """Reasoning models (gpt-5*, o*) take different parameters than classic chat models."""
-    name = model.split("/")[-1]
+    name = model.split("/")[-1].lower()
+    if re.match(r"gpt-5\.\d", name):  # gpt-5.1+ replaced "minimal" with "none"
+        return {"max_completion_tokens": 2500, "reasoning_effort": "none"}
     if name.startswith(("gpt-5", "o1", "o3", "o4")):
         return {"max_completion_tokens": 2500, "reasoning_effort": "minimal"}
     return {"max_tokens": 700, "temperature": 0}

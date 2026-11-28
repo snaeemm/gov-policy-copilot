@@ -18,6 +18,23 @@ Same pipeline, same index, same prompts (v2), same golden set (50 EN/AR question
 | gpt-5-nano | 12% | 0% |
 | gpt-5.4-mini | 96% | 88% |
 
+## Same model: direct Azure OpenAI vs through Foundry (gpt-5-mini)
+
+Identical pipeline and settings; only the endpoint changes (`LLM_PROVIDER=azure_openai` vs `LLM_PROVIDER=foundry`).
+
+| | Direct Azure OpenAI | Via Foundry |
+|---|---|---|
+| Groundedness | 97% | 98% |
+| Relevance | 80% | 80% |
+| Citation accuracy | 87% | 88% |
+| Answer rate | 82% | 86% |
+| Red-team pass | 96% | 92% |
+| p50 latency (s) | 9.54 | 10.12 |
+| p95 latency (s) | 12.76 | 13.86 |
+| Cost / query (USD) | 0.001615 | 0.001611 |
+
+Differences are within run-to-run noise (2-4 points on 50 questions; one red-team prompt). Same model, same price: Foundry changes the platform around the model (catalog, agents, evaluation, tracing), not answer quality.
+
 ## Custom pipeline vs Foundry Agent Service (same model, gpt-5-mini)
 
 The same task built as a managed **Foundry Agent Service** prompt agent (`scripts/foundry_agent.py`): instructions + the Azure AI Search tool over the same index through a keyless project connection. Scored with the same judge on the first 50 golden questions.

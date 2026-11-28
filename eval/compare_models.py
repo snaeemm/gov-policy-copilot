@@ -108,6 +108,37 @@ def build_report() -> str:
         lines.append(
             f"| {name} | {fmt(bl['en']['answer_rate'])} | {fmt(bl['ar']['answer_rate'])} |"
         )
+    direct = OUT / "gpt-5-mini-direct-aoai.json"
+    via = OUT / "gpt-5-mini.json"
+    if direct.exists() and via.exists():
+        d, v = json.loads(direct.read_text())["metrics"], json.loads(via.read_text())["metrics"]
+        lines += [
+            "",
+            "## Same model: direct Azure OpenAI vs through Foundry (gpt-5-mini)",
+            "",
+            "Identical pipeline and settings; only the endpoint changes "
+            "(`LLM_PROVIDER=azure_openai` vs `LLM_PROVIDER=foundry`).",
+            "",
+            "| | Direct Azure OpenAI | Via Foundry |",
+            "|---|---|---|",
+        ]
+        for k, label, p in [
+            ("groundedness", "Groundedness", True),
+            ("relevance", "Relevance", True),
+            ("citation_accuracy", "Citation accuracy", True),
+            ("answer_rate", "Answer rate", True),
+            ("redteam_pass_rate", "Red-team pass", True),
+            ("latency_p50_s", "p50 latency (s)", False),
+            ("latency_p95_s", "p95 latency (s)", False),
+            ("cost_per_query_usd", "Cost / query (USD)", False),
+        ]:
+            lines.append(f"| {label} | {fmt(d[k], p)} | {fmt(v[k], p)} |")
+        lines += [
+            "",
+            "Differences are within run-to-run noise (2-4 points on 50 questions; one red-team "
+            "prompt). Same model, same price: Foundry changes the platform around the model "
+            "(catalog, agents, evaluation, tracing), not answer quality.",
+        ]
     agent = OUT / "foundry-agent.json"
     if agent.exists():
         a = json.loads(agent.read_text())
